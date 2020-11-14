@@ -1,0 +1,62 @@
+.App-wrapper {
+  display: grid;
+  grid-template-areas:
+  'header header header'
+  'sidebar content ms';
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
+}
+
+.App-header {
+  grid-area: header;
+  background: burlywood;
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 50px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: aquamarine;
+}
+
+.main-profile {
+  grid-area: content;
+  background: darkgray;
+}
+
+.messages-sidebar {
+  grid-area: ms;
+  background: gold;
+}
+
+.App-logo {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  margin-left: 200px;
+  pointer-events: none;
+  background: blue;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+.App-link {
+
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
