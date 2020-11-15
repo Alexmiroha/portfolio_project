@@ -1,0 +1,4 @@
+.mainProfile {
+    grid-area: content;
+    background: darkgray;
+}

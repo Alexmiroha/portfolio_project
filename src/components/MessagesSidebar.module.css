@@ -1,0 +1,8 @@
+.messagesSidebar {
+    grid-area: ms;
+    background: gold;
+}
+
+link {
+    color: red;
+}

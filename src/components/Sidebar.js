@@ -1,9 +1,10 @@
 import React from 'react';
+import s from './Sidebar.module.css';
 
 function Sidebar() {
     return (
-        <nav className='sidebar'>
-            <ul className='sidebar-list'>
+        <nav className={s.sidebar}>
+            <ul className={s.sidebarList}>
                 <li><a href="">Profile</a></li>
                 <li><a href="">Messages</a></li>
                 <li><a href="">News</a></li>
