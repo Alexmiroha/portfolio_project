@@ -1,4 +1,6 @@
+
 .App-wrapper {
+  font-family: Roboto,-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
   display: grid;
   grid-template-areas:
   'header header header'
@@ -6,6 +8,7 @@
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
+  color: #888da8;
 }
 
 

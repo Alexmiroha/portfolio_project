@@ -1,0 +1,24 @@
+.sidebar {
+    grid-area: sidebar;
+    background: #fdfdfd;
+    position: fixed;
+    top: -16px;
+    height: 107%;
+    width: 270px;
+}
+
+.sidebarList a {
+    display: flex;
+    padding: 16px 0 16px 25px;
+}
+li {
+    list-style-type: none;
+    margin-bottom: 0px;
+}
+
+a {
+    text-decoration: none;
+}
+ul {
+    padding-inline-start: 0px;
+}

@@ -1,6 +1,10 @@
 .messagesSidebar {
     grid-area: ms;
     background: gold;
+    position: fixed;
+    right: 0px;
+    top: 70px;
+    height: 100%;
 }
 
 link {
