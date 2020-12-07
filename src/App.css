@@ -11,6 +11,9 @@
   color: #888da8;
 }
 
+.App-wrapper-content {
+  grid-area: content;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

@@ -19,17 +19,17 @@ function Sidebar() {
             <ul className={s.sidebarList}>
                 <Logo />
                 {/*!!!!!!!!!!styles 4 icons!!!!!!!!!!!!*/}
-                <IconContext.Provider value={{ color: '#9a9fbf', size: '1.5em'}}>
-                    <SidebarButton icon=<AiOutlineCloseCircle /> name='Collapse Menu' link=''/>
-                    <SidebarButton icon=<RiNewspaperLine /> name='News Feed' link=''/>
-                    <SidebarButton icon=<TiStarOutline /> name='Fav Pages Feed' link=''/>
-                    <SidebarButton icon=<HiOutlineUserGroup /> name='Friend Groups' link=''/>
-                    <SidebarButton icon=<BsMusicPlayer /> name='Music & Playlists' link=''/>
-                    <SidebarButton icon=<TiWeatherPartlySunny /> name='Weather App' link=''/>
-                    <SidebarButton icon=<GoCalendar /> name='Calendar and Events' link=''/>
-                    <SidebarButton icon=<BiBadgeCheck /> name='News Feed' link=''/>
-                    <SidebarButton icon=<BiStats /> name='Account Stats' link=''/>
-                    <SidebarButton icon=<BsColumns /> name='Manage Widgets' link=''/>
+                <IconContext.Provider value={{ className: 'react-icons', size: '1.5em' }}>
+                    <SidebarButton icon=<AiOutlineCloseCircle /> name='Collapse Menu' link='' type='checkbox'/>
+                    <SidebarButton icon=<RiNewspaperLine /> name='News Feed' link='/feed'/>
+                    <SidebarButton icon=<TiStarOutline /> name='Fav Pages Feed' link='/fav'/>
+                    <SidebarButton icon=<HiOutlineUserGroup /> name='Friend Groups' link='/friends'/>
+                    <SidebarButton icon=<BsMusicPlayer /> name='Music & Playlists' link='/music'/>
+                    <SidebarButton icon=<TiWeatherPartlySunny /> name='Weather App' link='weather'/>
+                    <SidebarButton icon=<GoCalendar /> name='Calendar and Events' link='calendar' />
+                    <SidebarButton icon=<BiBadgeCheck /> name='Community Badges' link='badges'/>
+                    <SidebarButton icon=<BiStats /> name='Account Stats' link='stats'/>
+                    <SidebarButton icon=<BsColumns /> name='Manage Widgets' link='widgets'/>
                 </IconContext.Provider>
             </ul>
             <ProfileCompletition />

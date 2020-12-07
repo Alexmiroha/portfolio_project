@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './ProfileCompletition.module.css';
+import {NavLink} from "react-router-dom";
 
 let classes = `${s.active} ${s.Mcolor} ${s.animate} ${s.progress}`;
 
@@ -17,7 +18,7 @@ function ProfileCompletition() {
             </div>
             <div className={s.text}>
                 Complete
-                <a href="" className={s.rText}> your profile </a>
+                <NavLink to="/profile" className={s.rText}> your profile </NavLink>
                 your profile so people can know more about you!
             </div>
         </div>

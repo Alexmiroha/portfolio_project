@@ -1,3 +1,21 @@
-.logo {
-    background: gold;
+.iconSB {
+    margin-right: 23px;
+    color: #9a9fbf;
+    transition: color .5s linear;
+}
+
+.button:hover .iconSB{
+    color: #ff5e3a;
+}
+
+.name {
+    color: #9a9fbf;
+    font-weight: 700;
+    font-size: 13px;
+    margin-top: 2.5px;
+    transition: color .5s linear;
+}
+
+.button:hover .name {
+    color: #515365;
 }

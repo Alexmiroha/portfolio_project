@@ -1,15 +1,15 @@
 import React from 'react';
 import s from './SidebarButton.module.css';
 import { RiNewspaperLine } from 'react-icons/ri';
-import st from "../buttons.module.css";
+import {NavLink} from "react-router-dom";
 
 function SidebarButton(props) {
     return (
         <li>
-            <a href={props.link} className={s.button}>
-                <div className={st.iconSB}>{props.icon}</div>
-                <div className={st.name}>{props.name}</div>
-            </a>
+            <NavLink to={props.link} className={s.button}>
+                <div className={s.iconSB}>{props.icon}</div>
+                <div className={s.name}>{props.name}</div>
+            </NavLink>
         </li>
     );
 }
