@@ -1,4 +1,4 @@
-import logo from './img/logo.png';
+import React, {useState} from "react";
 import './App.css';
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -14,7 +14,6 @@ import Calendar from "./components/MainPageComponents/Calendar/Calendar";
 import Badges from "./components/MainPageComponents/Badges/Badges";
 import AccStats from "./components/MainPageComponents/AccountStats/AccStats";
 import Widgets from "./components/MainPageComponents/Widgets/Widgets";
-import {useState} from "react";
 
 
 
