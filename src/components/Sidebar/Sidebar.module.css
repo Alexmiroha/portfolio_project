@@ -1,3 +1,102 @@
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!Animation sidebar on click!!!!!!!!!!!!!!!!!!!!!!!*/
+@keyframes moveSidebar1 {
+    0% {left: 0px}
+    50% {left: -250px}
+    100% {left: 0px; max-width: 270px;}
+}
+
+@keyframes moveSidebar2 {
+    0% {left: 0px}
+    50% {left: -350px;}
+    100% {left: 0px; max-width: 70px; }
+}
+
+
+.sidebar.move1 {
+    animation: moveSidebar1 1s;
+    max-width: 70px;
+    animation-fill-mode: forwards;
+}
+
+.sidebar.move2 {
+    animation: moveSidebar2 1s;
+    animation-fill-mode: forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes hideNamesButton {
+    0% {}
+    100% {max-height: 56px; overflow: hidden;}
+}
+
+.move2 .button {
+    animation: hideNamesButton 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes showNamesButton {
+    0% {}
+    100% {max-height: 56px; max-width: 270px; }
+}
+
+.move1 .button {
+    animation: showNamesButton 1s;
+    animation-fill-mode: forwards;
+    animation-delay: .2s;
+    max-height: 56px;
+    overflow: hidden;
+    max-width: 70px;
+
+}
+
+.move1 .logo {
+    animation: showNamesButton 1s;
+    animation-fill-mode: forwards;
+    max-height: 56px;
+    overflow: hidden;
+    max-width: 70px;
+}
+
+
+
+
+
+
+
+
+
+@keyframes hideCompl1 {
+    0% {}
+    100% {left: -300px;}
+}
+
+@keyframes showCompl2 {
+    0% {left: -300px;}
+    100% {left: 0px;}
+}
+
+.profileCompletitionBlock.hideCompl {
+    animation: hideCompl1 1s;
+    animation-fill-mode: forwards;
+
+}
+
+.showCompl {
+    animation: showCompl2 1s;
+    animation-fill-mode: forwards;
+
+}
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!Animation sidebar on click!!!!!!!!!!!!!!!!!!!!!!!*/
+
 .sidebar {
     grid-area: sidebar;
     background: #fdfdfd;
@@ -7,10 +106,8 @@
     width: 270px;
 }
 
-.sidebarList a {
-    display: flex;
-    padding: 16px 0 16px 25px;
-}
+
+
 li {
     list-style-type: none;
     margin-bottom: 0px;
@@ -21,4 +118,118 @@ a {
 }
 ul {
     padding-inline-start: 0px;
+}
+
+.logo {
+    background: #ff5e3a;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 15px;
+    height: 40px;
+
+}
+.logoName {
+    color: white;
+    text-decoration: none;
+    font-size: .875rem;
+    position: relative;
+    top: -24px;
+    right: 120px;
+}
+
+.imgLogo {
+    width: 34px;
+    height: 34px;
+    align-items: center;
+    margin: 3px 0px 0px 0px;
+}
+
+.iconSB {
+    padding: 14px 0px 14px 25px;
+    color: #9a9fbf;
+    transition: color .5s linear;
+}
+
+.button {
+    display: flex;
+}
+
+.button:hover .iconSB{
+    color: #ff5e3a;
+}
+
+.collapseMenu {
+    cursor: pointer;
+}
+
+.buttonName {
+    color: #9a9fbf;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 18px 15px 20px 25px;
+    transition: color .5s linear;
+}
+
+.button:hover .buttonName {
+    color: #515365;
+}
+
+
+
+
+
+
+
+
+.profileCompletitionBlock {
+    margin-top: 30px;
+    padding: 25px;
+    position: relative;
+}
+
+.infoCompl {
+    display: flex;
+    justify-content: space-between;
+    color: #515365;
+    font-size: 14px;
+    font-weight: 400;
+    font-height: 1.5;
+}
+
+.meterCompl {
+    margin: 18px 5px 18px 5px;
+    height: 6px;
+    position: relative;
+    background: #ebecf2;
+    border-radius: 25px;
+    padding: 0px;
+}
+
+.meterCompl span {
+    display: block;
+    height: 100%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background: #ff5e3a;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.progress {
+    width: 82%;
+}
+
+.textCompl {
+    font-size: 13px;
+}
+
+.rText {
+    color: #ff5e3a;
+    position: relative;
+
 }

@@ -14,13 +14,20 @@ import Calendar from "./components/MainPageComponents/Calendar/Calendar";
 import Badges from "./components/MainPageComponents/Badges/Badges";
 import AccStats from "./components/MainPageComponents/AccountStats/AccStats";
 import Widgets from "./components/MainPageComponents/Widgets/Widgets";
+import {useState} from "react";
+
+
+
 
 function App() {
+
+    const [sidebarActive, setSidebarActive] = useState(false);
+
   return (
       <BrowserRouter>
     <div className="App-wrapper">
         <Header />
-        <Sidebar />
+        <Sidebar active={sidebarActive} setActive={setSidebarActive}/>
         <div className='App-wrapper-content'>
             <Route path='/profile' component={Profile} />
             <Route path='/feed' component={NewsFeed} />
