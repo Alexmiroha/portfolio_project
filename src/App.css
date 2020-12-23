@@ -5,27 +5,14 @@
   grid-template-areas:
   'header header header'
   'sidebar content ms';
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
+  grid-template-rows: 70px 1fr;
+  grid-template-columns: 150px 10fr 70px;
   grid-gap: 10px;
   color: #888da8;
 }
 
 .App-wrapper-content {
   grid-area: content;
-}
+  text-align: center;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

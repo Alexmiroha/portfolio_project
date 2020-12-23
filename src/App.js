@@ -5,7 +5,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Profile from "./components/MainPageComponents/Profile/Profile";
 import MessagesSidebar from "./components/MessagesSidebar/MessagesSidebar";
 import NewsFeed from "./components/MainPageComponents/NewsFeed/NewsFeed";
-import {BrowserRouter, Route} from "react-router-dom";
+import {BrowserRouter, Route, Redirect} from "react-router-dom";
 import FavPagesFeed from "./components/MainPageComponents/FavPagesFeed/FavPagesFeed";
 import FriendGroups from "./components/MainPageComponents/FriendGroups/FriendGroups";
 import Music from "./components/MainPageComponents/Music/Music";
@@ -14,6 +14,7 @@ import Calendar from "./components/MainPageComponents/Calendar/Calendar";
 import Badges from "./components/MainPageComponents/Badges/Badges";
 import AccStats from "./components/MainPageComponents/AccountStats/AccStats";
 import Widgets from "./components/MainPageComponents/Widgets/Widgets";
+import Messages from "./components/MainPageComponents/Messages/Messages";
 
 
 
@@ -28,6 +29,9 @@ function App() {
         <Header />
         <Sidebar active={sidebarActive} setActive={setSidebarActive}/>
         <div className='App-wrapper-content'>
+            <Route exact path="/">
+                <Redirect to="/profile" />
+            </Route>
             <Route path='/profile' component={Profile} />
             <Route path='/feed' component={NewsFeed} />
             <Route path='/fav' component={FavPagesFeed} />
@@ -38,6 +42,7 @@ function App() {
             <Route path='/badges' component={Badges} />
             <Route path='/stats' component={AccStats} />
             <Route path='/widgets' component={Widgets} />
+            <Route path='/messages' component={Messages} />
         </div>
         <MessagesSidebar />
     </div>

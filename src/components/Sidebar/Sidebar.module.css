@@ -1,26 +1,61 @@
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!Animation sidebar on click!!!!!!!!!!!!!!!!!!!!!!!*/
+
+/*FullSidebar*/
 @keyframes moveSidebar1 {
     0% {left: 0px}
     50% {left: -250px}
-    100% {left: 0px; max-width: 270px;}
+    100% {left: 0px; max-width: 230px;}
 }
-
-@keyframes moveSidebar2 {
-    0% {left: 0px}
-    50% {left: -350px;}
-    100% {left: 0px; max-width: 70px; }
-}
-
-
 .sidebar.move1 {
     animation: moveSidebar1 1s;
     max-width: 70px;
     animation-fill-mode: forwards;
 }
 
-.sidebar.move2 {
-    animation: moveSidebar2 1s;
+@keyframes showLogoName {
+    0% {right: 120px;}
+    100% {right: 70px;}
+}
+
+
+.move1 .logoName {
+    animation: showLogoName 1s;
     animation-fill-mode: forwards;
+}
+
+@keyframes showNamesButton {
+    0% {}
+    100% {max-height: 56px; max-width: 270px; }
+}
+.move1 .logo {
+    animation: showNamesButton 1s;
+    animation-fill-mode: forwards;
+    max-height: 56px;
+    overflow: hidden;
+    max-width: 70px;
+}
+
+
+
+.move1 .button {
+    animation: showNamesButton 1s;
+    animation-fill-mode: forwards;
+    animation-delay: .2s;
+    max-height: 56px;
+    overflow: hidden;
+    max-width: 70px;
+
+}
+
+@keyframes showCompl {
+    0% {left: -300px;}
+    100% {left: 0px;}
+}
+
+.move1 .profileCompletitionBlock {
+    animation: showCompl 1s;
+    animation-fill-mode: forwards;
+
 }
 
 
@@ -29,8 +64,17 @@
 
 
 
+/*HidenSidebar*/
+@keyframes moveSidebar2 {
+    0% {left: 0px}
+    50% {left: -350px;}
+    100% {left: 0px; max-width: 70px; }
+}
 
-
+.sidebar.move2 {
+    animation: moveSidebar2 1s;
+    animation-fill-mode: forwards;
+}
 
 
 @keyframes hideNamesButton {
@@ -43,58 +87,29 @@
     animation-fill-mode: forwards;
 }
 
-@keyframes showNamesButton {
+@keyframes hideLogoName {
     0% {}
-    100% {max-height: 56px; max-width: 270px; }
+    100% {right: 120px;}
 }
 
-.move1 .button {
-    animation: showNamesButton 1s;
+.move2 .logoName {
+    animation: hideLogoName 1s;
     animation-fill-mode: forwards;
-    animation-delay: .2s;
-    max-height: 56px;
-    overflow: hidden;
-    max-width: 70px;
-
 }
 
-.move1 .logo {
-    animation: showNamesButton 1s;
-    animation-fill-mode: forwards;
-    max-height: 56px;
-    overflow: hidden;
-    max-width: 70px;
-}
-
-
-
-
-
-
-
-
-
-@keyframes hideCompl1 {
+@keyframes hideCompl {
     0% {}
     100% {left: -300px;}
 }
 
-@keyframes showCompl2 {
-    0% {left: -300px;}
-    100% {left: 0px;}
-}
 
-.profileCompletitionBlock.hideCompl {
-    animation: hideCompl1 1s;
+
+.move2 .profileCompletitionBlock {
+    animation: hideCompl 1s;
     animation-fill-mode: forwards;
 
 }
 
-.showCompl {
-    animation: showCompl2 1s;
-    animation-fill-mode: forwards;
-
-}
 /*!!!!!!!!!!!!!!!!!!!!!!!!!!Animation sidebar on click!!!!!!!!!!!!!!!!!!!!!!!*/
 
 .sidebar {
@@ -103,7 +118,7 @@
     position: fixed;
     top: -16px;
     height: 107%;
-    width: 270px;
+    width: 230px;
 }
 
 
@@ -136,7 +151,7 @@ ul {
     font-size: .875rem;
     position: relative;
     top: -24px;
-    right: 120px;
+    right: 70px;
 }
 
 .imgLogo {
