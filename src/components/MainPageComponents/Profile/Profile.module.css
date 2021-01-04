@@ -1,3 +1,22 @@
 .mainProfile {
-    background: darkgray;
+    padding-top: 35px;
+}
+
+.contentWrapper {
+    max-width: 1270px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 32px;
+}
+
+.LSidebarBlock {
+    width: 295px;
+    height: 3000px;
+    background-color: aqua;
+}
+
+.RSidebarBlock {
+    width: 295px;
+    height: 3000px;
+    background-color: deeppink;
 }

@@ -5,7 +5,7 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Profile from "./components/MainPageComponents/Profile/Profile";
 import MessagesSidebar from "./components/MessagesSidebar/MessagesSidebar";
 import NewsFeed from "./components/MainPageComponents/NewsFeed/NewsFeed";
-import {BrowserRouter, Route, Redirect} from "react-router-dom";
+import {Route, Redirect} from "react-router-dom";
 import FavPagesFeed from "./components/MainPageComponents/FavPagesFeed/FavPagesFeed";
 import FriendGroups from "./components/MainPageComponents/FriendGroups/FriendGroups";
 import Music from "./components/MainPageComponents/Music/Music";
@@ -17,37 +17,33 @@ import Widgets from "./components/MainPageComponents/Widgets/Widgets";
 import Messages from "./components/MainPageComponents/Messages/Messages";
 
 
-
-
-function App() {
+function App(props) {
 
     const [sidebarActive, setSidebarActive] = useState(false);
 
-  return (
-      <BrowserRouter>
-    <div className="App-wrapper">
-        <Header />
-        <Sidebar active={sidebarActive} setActive={setSidebarActive}/>
-        <div className='App-wrapper-content'>
-            <Route exact path="/">
-                <Redirect to="/profile" />
-            </Route>
-            <Route path='/profile' component={Profile} />
-            <Route path='/feed' component={NewsFeed} />
-            <Route path='/fav' component={FavPagesFeed} />
-            <Route path='/friends' component={FriendGroups} />
-            <Route path='/music' component={Music} />
-            <Route path='/weather' component={Weather} />
-            <Route path='/calendar' component={Calendar} />
-            <Route path='/badges' component={Badges} />
-            <Route path='/stats' component={AccStats} />
-            <Route path='/widgets' component={Widgets} />
-            <Route path='/messages' component={Messages} />
+    return (
+        <div className="App-wrapper">
+            <Header/>
+            <Sidebar active={sidebarActive} setActive={setSidebarActive}/>
+            <div className='App-wrapper-content'>
+                <Route exact path="/">
+                    <Redirect to="/profile"/>
+                </Route>
+                <Route path='/profile' render={() => <Profile  profileData={props.state.profilePage}/> }/>
+                <Route path='/feed' render={() => <NewsFeed/>}/>
+                <Route path='/fav' render={() => <FavPagesFeed/>}/>
+                <Route path='/friends' render={() => <FriendGroups/>}/>
+                <Route path='/music' render={() => <Music/>}/>
+                <Route path='/weather' render={() => <Weather/>}/>
+                <Route path='/calendar' render={() => <Calendar/>}/>
+                <Route path='/badges' render={() => <Badges/>}/>
+                <Route path='/stats' render={() => <AccStats/>}/>
+                <Route path='/widgets' render={() => <Widgets/>}/>
+                <Route path='/messages' render={() => <Messages messagesState={props.state.messagePage}/>}/>
+            </div>
+            <MessagesSidebar/>
         </div>
-        <MessagesSidebar />
-    </div>
-      </BrowserRouter>
-  );
+    );
 }
 
 export default App;

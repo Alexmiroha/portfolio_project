@@ -6,6 +6,7 @@
     height: 70px;
     display: flex;
     justify-content: space-between;
+    z-index: 5;
 }
 
 .pageTitle {
@@ -131,6 +132,14 @@
     .searchField input[type=text] {
         width: 85px;
         padding-left: 25px;
+        margin-left: 250px;
         background-position: 5px 23px;
+    }
+
+    .findFriends {
+        min-width: 119px;
+    }
+    .accButtonBlock {
+        min-width: 127px;
     }
 }

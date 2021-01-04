@@ -119,6 +119,7 @@
     top: -16px;
     height: 107%;
     width: 230px;
+    z-index: 6;
 }
 
 
@@ -150,7 +151,7 @@ ul {
     text-decoration: none;
     font-size: .875rem;
     position: relative;
-    top: -24px;
+    top: 8px;
     right: 70px;
 }
 

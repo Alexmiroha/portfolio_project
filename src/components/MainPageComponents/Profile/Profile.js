@@ -1,13 +1,21 @@
 import React from "react";
 import s from './Profile.module.css';
+import HeaderBlock from "./HeaderBlock/HeaderBlock";
+import MainContentBlock from "./MainContentBlock/MainContentBlock";
 
-function Profile() {
+function Profile(props) {
     return (
         <main className={s.mainProfile}>
-            <div className="s.name">
-                <img className='s.bgImage' src="https://pix10.agoda.net/hotelImages/301716/-1/fe9724d8fb4da3dd4590353bd771a276.jpg?s=1024x768" alt=""/>
-                <h1>My Name Is</h1>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTKfNuudEVu37dR_gy70a3ARxhSM7yap6L5og&usqp=CAU" alt="" className="profile-img"/>
+            <HeaderBlock/>
+            <div className={s.contentWrapper}>
+
+                <div className={s.LSidebarBlock}></div>
+
+                <MainContentBlock profileData={props.profileData}/>
+
+
+                <div className={s.RSidebarBlock}></div>
+
             </div>
         </main>
     );

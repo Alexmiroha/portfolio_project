@@ -1,0 +1,140 @@
+.headerBlock {
+    border: 1px solid #e6ecf5;
+    max-width: 1270px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.container {
+    background-color: #fff;
+    justify-content: center;
+    border-radius: 5px;
+
+}
+
+.topThumb {
+    align-items: center;
+    box-shadow: inset 0 0 6px 4px rgba(0, 0, 0, .7);
+    border-radius: 5px;
+
+}
+
+.topThumb img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    overflow: hidden;
+    border-radius: 5px;
+
+}
+
+/*!!!!!!!!!!!!!!!!!!!SHADOW 4 BACKGROUND PROFILE IMAGE!!!!!!!!!!!!!!!!*/
+.wrapperImg {
+    position: relative;
+}
+
+.wrapperImg:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0px -120px 55px -30px rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+}
+
+/*!!!!!!!!!!!!!!!!SHADOW 4 BACKGROUND PROFILE IMAGE!!!!!!!!!!!!!!!!!!!!!!*/
+
+.row {
+    padding: 25px 0px 45px 0px;
+    display: flex;
+    justify-content: space-between;
+    color: #515365;
+    font-size: 14px;
+    font-weight: 700;
+    max-height: 25px;
+}
+
+.row ul {
+    display: flex;
+    justify-content: space-around;
+    font-size: 14px;
+}
+
+.LBlock li {
+    margin-left: 25%;
+    transform: translate(367px, 0px);
+}
+
+.LBlock li a {
+    color: #9a9fbf;
+}
+
+.LBlock li a:hover {
+    color: #515365;
+}
+
+.buttonsBlock {
+    max-width: 300px;
+    float: right;
+    padding-right: 15px;
+    transform: translateY(-125px);
+}
+
+.icon1, .icon2, .icon3 {
+    background-color: #38A9FF;
+    padding: 14px;
+    border-radius: 30px;
+    margin-right: 20px;
+}
+
+.icon1 {
+    background-color: #38A9FF;
+}
+
+.icon2 {
+    background-color: #7C5AC2;
+}
+
+.icon3 {
+    background-color: #FF5E3A;
+}
+
+.authorHeader {
+    transform: translate(-568px, -145px);
+    z-index: 1;
+    max-width: 200px;
+
+}
+
+.avatarImg {
+    transform: translate(0px, 0);
+    border-radius: 100px;
+    padding: 5px;
+    background-color: #fdfbee;
+}
+
+.authorInfo {
+    min-width: 150px;
+    position: relative;
+    top: -15px;
+}
+
+.authorInfo h4 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #515365;
+    margin: 0px 0px;
+}
+
+.authorInfo h4:hover {
+    color: #ff5e3a;
+}
+
+.country {
+    font-weight: 500;
+    font-size: 13px;
+}
