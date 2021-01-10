@@ -5,6 +5,7 @@ import u4 from "../components/MainPageComponents/Profile/MainContentBlock/img/fr
 import u5 from "../components/MainPageComponents/Profile/MainContentBlock/img/friend-harmonic11.jpg";
 import avatar from "../img/UserAvatarSmall.jpg";
 import postImage from "../components/MainPageComponents/Profile/MainContentBlock/img/post-photo6.jpg"
+import {renderEntireTree} from "../renderEntireTree";
 
 
 
@@ -32,17 +33,17 @@ let state = {
 
     profilePage: {
         postsData: [
-            {   id: 1, uImgs: {u1, u2, u3, u4, u5}, authorAvatar: {avatar},
+            {   id: 4, uImgs: {u1, u2, u3, u4, u5}, authorAvatar: {avatar},
                 postImage: {postImage}, authorName: "Jack Sparrow",
                 postTime: "4 hours ago", postMessage: "I'm SuperAwsome",
-                likeCount: "22", liker1: "Dima", liker2: "Katya", commentCount: "3", repostCount: "1"
-            },
-            {   id: 2, uImgs: {u1, u2, u3, u4, u5}, authorAvatar: {avatar},
-                postImage: {postImage}, authorName: "Jack Sparrow",
-                postTime: "7 hours ago", postMessage: "Hello World",
-                likeCount: "15", liker1: "Roma", liker2: "Igor", commentCount: "1", repostCount: "0"
+                likeCount: 10, liker1: "Dima", liker2: "Katya", commentCount: "3", repostCount: "1"
             },
             {   id: 3, uImgs: {u1, u2, u3, u4, u5}, authorAvatar: {avatar},
+                postImage: {postImage}, authorName: "Jack Sparrow",
+                postTime: "7 hours ago", postMessage: "Hello World",
+                likeCount: 15, liker1: "Roma", liker2: "Igor", commentCount: "1", repostCount: "0"
+            },
+            {   id: 2, uImgs: {u1, u2, u3, u4, u5}, authorAvatar: {avatar},
                 postImage: {postImage}, authorName: "Jack Sparrow",
                 postTime: "4 days ago", postMessage: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
                     "                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
@@ -55,20 +56,40 @@ let state = {
                     "                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
                     "                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
                     "                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-                likeCount: "53", liker1: "Dasha", liker2: "Yuliya", commentCount: "4", repostCount: "2"
+                likeCount: 53, liker1: "Dasha", liker2: "Yuliya", commentCount: "4", repostCount: "2"
             },
-            {   id: 4, uImgs: {u1, u2, u3, u4, u5}, authorAvatar: {avatar},
+            {   id: 1, uImgs: {u1, u2, u3, u4, u5}, authorAvatar: {avatar},
                 postImage: {postImage}, authorName: "Kateryna Buha",
                 postTime: "1minute ago", postMessage: "Hello I'm Katya",
-                likeCount: "100", liker1: "Vladilav", liker2: "Oleksii", commentCount: "10", repostCount: "5"
+                likeCount: 100, liker1: "Vladilav", liker2: "Oleksii", commentCount: "10", repostCount: "5"
             },
 
         ],
+        newPostTextarea: "helloo its texarea"
 
     },
 
 
 }
+
+export let addPost = () => {
+    let newPost = {
+        id: 5, uImgs: {}, authorAvatar: {avatar},
+        postImage: {postImage}, authorName: "Jack Sparrow",
+        postTime: "1 minute ago", postMessage: state.profilePage.newPostTextarea,
+        likeCount: 0, liker1: "", liker2: "", commentCount: "0", repostCount: "0"
+    }
+        state.profilePage.postsData.unshift(newPost);
+    state.profilePage.newPostTextarea = '';
+    renderEntireTree(state);
+}
+
+export let updateNewPostTextarea = (newText) => {
+    state.profilePage.newPostTextarea = newText;
+    renderEntireTree(state);
+
+}
+
 
 
 export default state;

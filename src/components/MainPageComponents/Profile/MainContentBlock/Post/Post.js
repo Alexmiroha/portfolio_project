@@ -5,10 +5,14 @@ import {IconContext} from "react-icons";
 import {BiCommentDetail} from "react-icons/bi";
 import {CgArrowsExchangeAlt} from "react-icons/cg";
 import {NavLink} from "react-router-dom";
+import WhoLikeThis from "./WhoLikeThis";
+
+
+
+
 
 
 const Post = (props) => {
-    console.log(props)
 
     return (
         <div className={s.postBlock}>
@@ -29,59 +33,56 @@ const Post = (props) => {
                 <article className={s.post}>
                     <div className={s.postHeader}>
                         <div className={s.authorImg}>
-                            <img src={props.authorAvatar.avatar} alt="post author image"/>
+                            <img src={props.post.authorAvatar.avatar} alt="post author image"/>
                         </div>
                         <div className={s.authorIn}>
                             <NavLink to="" className={s.authorName}>
-                                <h6>{props.authorName}</h6>
+                                <h6>{props.post.authorName}</h6>
                             </NavLink>
-                            <div className={s.time}>{props.postTime}</div>
+                            <div className={s.time}>{props.post.postTime}</div>
                         </div>
                         <NavLink to="" className={s.more}>...</NavLink>
                     </div>
                     <div className={s.message}>
                         <p className={s.paragraph}>
-                            {props.postMessage}
+                            {props.post.postMessage}
                         </p>
                     </div>
                     <div className={s.postThumb}>
-                        <img src={props.postImage} alt="post image"/>
+                        <img src={props.post.postImage.postImage} alt="post image"/>
                     </div>
                     <div className={s.postInfo}>
                         <div className={s.likesBlock}>
                             <NavLink to="" className={s.likeIcon}>
                                 &#9825;
                             </NavLink>
-                            <div className={s.likesCount}>{props.likeCount}</div>
+                            <div className={s.likesCount}>{props.post.likeCount}</div>
                             <div className={s.userLikedBlock}>
                                 <div className={s.likersImages}>
-                                    <NavLink to=""><img src={props.uImgs.u1}
-                                                        alt="user image(liked)"/></NavLink>
-                                    <NavLink to=""><img src={props.uImgs.u2}
-                                                        alt="user image(liked)"/></NavLink>
-                                    <NavLink to=""> <img src={props.uImgs.u3}
-                                                         alt="user image(liked)"/></NavLink>
-                                    <NavLink to=""> <img src={props.uImgs.u4}
-                                                         alt="user image(liked)"/></NavLink>
-                                    <NavLink to=""><img src={props.uImgs.u5}
-                                                        alt="user image(liked)"/></NavLink>
+                                    <NavLink to=""><img src={props.post.uImgs.u1}
+                                                        alt=""/></NavLink>
+                                    <NavLink to=""><img src={props.post.uImgs.u2}
+                                                        alt=""/></NavLink>
+                                    <NavLink to=""> <img src={props.post.uImgs.u3}
+                                                         alt=""/></NavLink>
+                                    <NavLink to=""> <img src={props.post.uImgs.u4}
+                                                         alt=""/></NavLink>
+                                    <NavLink to=""><img src={props.post.uImgs.u5}
+                                                        alt=""/></NavLink>
                                 </div>
-                                <div className={s.whoLikeThis}>
-                                    <NavLink to="">{props.liker1}</NavLink>
-                                    &nbsp;,&nbsp;
-                                    <NavLink to="">{props.liker2}</NavLink>
-                                    &nbsp;and {props.likeCount - 2} <NavLink to="">more</NavLink> liked this
-                                </div>
+
+                                <WhoLikeThis liker1={props.post.liker1} liker2={props.post.liker2} likeCount={props.post.likeCount} />
+
                             </div>
                         </div>
                         <div className={s.commentsReposts}>
                             <div className={s.commentsInfo}>
                                 <div className={s.commentsIcon}><BiCommentDetail/></div>
-                                <div className={s.commentsCount}>{props.commentCount}</div>
+                                <div className={s.commentsCount}>{props.post.commentCount}</div>
                             </div>
                             <div className={s.repostsInfo}>
                                 <div className={s.repostIcon}><CgArrowsExchangeAlt/></div>
-                                <div className={s.repostsCount}>{props.repostCount}</div>
+                                <div className={s.repostsCount}>{props.post.repostCount}</div>
                             </div>
                         </div>
                     </div>

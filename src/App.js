@@ -19,6 +19,8 @@ import Messages from "./components/MainPageComponents/Messages/Messages";
 
 function App(props) {
 
+
+
     const [sidebarActive, setSidebarActive] = useState(false);
 
     return (
@@ -29,7 +31,7 @@ function App(props) {
                 <Route exact path="/">
                     <Redirect to="/profile"/>
                 </Route>
-                <Route path='/profile' render={() => <Profile  profileData={props.state.profilePage}/> }/>
+                <Route path='/profile' render={() => <Profile  profilePage={props.state.profilePage} addPost={props.addPost} updatePostTextarea={props.updatePostTextarea}/> }/>
                 <Route path='/feed' render={() => <NewsFeed/>}/>
                 <Route path='/fav' render={() => <FavPagesFeed/>}/>
                 <Route path='/friends' render={() => <FriendGroups/>}/>

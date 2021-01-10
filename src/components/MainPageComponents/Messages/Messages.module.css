@@ -12,3 +12,39 @@
 .dialogArea {
     background-color: lavender;
 }
+
+
+.sendMessageArea {
+    display: flex;
+    margin: 20px 0px;
+}
+
+.sendMessageArea textarea {
+    width: 70%;
+    height: 43px;
+    font-size: 13px;
+    padding: 0px;
+    background: #fff;
+    border-radius: 5px;
+    border-color: #E6ECF5;
+    outline: none;
+    resize: none;
+    margin: 0px 5px 0px 30px;
+
+}
+
+.sendMessageArea input[type=button] {
+    cursor: pointer;
+    width: 126px;
+    border: none;
+    height: 43px;
+    background: #ff5e3a;
+    font-size: 15px;
+    border-radius: 4px;
+    color: #FFFFFF;
+    outline: none;
+}
+
+.sendMessageArea input[type=button]:hover {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+}

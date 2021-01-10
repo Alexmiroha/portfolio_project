@@ -4,6 +4,7 @@ import HeaderBlock from "./HeaderBlock/HeaderBlock";
 import MainContentBlock from "./MainContentBlock/MainContentBlock";
 
 function Profile(props) {
+
     return (
         <main className={s.mainProfile}>
             <HeaderBlock/>
@@ -11,7 +12,7 @@ function Profile(props) {
 
                 <div className={s.LSidebarBlock}></div>
 
-                <MainContentBlock profileData={props.profileData}/>
+                <MainContentBlock profilePage={props.profilePage} addPost={props.addPost} updatePostTextarea={props.updatePostTextarea}/>
 
 
                 <div className={s.RSidebarBlock}></div>

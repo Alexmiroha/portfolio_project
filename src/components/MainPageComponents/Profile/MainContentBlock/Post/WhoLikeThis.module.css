@@ -1,0 +1,13 @@
+.whoLikeThis {
+    max-width: 200px;
+    text-align: left;
+    margin-left: 20px;
+    transform: translateY(-15px);
+}
+.whoLikeThis a {
+    color: #515365;
+    font-weight: 700;
+}
+.whoLikeThis a:hover {
+    color: #ff5e3a;
+}

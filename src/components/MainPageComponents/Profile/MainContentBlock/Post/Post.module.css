@@ -82,6 +82,7 @@
     padding-top: 25px;
     margin-top: 25px;
     display: flex;
+    justify-content: space-between;
     border-top: 1px solid #E6ECF5;
 }
 
@@ -111,7 +112,7 @@
 
 .userLikedBlock {
     display: flex;
-    margin-right: 150px;
+    margin-right: 0px;
 }
 
 .likersImages{
@@ -129,20 +130,6 @@
     z-index: 3;
     border: 2px solid #ff5e3a;
     transform: scale(1.2);
-}
-
-.whoLikeThis {
-    max-width: 135px;
-    text-align: left;
-    margin-left: 20px;
-    transform: translateY(-15px);
-}
-.whoLikeThis a {
-    color: #515365;
-    font-weight: 700;
-}
-.whoLikeThis a:hover {
-    color: #ff5e3a;
 }
 
 .commentsReposts {

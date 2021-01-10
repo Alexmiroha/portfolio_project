@@ -16,8 +16,12 @@ const Message = (props) => {
     )
 }
 
+let messageText = React.createRef();
 
-
+let sendMessage = () => {
+    let message = messageText.current.value;
+    alert(message);
+}
 
 const Messages = (props) => {
     // функції, які приміняють метод map до даних в масивах, і перероблюють їх в масив з компонентами
@@ -32,6 +36,10 @@ const Messages = (props) => {
                 <ul className={s.messages}>
                     {messagesElement}
                 </ul>
+                <form className={s.sendMessageArea}>
+                    <textarea name="messageArea" ref={messageText} cols="30" rows="10" placeholder="Write your message"></textarea>
+                    <input type="button" value="send" onClick={sendMessage}/>
+                </form>
             </div>
         </div>
     );
