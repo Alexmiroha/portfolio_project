@@ -5,9 +5,10 @@ import u4 from "../components/MainPageComponents/Profile/MainContentBlock/img/fr
 import u5 from "../components/MainPageComponents/Profile/MainContentBlock/img/friend-harmonic11.jpg";
 import avatar from "../img/UserAvatarSmall.jpg";
 import postImage from "../components/MainPageComponents/Profile/MainContentBlock/img/post-photo6.jpg"
-import {renderEntireTree} from "../renderEntireTree";
 
+let renderEntireTree = () => {
 
+}
 
 let state = {
     messagePage: {
@@ -65,14 +66,14 @@ let state = {
             },
 
         ],
-        newPostTextarea: "helloo its texarea"
+        newPostTextarea: ""
 
     },
 
 
 }
 
-export let addPost = () => {
+export const addPost = () => {
     let newPost = {
         id: 5, uImgs: {}, authorAvatar: {avatar},
         postImage: {postImage}, authorName: "Jack Sparrow",
@@ -84,10 +85,14 @@ export let addPost = () => {
     renderEntireTree(state);
 }
 
-export let updateNewPostTextarea = (newText) => {
+export const updateNewPostTextarea = (newText) => {
     state.profilePage.newPostTextarea = newText;
     renderEntireTree(state);
 
+}
+
+export const callback = (observer) => {
+    renderEntireTree = observer;
 }
 
 
