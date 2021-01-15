@@ -31,7 +31,7 @@ function App(props) {
                 <Route exact path="/">
                     <Redirect to="/profile"/>
                 </Route>
-                <Route path='/profile' render={() => <Profile  profilePage={props.state.profilePage} addPost={props.addPost} updatePostTextarea={props.updatePostTextarea}/> }/>
+                <Route path='/profile' render={() => <Profile  profilePage={props.state.profilePage} dispatch={props.dispatch} /> }/>
                 <Route path='/feed' render={() => <NewsFeed/>}/>
                 <Route path='/fav' render={() => <FavPagesFeed/>}/>
                 <Route path='/friends' render={() => <FriendGroups/>}/>

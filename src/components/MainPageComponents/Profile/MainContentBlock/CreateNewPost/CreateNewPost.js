@@ -14,13 +14,13 @@ let CreateNewPost = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        props.addPost();
+        props.dispatch({ type:'ADD-POST' });
     }
 
 
 let changeTextarea = () => {
     let text = newPostElement.current.value;
-    props.updatePostTextarea(text);
+    props.dispatch({ type:'UPDT-NEWPOST-TEXTAREA', newText: text });
 }
 
 

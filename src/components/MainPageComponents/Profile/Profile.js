@@ -12,7 +12,7 @@ function Profile(props) {
 
                 <div className={s.LSidebarBlock}></div>
 
-                <MainContentBlock profilePage={props.profilePage} addPost={props.addPost} updatePostTextarea={props.updatePostTextarea}/>
+                <MainContentBlock profilePage={props.profilePage} dispatch={props.dispatch} />
 
 
                 <div className={s.RSidebarBlock}></div>

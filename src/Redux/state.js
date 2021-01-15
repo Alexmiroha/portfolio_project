@@ -74,12 +74,18 @@ let store = {
 
 
     },
-    getState() {
-        return this._state
-    },
     _callSubscriber() {
 
     },
+
+    getState() {
+        return this._state
+    },
+    callback(observer) {
+        this._callSubscriber = observer;
+    },
+
+
     addPost() {
         let newPost = {
             id: 5, uImgs: {}, authorAvatar: {avatar},
@@ -97,9 +103,28 @@ let store = {
 
     },
 
-    callback(observer) {
-        this._callSubscriber = observer;
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newPost = {
+                id: 5, uImgs: {}, authorAvatar: {avatar},
+                postImage: {postImage}, authorName: "Jack Sparrow",
+                postTime: "1 minute ago", postMessage: this._state.profilePage.newPostTextarea,
+                likeCount: 0, liker1: "", liker2: "", commentCount: "0", repostCount: "0"
+            }
+            this._state.profilePage.postsData.unshift(newPost);
+            this._state.profilePage.newPostTextarea = '';
+            this._callSubscriber(this._state);
+        }
+        else if (action.type === 'UPDT-NEWPOST-TEXTAREA') {
+            this._state.profilePage.newPostTextarea = action.newText;
+            this._callSubscriber(this._state);
+        }
+
+
+
     }
+
+
 
 
 }

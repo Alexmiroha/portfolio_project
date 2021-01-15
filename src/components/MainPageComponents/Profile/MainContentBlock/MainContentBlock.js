@@ -14,7 +14,7 @@ const MainContentBlock = (props) => {
 
     return (
         <div className={s.mainContentBlock}>
-            <CreateNewPost addPost={props.addPost} newPostTextarea={props.profilePage.newPostTextarea} updatePostTextarea={props.updatePostTextarea}/>
+            <CreateNewPost dispatch={props.dispatch} newPostTextarea={props.profilePage.newPostTextarea} />
 
             {PostElement}
 
