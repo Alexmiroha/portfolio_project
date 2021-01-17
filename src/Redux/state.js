@@ -5,7 +5,8 @@ import u4 from "../components/MainPageComponents/Profile/MainContentBlock/img/fr
 import u5 from "../components/MainPageComponents/Profile/MainContentBlock/img/friend-harmonic11.jpg";
 import avatar from "../img/UserAvatarSmall.jpg";
 import postImage from "../components/MainPageComponents/Profile/MainContentBlock/img/post-photo6.jpg"
-
+import profileReduser from './Reducer-Profile';
+import messagesReduser from './Reducer-Messages';
 
 let store = {
     _state: {
@@ -27,6 +28,7 @@ let store = {
                 {id: 5, message: "Let's Start!!!"},
                 {id: 6, message: "Are U ready???"},
             ],
+            newMessageTextarea: ""
 
         },
 
@@ -85,46 +87,15 @@ let store = {
         this._callSubscriber = observer;
     },
 
-
-    addPost() {
-        let newPost = {
-            id: 5, uImgs: {}, authorAvatar: {avatar},
-            postImage: {postImage}, authorName: "Jack Sparrow",
-            postTime: "1 minute ago", postMessage: this._state.profilePage.newPostTextarea,
-            likeCount: 0, liker1: "", liker2: "", commentCount: "0", repostCount: "0"
-        }
-        this._state.profilePage.postsData.unshift(newPost);
-        this._state.profilePage.newPostTextarea = '';
-        this._callSubscriber(this._state);
-    },
-    updateNewPostTextarea(newText) {
-        this._state.profilePage.newPostTextarea = newText;
-        this._callSubscriber(this._state);
-
-    },
-
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
-            let newPost = {
-                id: 5, uImgs: {}, authorAvatar: {avatar},
-                postImage: {postImage}, authorName: "Jack Sparrow",
-                postTime: "1 minute ago", postMessage: this._state.profilePage.newPostTextarea,
-                likeCount: 0, liker1: "", liker2: "", commentCount: "0", repostCount: "0"
-            }
-            this._state.profilePage.postsData.unshift(newPost);
-            this._state.profilePage.newPostTextarea = '';
-            this._callSubscriber(this._state);
-        }
-        else if (action.type === 'UPDT-NEWPOST-TEXTAREA') {
-            this._state.profilePage.newPostTextarea = action.newText;
-            this._callSubscriber(this._state);
-        }
 
+        this._state.profilePage = profileReduser(this._state.profilePage, action);
 
+        this._state.messagePage = messagesReduser(this._state.messagePage, action);
+
+        this._callSubscriber(this._state);
 
     }
-
-
 
 
 }

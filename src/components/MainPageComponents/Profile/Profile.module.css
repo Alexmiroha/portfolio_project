@@ -11,12 +11,10 @@
 
 .LSidebarBlock {
     width: 295px;
-    height: 3000px;
     background-color: aqua;
 }
 
 .RSidebarBlock {
     width: 295px;
-    height: 3000px;
     background-color: deeppink;
 }

@@ -41,7 +41,7 @@ function App(props) {
                 <Route path='/badges' render={() => <Badges/>}/>
                 <Route path='/stats' render={() => <AccStats/>}/>
                 <Route path='/widgets' render={() => <Widgets/>}/>
-                <Route path='/messages' render={() => <Messages messagesState={props.state.messagePage}/>}/>
+                <Route path='/messages' render={() => <Messages messagesState={props.state.messagePage} dispatch={props.dispatch}/>}/>
             </div>
             <MessagesSidebar/>
         </div>

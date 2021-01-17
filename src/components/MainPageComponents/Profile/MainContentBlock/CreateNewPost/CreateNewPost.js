@@ -7,21 +7,21 @@ import {FaPhotoVideo} from "react-icons/fa";
 import {CgMore} from "react-icons/cg";
 import {RiListSettingsLine} from "react-icons/ri";
 import {IconContext} from "react-icons";
+import {addPostActionCreator, changeTextareaActionCreator} from "../../../../../Redux/Reducer-Profile";
+
 
 
 
 let CreateNewPost = (props) => {
-    let newPostElement = React.createRef();
 
     let addPost = () => {
-        props.dispatch({ type:'ADD-POST' });
+        props.dispatch(addPostActionCreator());
     }
 
-
-let changeTextarea = () => {
-    let text = newPostElement.current.value;
-    props.dispatch({ type:'UPDT-NEWPOST-TEXTAREA', newText: text });
-}
+    let changeTextarea = (event) => {
+    let text = event.target.value;
+    props.dispatch(changeTextareaActionCreator(text));
+    }
 
 
     return (
@@ -34,7 +34,7 @@ let changeTextarea = () => {
                 <div className={s.emojiButton}><FiSmile/></div>
                 <div className={s.forMoveTop}>
                     <div className={s.inputField}>
-                        <textarea name="text" ref={newPostElement} cols="30" rows="10"
+                        <textarea name="text"
                                   placeholder="Share what you are thinking here..." value={props.newPostTextarea} onChange={changeTextarea}/>
                     </div>
                     <div className={s.buttons}>
