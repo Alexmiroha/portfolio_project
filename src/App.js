@@ -19,8 +19,6 @@ import Messages from "./components/MainPageComponents/Messages/Messages";
 
 function App(props) {
 
-
-
     const [sidebarActive, setSidebarActive] = useState(false);
 
     return (

@@ -8,7 +8,6 @@ import Post from "./Post/Post";
 
 const MainContentBlock = (props) => {
 
-
     let PostElement = props.profilePage.postsData.map((post, key) => <Post post={post} key={key}/>);
 
 

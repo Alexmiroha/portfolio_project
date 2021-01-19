@@ -4,7 +4,6 @@ import HeaderBlock from "./HeaderBlock/HeaderBlock";
 import MainContentBlock from "./MainContentBlock/MainContentBlock";
 
 function Profile(props) {
-
     return (
         <main className={s.mainProfile}>
             <HeaderBlock/>
