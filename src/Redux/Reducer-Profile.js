@@ -62,7 +62,7 @@ const profileReduser = (state = initialState, action) => {
                 id: state.postsData.length + 1, uImgs: {}, authorAvatar: {avatar},
                 postImage: {postImage}, authorName: "Jack Sparrow",
                 postTime: "1 minute ago", postMessage: state.newPostTextarea,
-                likeCount: 0, liker1: "", liker2: "", commentCount: "0", repostCount: "0"
+                likeCount: 0, liker1: "", liker2: "", commentCount: 0, repostCount: 0
             }
             state.postsData.unshift(newPost);
             state.newPostTextarea = '';

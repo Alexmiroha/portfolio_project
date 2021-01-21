@@ -1,7 +1,7 @@
 import React from 'react';
 import s from "./MainContentBlock.module.css";
-import CreateNewPost from "./CreateNewPost/CreateNewPost";
 import Post from "./Post/Post";
+import CreateNewPostContainer from "./CreateNewPost/CreateNewPostContainer";
 
 
 
@@ -13,7 +13,7 @@ const MainContentBlock = (props) => {
 
     return (
         <div className={s.mainContentBlock}>
-            <CreateNewPost dispatch={props.dispatch} newPostTextarea={props.profilePage.newPostTextarea} />
+            <CreateNewPostContainer dispatch={props.dispatch} newPostTextarea={props.profilePage.newPostTextarea} />
 
             {PostElement}
 

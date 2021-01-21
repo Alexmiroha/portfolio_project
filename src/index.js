@@ -7,7 +7,6 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
 
 let renderEntireTree = (state) => {
-    console.log(state)
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>

@@ -14,7 +14,7 @@ import Calendar from "./components/MainPageComponents/Calendar/Calendar";
 import Badges from "./components/MainPageComponents/Badges/Badges";
 import AccStats from "./components/MainPageComponents/AccountStats/AccStats";
 import Widgets from "./components/MainPageComponents/Widgets/Widgets";
-import Messages from "./components/MainPageComponents/Messages/Messages";
+import MessagesContainer from "./components/MainPageComponents/Messages/MessagesContainer";
 
 
 function App(props) {
@@ -39,7 +39,7 @@ function App(props) {
                 <Route path='/badges' render={() => <Badges/>}/>
                 <Route path='/stats' render={() => <AccStats/>}/>
                 <Route path='/widgets' render={() => <Widgets/>}/>
-                <Route path='/messages' render={() => <Messages messagesState={props.state.messagePage} dispatch={props.dispatch}/>}/>
+                <Route path='/messages' render={() => <MessagesContainer messagesState={props.state.messagePage} dispatch={props.dispatch}/>}/>
             </div>
             <MessagesSidebar/>
         </div>

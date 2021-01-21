@@ -1,7 +1,5 @@
 import React from 'react';
 import s from './Messages.module.css';
-import {changeMessageTextareaActionCreator,
-    SendMessageActionCreator} from "../../../Redux/Reducer-Messages";
 import DialogItem from "./Dialog/DialogItem";
 import Message from "./Dialog/Message/Message";
 
@@ -10,11 +8,13 @@ const Messages = (props) => {
 
     let changeTextarea = (event) => {
         let text = event.target.value;
-        props.dispatch(changeMessageTextareaActionCreator(text));
+        props.changeMessage(text);
+        // props.dispatch(changeMessageTextareaActionCreator(text));
     }
 
     let sendMessage = () => {
-        props.dispatch(SendMessageActionCreator());
+        props.SendMessage();
+        // props.dispatch(SendMessageActionCreator());
     }
 
     // функції, які приміняють метод map до даних в масивах, і перероблюють їх в масив з компонентами

@@ -7,7 +7,6 @@ import {FaPhotoVideo} from "react-icons/fa";
 import {CgMore} from "react-icons/cg";
 import {RiListSettingsLine} from "react-icons/ri";
 import {IconContext} from "react-icons";
-import {addPostActionCreator, changeTextareaActionCreator} from "../../../../../Redux/Reducer-Profile";
 
 
 
@@ -15,12 +14,12 @@ import {addPostActionCreator, changeTextareaActionCreator} from "../../../../../
 let CreateNewPost = (props) => {
 
     let addPost = () => {
-        props.dispatch(addPostActionCreator());
+        props.addPost();
     }
 
     let changeTextarea = (event) => {
     let text = event.target.value;
-    props.dispatch(changeTextareaActionCreator(text));
+    props.changeTextarea(text);
     }
 
 
