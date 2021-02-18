@@ -1,22 +1,32 @@
 import React from 'react';
 import {addPostActionCreator, changeTextareaActionCreator} from "../../../../../Redux/Reducer-Profile";
 import CreateNewPost from "./CreateNewPost";
+import {connect} from "react-redux";
 
 
-
-
-let CreateNewPostContainer = (props) => {
-
-    let addPost = () => {
-        props.dispatch(addPostActionCreator());
+let mapStateToProps = (state) => {
+    return {
+        newPostTextarea: state.newPostTextarea
     }
+}
 
-    let changeTextarea = (text) => {
-        props.dispatch(changeTextareaActionCreator(text));
+let mapDispatchToProps = (dispatch) => {
+    return {
+        changeTextarea: (text) => {
+            dispatch(changeTextareaActionCreator(text));
+        },
+        addPost: () => {
+            dispatch(addPostActionCreator());
+        }
     }
+}
 
 
-    return <CreateNewPost changeTextarea={changeTextarea} addPost={addPost} newPostTextarea={props.newPostTextarea}/>;
-};
+const CreateNewPostContainer = connect(mapStateToProps, mapDispatchToProps) (CreateNewPost);
+
+
+
+
+
 
 export default CreateNewPostContainer;

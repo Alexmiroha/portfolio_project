@@ -2,19 +2,25 @@ import React from 'react';
 import {changeMessageTextareaActionCreator,
     SendMessageActionCreator} from "../../../Redux/Reducer-Messages";
 import Messages from "./Messages";
+import {connect} from "react-redux";
 
-
-const MessagesContainer = (props) => {
-
-    let changeTextarea = (text) => {
-        props.dispatch(changeMessageTextareaActionCreator(text));
+let mapStateToProps = (state) => {
+    return {
+        messagesState: state.messagePage
     }
+}
 
-    let sendMessage = () => {
-        props.dispatch(SendMessageActionCreator());
+let mapDispatchToProps = (dispatch) => {
+    return {
+        changeMessage: (text) => {
+            dispatch(changeMessageTextareaActionCreator(text));
+        },
+        SendMessage: () => {
+            dispatch(SendMessageActionCreator());
+        }
     }
+}
 
-    return <Messages changeMessage={changeTextarea} SendMessage={sendMessage} messagesState={props.messagesState}/>;
-};
+const MessagesContainer = connect(mapStateToProps, mapDispatchToProps) (Messages);
 
 export default MessagesContainer;
