@@ -8,12 +8,12 @@ import CreateNewPostContainer from "./CreateNewPost/CreateNewPostContainer";
 
 const MainContentBlock = (props) => {
 
-    let PostElement = props.profilePage.postsData.map((post, key) => <Post post={post} key={key}/>);
+    let PostElement = props.postsData.map((post, key) => <Post post={post} key={post.id}/>);
 
 
     return (
         <div className={s.mainContentBlock}>
-            <CreateNewPostContainer dispatch={props.dispatch} newPostTextarea={props.profilePage.newPostTextarea} />
+            <CreateNewPostContainer />
 
             {PostElement}
 

@@ -11,7 +11,6 @@ const ADD_POST = 'ADD-POST';
 const UPDT_NEWPOST_TEXTAREA = 'UPDT-NEWPOST-TEXTAREA';
 
 
-
 let initialState = {
     postsData: [
         {
@@ -57,6 +56,11 @@ let initialState = {
 const profileReduser = (state = initialState, action) => {
 
     switch (action.type) {
+        case UPDT_NEWPOST_TEXTAREA:
+            return {
+                ...state,
+                newPostTextarea: action.newText
+            };
         case ADD_POST:
             let newPost = {
                 id: state.postsData.length + 1, uImgs: {}, authorAvatar: {avatar},
@@ -64,12 +68,11 @@ const profileReduser = (state = initialState, action) => {
                 postTime: "1 minute ago", postMessage: state.newPostTextarea,
                 likeCount: 0, liker1: "", liker2: "", commentCount: 0, repostCount: 0
             }
-            state.postsData.unshift(newPost);
-            state.newPostTextarea = '';
-            return state;
-        case UPDT_NEWPOST_TEXTAREA:
-            state.newPostTextarea = action.newText;
-            return state;
+            return {
+                ...state,
+                newPostTextarea: '',
+                postsData: [newPost, ...state.postsData]
+            };
         default:
             return state;
 

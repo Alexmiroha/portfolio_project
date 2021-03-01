@@ -20,9 +20,9 @@ const Messages = (props) => {
     // функції, які приміняють метод map до даних в масивах, і перероблюють їх в масив з компонентами
     let dialogsElement = props.messagesState.dialogsData.map((dialog, key) => <DialogItem name={dialog.name}
                                                                                           path={dialog.path}
-                                                                                          key={key}/>);
+                                                                                          key={dialog.id}/>);
     let messagesElement = props.messagesState.messagesData.map((message, key) => <Message message={message.message}
-                                                                                          key={key}/>);
+                                                                                          key={message.id}/>);
 
 
     return (

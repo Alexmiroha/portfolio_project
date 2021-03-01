@@ -29,7 +29,7 @@ function App(props) {
                 <Route exact path="/">
                     <Redirect to="/profile"/>
                 </Route>
-                <Route path='/profile' render={() => <Profile  profilePage={props.state.profilePage} dispatch={props.dispatch} /> }/>
+                <Route path='/profile' render={() => <Profile /> }/>
                 <Route path='/feed' render={() => <NewsFeed/>}/>
                 <Route path='/fav' render={() => <FavPagesFeed/>}/>
                 <Route path='/friends' render={() => <FriendGroups/>}/>
@@ -39,7 +39,7 @@ function App(props) {
                 <Route path='/badges' render={() => <Badges/>}/>
                 <Route path='/stats' render={() => <AccStats/>}/>
                 <Route path='/widgets' render={() => <Widgets/>}/>
-                <Route path='/messages' render={() => <MessagesContainer messagesState={props.state.messagePage} dispatch={props.dispatch}/>}/>
+                <Route path='/messages' render={() => <MessagesContainer />}/>
             </div>
             <MessagesSidebar/>
         </div>

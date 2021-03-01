@@ -12,6 +12,7 @@ import {IconContext} from "react-icons";
 
 
 let CreateNewPost = (props) => {
+console.log(props)
 
     let addPost = () => {
         props.addPost();

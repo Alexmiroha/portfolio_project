@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 
 let mapStateToProps = (state) => {
     return {
-        newPostTextarea: state.newPostTextarea
+        newPostTextarea: state.profilePage.newPostTextarea
     }
 }
 

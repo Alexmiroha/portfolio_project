@@ -1,7 +1,7 @@
 import React from "react";
 import s from './Profile.module.css';
 import HeaderBlock from "./HeaderBlock/HeaderBlock";
-import MainContentBlock from "./MainContentBlock/MainContentBlock";
+import MainContentBlockContainer from "./MainContentBlock/MainContentBlockContainer";
 
 function Profile(props) {
     return (
@@ -11,7 +11,7 @@ function Profile(props) {
 
                 <div className={s.LSidebarBlock}></div>
 
-                <MainContentBlock profilePage={props.profilePage} dispatch={props.dispatch} />
+                <MainContentBlockContainer />
 
 
                 <div className={s.RSidebarBlock}></div>

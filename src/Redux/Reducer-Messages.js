@@ -25,22 +25,24 @@ let initialState = {
 }
 
 
-
 const messagesReduser = (state = initialState, action) => {
-
 
     switch (action.type) {
         case UPDT_MESSAGE_TEXTAREA:
-            state.newMessageTextarea = action.newText;
-            return state;
+            return {
+                ...state,
+                newMessageTextarea: action.newText
+            };
         case SEND_MESSAGE:
             let newMessage = {
                 id: state.messagesData.length + 1,
                 message: state.newMessageTextarea
             }
-            state.messagesData.push(newMessage);
-            state.newMessageTextarea = '';
-            return state;
+            return {
+                ...state,
+                newMessageTextarea: '',
+                messagesData: [...state.messagesData, newMessage]
+            };
         default:
             return state;
 
