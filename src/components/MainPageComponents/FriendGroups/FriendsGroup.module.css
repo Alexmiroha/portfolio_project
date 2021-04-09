@@ -1,0 +1,26 @@
+.headerFG {
+    border: 5px solid darkcyan;
+}
+
+.FGBlock {
+    border: 2px solid olivedrab;
+    margin: 10px;
+}
+
+.userFriend {
+    border: 1px solid yellow;
+    background-color: pink;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.suggestionsBlock .userFriend {
+    background-color: lightblue;
+}
+
+.avatar {
+    height: 50px;
+    width: 50px;
+}
