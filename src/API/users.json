@@ -1,0 +1,176 @@
+{
+  "items": [
+    {
+      "id": 0001,
+      "avatar": {
+        "small": "https://img.lovepik.com/element/40033/4306.png_860.png",
+        "large": null
+      },
+      "name": "Vas'an Galkin",
+      "status": "Im dog",
+      "location": {
+        "city": "Kiev",
+        "country": "Ukraine"
+      },
+      "birth": "28.11.1994",
+      "onlineStatus": true,
+      "lastSeen": "1 hour ago",
+      "followedStatus": false,
+    },
+    {
+      "id": 0002,
+      "avatar": {
+        "small": "https://img.lovepik.com/element/40033/4306.png_860.png",
+        "large": null
+      },
+      "name": "Veronika Petrushka",
+      "status": "Im cat",
+      "location": {
+        "city": "Lviv",
+        "country": "Ukraine"
+      },
+      "birth": "13.07.2001",
+      "onlineStatus": false,
+      "lastSeen": "1 hour ago",
+      "followedStatus": true,
+    },
+    {
+      "id": 0003,
+      "avatar": {
+        "small": "https://img.lovepik.com/element/40033/4306.png_860.png",
+        "large": null
+      },
+      "name": "Andrii Horynko",
+      "status": "Im bird",
+      "location": {
+        "city": "Kiev",
+        "country": "Ukraine"
+      },
+      "birth": "22.22.1988",
+      "onlineStatus": true,
+      "lastSeen": "1 hour ago",
+      "followedStatus": false,
+    },
+    {
+      "id": 0004,
+      "avatar": {
+        "small": "https://img.lovepik.com/element/40033/4306.png_860.png",
+        "large": null
+      },
+      "name": "Masha Andreeva",
+      "status": "Im girl",
+      "location": {
+        "city": "Obolon",
+        "country": "Ukraine"
+      },
+      "birth": "25.12.1995",
+      "onlineStatus": false,
+      "lastSeen": "1 hour ago",
+      "followedStatus": true,
+    },
+    {
+      "id": 0005,
+      "avatar": {
+        "small": "https://img.lovepik.com/element/40033/4306.png_860.png",
+        "large": null
+      },
+      "name": "Igor Barsuk",
+      "status": "Hello",
+      "location": {
+        "city": "Dublinka",
+        "country": "Ukraine"
+      },
+      "birth": "27.02.1998",
+      "onlineStatus": true,
+      "lastSeen": "1 hour ago",
+      "followedStatus": false,
+    },
+    {
+      "id": 0006,
+      "avatar": {
+        "small": "https://img.lovepik.com/element/40033/4306.png_860.png",
+        "large": null
+      },
+      "name": "Vas'an Galkin",
+      "status": "Im dog",
+      "location": {
+        "city": "Kiev",
+        "country": "Ukraine"
+      },
+      "birth": "27.02.1998",
+      "onlineStatus": true,
+      "lastSeen": "1 hour ago",
+      "followedStatus": false,
+    },
+    {
+      "id": 0007,
+      "avatar": {
+        "small": "https://img.lovepik.com/element/40033/4306.png_860.png",
+        "large": null
+      },
+      "name": "Vas'an Galkin",
+      "status": "Im dog",
+      "location": {
+        "city": "Kiev",
+        "country": "Ukraine"
+      },
+      "birth": "27.02.1998",
+      "onlineStatus": true,
+      "lastSeen": "1 hour ago",
+      "followedStatus": false,
+    },
+   {
+      "id": 0008,
+      "avatar": {
+        "small": "https://img.lovepik.com/element/40033/4306.png_860.png",
+        "large": null
+      },
+      "name": "Vas'an Galkin",
+      "status": "Im dog",
+      "location": {
+        "city": "Kiev",
+        "country": "Ukraine"
+      },
+      "birth": "27.02.1998",
+      "onlineStatus": true,
+      "lastSeen": "1 hour ago",
+      "followedStatus": false,
+    },
+   {
+      "id": 0009,
+      "avatar": {
+        "small": "https://img.lovepik.com/element/40033/4306.png_860.png",
+        "large": null
+      },
+      "name": "Vas'an Galkin",
+      "status": "Im dog",
+      "location": {
+        "city": "Kiev",
+        "country": "Ukraine"
+      },
+      "birth": "27.02.1998",
+      "onlineStatus": true,
+      "lastSeen": "1 hour ago",
+      "followedStatus": false,
+    },
+    {
+      "id": 0010,
+      "avatar": {
+        "small": "https://img.lovepik.com/element/40033/4306.png_860.png",
+        "large": null
+      },
+      "name": "Vas'an Galkin",
+      "status": "Im dog",
+      "location": {
+        "city": "Kiev",
+        "country": "Ukraine"
+      },
+      "birth": "27.02.1998",
+      "onlineStatus": true,
+      "lastSeen": "1 hour ago",
+      "followedStatus": false,
+    }
+  ],
+  "totalCount": 11649,
+  "error": null
+}
