@@ -24,3 +24,11 @@
     height: 50px;
     width: 50px;
 }
+
+.pages span {
+    margin-right: 5px;
+}
+
+.selected {
+    font-weight: bold;
+}

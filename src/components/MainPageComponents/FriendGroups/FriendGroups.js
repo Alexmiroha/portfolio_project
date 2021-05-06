@@ -5,17 +5,34 @@ import * as axios from "axios";
 class FriendGroups extends React.Component {
 
 
-    constructor(props) {
-        super(props);
-        axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
-            debugger;
+    componentDidMount() {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.SelectedPage}&count=${this.props.UsersTotalCount}`).then(response => {
             this.props.setUsers(response.data.items);
-
+            this.props.setUsersTotalCount(response.data.totalCount);
         })
     }
 
+    onPageChanged = (pageNumber) => {
+        this.props.setSelectedPage(pageNumber)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.UersPageSize}`).then(response => {
+            this.props.setUsers(response.data.items);
+        })
+}
+
 
     render() {
+
+        let pagesCount = Math.ceil(this.props.UsersTotalCount / this.props.UersPageSize);
+
+        let pages = [1];
+
+        for (let i = this.props.SelectedPage -5; i <= this.props.SelectedPage +5; i++) {
+            if (i>1 && i < pagesCount) {
+                pages.push(i);
+            }
+        }
+        pages.push(pagesCount);
+
         return (
             <div className={s.FriendsGroup}>
                 <div className={s.headerFG}>
@@ -30,10 +47,22 @@ class FriendGroups extends React.Component {
                 </div>
 
                 <div className={`${s.userFriends} ${s.FGBlock}`}>
+
+                    <div>Registered Users - {this.props.UsersTotalCount}</div>
+
+                    <div className={s.pages}>
+
+                        {pages.map(p => {
+                                return <span className={this.props.SelectedPage === p && s.selected}
+                                onClick={(e) => { this.onPageChanged(p); }}>{p}</span>
+                            }
+                        )}
+
+                    </div>
                     <h2>Friends</h2>
                     <div className={s.friendsBlock}>
                         {
-                            this.props.users.map(u =>
+                            this.props.users?.map(u =>
                                 <div key={u.id}>
                                     <div>
                                         <img className={s.avatar} src={u.photos.small} alt=""/>
