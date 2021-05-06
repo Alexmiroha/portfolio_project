@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {FollowAC, SetUsersAC, UnfollowAC, SetSelectedPageAC, setUsersTotalCountAC} from "../../../Redux/Reducer-FriendGroups";
-import FriendGroups from "./FriendGroups";
+import FriendGroupsAPIConnect from "./FriendGroupsAPIConnect";
 
 let mapStateToProps = (state) => {
     return {
@@ -33,4 +33,4 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(FriendGroups)
+export default connect(mapStateToProps, mapDispatchToProps)(FriendGroupsAPIConnect)
