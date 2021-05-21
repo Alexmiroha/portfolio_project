@@ -1,6 +1,13 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {FollowAC, SetUsersAC, UnfollowAC, SetSelectedPageAC, setUsersTotalCountAC} from "../../../Redux/Reducer-FriendGroups";
+import {
+    FollowAC,
+    SetUsersAC,
+    UnfollowAC,
+    SetSelectedPageAC,
+    setUsersTotalCountAC,
+    toggleIsLoadingAC
+} from "../../../Redux/Reducer-FriendGroups";
 import FriendGroupsAPIConnect from "./FriendGroupsAPIConnect";
 
 let mapStateToProps = (state) => {
@@ -8,7 +15,9 @@ let mapStateToProps = (state) => {
         users: state.friendGroupPage.users,
         UersPageSize: state.friendGroupPage.UersPageSize,
         UsersTotalCount: state.friendGroupPage.UsersTotalCount,
-        SelectedPage: state.friendGroupPage.SelectedPage
+        SelectedPage: state.friendGroupPage.SelectedPage,
+        isLoading: state.friendGroupPage.isLoading,
+
 
     }
 }
@@ -30,6 +39,9 @@ let mapDispatchToProps = (dispatch) => {
         setUsersTotalCount: (totalCount) => {
             dispatch(setUsersTotalCountAC(totalCount));
         },
+        toggleIsLoading: (isLoading) => {
+            dispatch(toggleIsLoadingAC(isLoading))
+        }
     }
 }
 

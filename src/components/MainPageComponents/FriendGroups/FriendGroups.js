@@ -1,5 +1,6 @@
 import React from 'react';
-import s from "./FriendsGroup.module.css";
+import s from './FriendsGroup.module.css';
+import preloader from '../../../img/294.svg'
 
 let FriendGroups = (props) => {
 
@@ -43,6 +44,7 @@ let FriendGroups = (props) => {
             </div>
             <h2>Friends</h2>
             <div className={s.friendsBlock}>
+                { props.isLoading ? <img src={preloader}/> : null }
                 {
                     props.users?.map(u =>
                         <div key={u.id}>
