@@ -1,12 +1,12 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {
-    FollowAC,
-    SetUsersAC,
-    UnfollowAC,
-    SetSelectedPageAC,
-    setUsersTotalCountAC,
-    toggleIsLoadingAC
+    Follow,
+    SetUsers,
+    Unfollow,
+    SetSelectedPage,
+    setUsersTotalCount,
+    toggleIsLoading
 } from "../../../Redux/Reducer-FriendGroups";
 import FriendGroupsAPIConnect from "./FriendGroupsAPIConnect";
 
@@ -22,27 +22,4 @@ let mapStateToProps = (state) => {
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        follow: (userId) => {
-            dispatch(FollowAC(userId));
-        },
-        unfollow: (userId) => {
-            dispatch(UnfollowAC(userId));
-        },
-        setUsers: (users) => {
-            dispatch(SetUsersAC(users));
-        },
-        setSelectedPage: (pageNumber) => {
-            dispatch(SetSelectedPageAC(pageNumber));
-        },
-        setUsersTotalCount: (totalCount) => {
-            dispatch(setUsersTotalCountAC(totalCount));
-        },
-        toggleIsLoading: (isLoading) => {
-            dispatch(toggleIsLoadingAC(isLoading))
-        }
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(FriendGroupsAPIConnect)
+export default connect(mapStateToProps, {Follow, Unfollow, SetUsers, SetSelectedPage, setUsersTotalCount, toggleIsLoading, })(FriendGroupsAPIConnect)

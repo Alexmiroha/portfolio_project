@@ -64,16 +64,16 @@ const FriendsReduser = (state = initialState, action) => {
     }
 }
 
-export const FollowAC = (userId) => ({type: 'FOLLOW', userId});
+export const Follow = (userId) => ({type: 'FOLLOW', userId});
 
-export const UnfollowAC = (userId) => ({type: 'UNFOLLOW', userId});
+export const Unfollow = (userId) => ({type: 'UNFOLLOW', userId});
 
-export const SetUsersAC = (users) => ({type: 'SET_USERS', users});
+export const SetUsers = (users) => ({type: 'SET_USERS', users});
 
-export const SetSelectedPageAC = (SelectedPage) => ({type: 'SET_SELECTED_PAGE', SelectedPage})
+export const SetSelectedPage = (SelectedPage) => ({type: 'SET_SELECTED_PAGE', SelectedPage})
 
-export const setUsersTotalCountAC = (UsersTotalCount) => ({type: 'SET_USERS_TOTAL_COUNT', UsersTotalCount})
+export const setUsersTotalCount = (UsersTotalCount) => ({type: 'SET_USERS_TOTAL_COUNT', UsersTotalCount})
 
-export const toggleIsLoadingAC = (isLoading) => ({type: 'TOGGLE_IS_LOADING', isLoading})
+export const toggleIsLoading = (isLoading) => ({type: 'TOGGLE_IS_LOADING', isLoading})
 
 export default FriendsReduser;

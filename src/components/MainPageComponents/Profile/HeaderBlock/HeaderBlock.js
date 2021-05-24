@@ -2,14 +2,15 @@ import React from "react";
 import s from './HeaderBlock.module.css';
 import header from '../img/top-header.jpg';
 import avatar from '../img/author-main.jpg';
-import {NavLink, Route} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import {BiSmile} from "react-icons/bi";
 import {TiMessages} from "react-icons/ti";
 import {VscSettings} from "react-icons/vsc"
 import {IconContext} from "react-icons";
 import {CgMore} from "react-icons/cg";
 
-function HeaderBlock() {
+const HeaderBlock = (props) => {
+
     return (
         <div className={s.headerBlock}>
             <div className={s.container}>
@@ -32,9 +33,9 @@ function HeaderBlock() {
                             </li>
                             <li className={s.authorInfo}>
                             <NavLink to="">
-                                <h4>Jack Sparrow</h4>
+                                <h4>{props.fullName}</h4>
                             </NavLink>
-                            <div className={s.country}>San Francisco, CA</div>
+                            <div className={s.instaLink}>{props.contacts?.instagram}</div>
                             </li>
                             <li>
                                 <NavLink to="">Photos</NavLink>
@@ -48,7 +49,7 @@ function HeaderBlock() {
                         </ul>
                         <div className={s.authorHeader}>
                             <NavLink to="">
-                                <img src={avatar} className={s.avatarImg} alt="Avatar image"/>
+                                <img src={props.photos?.large || avatar} className={s.avatarImg} alt="Avatar image"/>
                             </NavLink>
                         </div>
                     </div>

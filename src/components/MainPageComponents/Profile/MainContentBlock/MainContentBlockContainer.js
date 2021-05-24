@@ -5,16 +5,13 @@ import MainContentBlock from "./MainContentBlock";
 
 let mapStateToProps = (state) => {
     return {
-        postsData: state.profilePage.postsData
+        postsData: state.profilePage.postsData,
+        profile: state.profilePage.profile
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {}
-}
 
-
-const MainContentBlockContainer = connect(mapStateToProps, mapDispatchToProps) (MainContentBlock);
+const MainContentBlockContainer = connect(mapStateToProps, {}) (MainContentBlock);
 
 
 

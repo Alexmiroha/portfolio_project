@@ -8,7 +8,8 @@ import CreateNewPostContainer from "./CreateNewPost/CreateNewPostContainer";
 
 const MainContentBlock = (props) => {
 
-    let PostElement = props.postsData.map((post, key) => <Post post={post} key={post.id}/>);
+
+    let PostElement = props.postsData.map((post, key) => <Post post={post} profile={props.profile} key={post.id}/>);
 
 
     return (

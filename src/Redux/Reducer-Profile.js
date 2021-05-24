@@ -9,6 +9,7 @@ import u5 from "../components/MainPageComponents/Profile/MainContentBlock/img/fr
 
 const ADD_POST = 'ADD-POST';
 const UPDT_NEWPOST_TEXTAREA = 'UPDT-NEWPOST-TEXTAREA';
+const SET_USER_PROFILE = 'SET_USER_PROFILE';
 
 
 let initialState = {
@@ -19,37 +20,11 @@ let initialState = {
             postTime: "4 hours ago", postMessage: "I'm SuperAwsome",
             likeCount: 10, liker1: "Dima", liker2: "Katya", commentCount: 3, repostCount: 1
         },
-        {
-            id: 3, uImgs: {u1, u2, u3, u4, u5}, authorAvatar: {avatar},
-            postImage: {postImage}, authorName: "Jack Sparrow",
-            postTime: "7 hours ago", postMessage: "Hello World",
-            likeCount: 15, liker1: "Roma", liker2: "Igor", commentCount: 1, repostCount: 0
-        },
-        {
-            id: 2, uImgs: {u1, u2, u3, u4, u5}, authorAvatar: {avatar},
-            postImage: {postImage}, authorName: "Jack Sparrow",
-            postTime: "4 days ago", postMessage: "Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
-                "                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
-                "                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
-                "                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
-                "                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
-                "                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
-                "                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
-                "                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
-                "                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
-                "                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n" +
-                "                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-            likeCount: 53, liker1: "Dasha", liker2: "Yuliya", commentCount: 4, repostCount: 2
-        },
-        {
-            id: 1, uImgs: {u1, u2, u3, u4, u5}, authorAvatar: {avatar},
-            postImage: {postImage}, authorName: "Kateryna Buha",
-            postTime: "1minute ago", postMessage: "Hello I'm Katya",
-            likeCount: 100, liker1: "Vladilav", liker2: "Oleksii", commentCount: 10, repostCount: 5
-        },
 
     ],
-    newPostTextarea: ""
+    newPostTextarea: "",
+    profile: null,
+
 
 }
 
@@ -73,6 +48,12 @@ const profileReduser = (state = initialState, action) => {
                 newPostTextarea: '',
                 postsData: [newPost, ...state.postsData]
             };
+        case SET_USER_PROFILE: {
+            return {
+                ...state, profile: action.profile
+            }
+        }
+
         default:
             return state;
 
@@ -80,11 +61,11 @@ const profileReduser = (state = initialState, action) => {
 }
 
 
-export const addPostActionCreator = () => ({type: 'ADD-POST'});
-
-export const changeTextareaActionCreator = (text) => ({
+export const addPost = () => ({type: 'ADD-POST'});
+export const changeTextarea = (text) => ({
     type: 'UPDT-NEWPOST-TEXTAREA', newText: text
 });
+export const SetUserProfile = (profile) => ({type: 'SET_USER_PROFILE', profile});
 
 
 export default profileReduser;

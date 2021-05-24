@@ -12,7 +12,6 @@ import {IconContext} from "react-icons";
 
 
 let CreateNewPost = (props) => {
-console.log(props)
 
     let addPost = () => {
         props.addPost();
@@ -29,7 +28,7 @@ console.log(props)
             <form className={s.form}>
 
                 <div className={s.userImage}>
-                    <img src={avatar} alt="user avatar"/>
+                    <img src={props.photo?.small || avatar} alt="user avatar"/>
                 </div>
                 <div className={s.emojiButton}><FiSmile/></div>
                 <div className={s.forMoveTop}>

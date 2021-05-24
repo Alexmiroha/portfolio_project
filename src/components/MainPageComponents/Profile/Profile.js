@@ -6,7 +6,7 @@ import MainContentBlockContainer from "./MainContentBlock/MainContentBlockContai
 function Profile(props) {
     return (
         <main className={s.mainProfile}>
-            <HeaderBlock/>
+            <HeaderBlock fullName={props.profile?.fullName} contacts={props.profile?.contacts} photos={props.profile?.photos}/>
             <div className={s.contentWrapper}>
 
                 <div className={s.LSidebarBlock}></div>

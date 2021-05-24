@@ -14,6 +14,7 @@ import WhoLikeThis from "./WhoLikeThis";
 
 const Post = (props) => {
 
+
     return (
         <div className={s.postBlock}>
             <div className={s.controlBlock}>
@@ -33,11 +34,11 @@ const Post = (props) => {
                 <article className={s.post}>
                     <div className={s.postHeader}>
                         <div className={s.authorImg}>
-                            <img src={props.post.authorAvatar.avatar} alt="post author image"/>
+                            <img src={props.profile?.photos.small || props.post.authorAvatar.avatar} alt="post author image"/>
                         </div>
                         <div className={s.authorIn}>
                             <NavLink to="" className={s.authorName}>
-                                <h6>{props.post.authorName}</h6>
+                                <h6>{props.profile?.fullName || props.post.authorName}</h6>
                             </NavLink>
                             <div className={s.time}>{props.post.postTime}</div>
                         </div>
@@ -45,7 +46,7 @@ const Post = (props) => {
                     </div>
                     <div className={s.message}>
                         <p className={s.paragraph}>
-                            {props.post.postMessage}
+                            {props.profile?.aboutMe || props.post.postMessage}
                         </p>
                     </div>
                     <div className={s.postThumb}>

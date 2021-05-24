@@ -115,6 +115,8 @@
     border-radius: 100px;
     padding: 5px;
     background-color: #fdfbee;
+    max-height: 100px;
+    max-width: 100px;
 }
 
 .authorInfo {
@@ -134,7 +136,7 @@
     color: #ff5e3a;
 }
 
-.country {
+.instaLink {
     font-weight: 500;
     font-size: 13px;
 }
