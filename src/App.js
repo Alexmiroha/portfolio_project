@@ -29,7 +29,7 @@ function App(props) {
                 <Route exact path="/">
                     <Redirect to="/profile"/>
                 </Route>
-                <Route path='/profile' render={() => <ProfileContainer /> }/>
+                <Route path='/profile/:userID' render={() => <ProfileContainer /> }/>
                 <Route path='/feed' render={() => <NewsFeed/>}/>
                 <Route path='/fav' render={() => <FavPagesFeed/>}/>
                 <Route path='/friends' render={() => <FriendGroupsContainer/>}/>

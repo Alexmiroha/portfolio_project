@@ -28,7 +28,7 @@ function Sidebar({active, setActive}) {
         <nav className={active ? `${s.sidebar} ${s.active} ${s.move2}` : `${s.sidebar} ${s.move1}`}>
             <ul className={s.sidebarList}>
                 <li>
-                    <NavLink to="/profile" className={s.logo}>
+                    <NavLink to="/profile/2" className={s.logo}>
                         <img src={logo} className={s.imgLogo} alt="Logo Olympus"/>
                         <h6 className={s.logoName}>Olympus</h6>
                     </NavLink>

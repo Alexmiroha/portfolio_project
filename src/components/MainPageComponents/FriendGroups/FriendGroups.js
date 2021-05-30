@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './FriendsGroup.module.css';
 import preloader from '../../../img/294.svg'
+import {NavLink} from "react-router-dom";
 
 let FriendGroups = (props) => {
 
@@ -49,7 +50,9 @@ let FriendGroups = (props) => {
                     props.users?.map(u =>
                         <div key={u.id}>
                             <div>
+                                <NavLink to={'/profile/' + u.id}>
                                 <img className={s.avatar} src={u.photos.small} alt=""/>
+                                </NavLink>
                             </div>
                             {u.followedStatus ? <button onClick={() => {
                                 props.unfollow(u.id)
