@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import './App.css';
-import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import MessagesSidebar from "./components/MessagesSidebar/MessagesSidebar";
 import NewsFeed from "./components/MainPageComponents/NewsFeed/NewsFeed";
@@ -15,6 +14,7 @@ import Widgets from "./components/MainPageComponents/Widgets/Widgets";
 import MessagesContainer from "./components/MainPageComponents/Messages/MessagesContainer";
 import FriendGroupsContainer from "./components/MainPageComponents/FriendGroups/FriendGroupsContainer";
 import ProfileContainer from "./components/MainPageComponents/Profile/ProfileContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 
 
 function App(props) {
@@ -23,7 +23,7 @@ function App(props) {
 
     return (
         <div className="App-wrapper">
-            <Header/>
+            <HeaderContainer/>
             <Sidebar active={sidebarActive} setActive={setSidebarActive}/>
             <div className='App-wrapper-content'>
                 <Route exact path="/">

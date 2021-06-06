@@ -26,6 +26,7 @@
 .searchField {
     right: 100px;
     position: relative;
+    top: -20px;
 }
 
 .findFriends {
@@ -35,8 +36,6 @@
     font-weight: 700;
     display: inline-block;
     position: relative;
-    right: 110px;
-
 }
 
 .controlBlock {
@@ -122,6 +121,17 @@
     transform: scale(1.3);
     top: 18px;
     left: 10px;
+}
+
+.loginButton {
+    border-radius: 20px;
+    padding: 5px 25px 10px 25px;
+    background-color: #515471;
+    color: #FFFFFF;
+}
+
+.loginButtonCont {
+    margin: 20px 100px 20px 20px;
 }
 
 @media screen and (max-width: 1200px) {

@@ -7,7 +7,7 @@ import {RiFlashlightLine} from "react-icons/ri";
 import {IconContext} from "react-icons";
 import avatar from "../../img/UserAvatarSmall.jpg";
 
-function Header() {
+const Header = (props) => {
     return (
         <header className={s.header}>
             <Route path='/profile' render={() => {
@@ -43,47 +43,59 @@ function Header() {
             <Route path='/messages' render={() => {
                 return (<h6 className={s.pageTitle}>Messages</h6>)
             }}/>
+            <Route path='/login' render={() => {
+                return (<h6 className={s.pageTitle}>Login Page</h6>)
+            }}/>
             <div className={s.headerItems}>
-                <div className={s.searchField}>
-                    <form action="">
-                        <input type="text" placeholder='Search people or pages...'/>
-                    </form>
-                </div>
-                <div className={s.findFriends}>Find Friends</div>
                 <IconContext.Provider value={{size: '1.6em', color: '#fff'}}>
-                    <div className={s.controlBlock}>
-                        <div className={s.headerIcons}>
-                            <div className={s.icon}><BiSmile/></div>
-                            <div className={s.label} style={{backgroundColor: '#38A9FF'}}>1</div>
-                            <div className={s.dropdown}></div>
-                        </div>
-                        <div className={s.headerIcons}>
-                            <NavLink to="/messages" className={s.icon}><TiMessages/></NavLink>
-                            <div className={s.label} style={{backgroundColor: '#7C5AC2'}}>4</div>
-                            <div className={s.dropdown}></div>
-                        </div>
-                        <div className={s.headerIcons}>
-                            <div className={s.icon}><RiFlashlightLine/></div>
-                            <div className={s.label} style={{backgroundColor: '#FF5E3A'}}>2</div>
-                            <div className={s.dropdown}></div>
-                        </div>
-                        <div className={s.yourAccountButton}>
-                            <div className={s.accButtonBlock}>
-                                <div className={s.avatar}>
-                                    <img src={avatar} className={s.imgAvatar} alt="avatar"/>
-                                    <div className={s.status}></div>
+
+                        { props.isLogined ?
+                            <div className={s.controlBlock}>
+                                <div className={s.searchField}>
+                                    <form action="">
+                                        <input type="text" placeholder='Search people or pages...'/>
+                                        <div className={s.findFriends}>Find Friends</div>
+                                    </form>
                                 </div>
-                                <div className={s.nameBlock}>
-                                    <div className={s.name}>
-                                        <div>Jack Sparrow</div>
+                                <div className={s.headerIcons}>
+                                    <div className={s.icon}><BiSmile/></div>
+                                    <div className={s.label} style={{backgroundColor: '#38A9FF'}}>1</div>
+                                    <div className={s.dropdown}></div>
+                                </div>
+                                <div className={s.headerIcons}>
+                                    <NavLink to="/messages" className={s.icon}><TiMessages/></NavLink>
+                                    <div className={s.label} style={{backgroundColor: '#7C5AC2'}}>4</div>
+                                    <div className={s.dropdown}></div>
+                                </div>
+                                <div className={s.headerIcons}>
+                                    <div className={s.icon}><RiFlashlightLine/></div>
+                                    <div className={s.label} style={{backgroundColor: '#FF5E3A'}}>2</div>
+                                    <div className={s.dropdown}></div>
+                                </div>
+                                <div className={s.yourAccountButton}>
+                                    <div className={s.accButtonBlock}>
+                                        <div className={s.avatar}>
+                                            <img src={avatar} className={s.imgAvatar} alt="avatar"/>
+                                            <div className={s.status}></div>
+                                        </div>
+                                        <div className={s.nameBlock}>
+                                            <div className={s.name}>
+                                                <div>{props.login}</div>
+                                            </div>
+                                            <div className={s.pseudoName}>Captain</div>
+                                        </div>
+                                        <span className={s.arrow}>ˇ</span>
                                     </div>
-                                    <div className={s.pseudoName}>Captain</div>
+                                    <div className={s.dropdown}></div>
                                 </div>
-                                <span className={s.arrow}>ˇ</span>
                             </div>
-                            <div className={s.dropdown}></div>
-                        </div>
-                    </div>
+                            :
+
+                            <div className={s.loginButtonCont}>
+                                <NavLink className={s.loginButton} to="/login">Login</NavLink>
+                            </div>
+                        }
+
                 </IconContext.Provider>
             </div>
         </header>
