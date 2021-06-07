@@ -7,7 +7,7 @@ class FriendGroupsAPIConnect extends React.Component {
 
     componentDidMount() {
         this.props.toggleIsLoading(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.SelectedPage}&count=${this.props.UsersTotalCount}`).then(response => {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.SelectedPage}&count=${this.props.UsersTotalCount}`, {withCredentials: true}).then(response => {
             this.props.toggleIsLoading(false);
             this.props.SetUsers(response.data.items);
             this.props.setUsersTotalCount(response.data.totalCount);
@@ -17,7 +17,7 @@ class FriendGroupsAPIConnect extends React.Component {
     onPageChanged = (pageNumber) => {
         this.props.SetSelectedPage(pageNumber)
         this.props.toggleIsLoading(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.UersPageSize}`).then(response => {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.UersPageSize}`, {withCredentials: true}).then(response => {
             this.props.toggleIsLoading(false);
             this.props.SetUsers(response.data.items);
         })
