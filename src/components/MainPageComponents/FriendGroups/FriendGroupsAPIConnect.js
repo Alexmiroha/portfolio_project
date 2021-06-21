@@ -8,6 +8,7 @@ class FriendGroupsAPIConnect extends React.Component {
     componentDidMount() {
         this.props.toggleIsLoading(true);
         usersAPI.getUsers(this.props.SelectedPage, this.props.UsersTotalCount).then(data => {
+            debugger
             this.props.toggleIsLoading(false);
             this.props.SetUsers(data.items);
             this.props.setUsersTotalCount(data.totalCount);

@@ -23,7 +23,7 @@ const FriendsReduser = (state = initialState, action) => {
                 ...state,
                 users: state.users.map(u => {
                     if (u.id === action.userId) {
-                        return {...u, followedStatus: true}
+                        return {...u, followed: true}
                     }
                     return u;
                 })
@@ -35,7 +35,7 @@ const FriendsReduser = (state = initialState, action) => {
                 ...state,
                 users: state.users.map(u => {
                     if (u.id === action.userId) {
-                        return {...u, followedStatus: false}
+                        return {...u, followed: false}
                     }
                     return u;
                 })

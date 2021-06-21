@@ -2,10 +2,10 @@ import React from 'react';
 import s from './FriendsGroup.module.css';
 import preloader from '../../../img/294.svg'
 import {NavLink} from "react-router-dom";
-import * as axios from "axios";
 import {usersAPI} from "../../../API/API";
 
 let FriendGroups = (props) => {
+    console.log(props)
     let pagesCount = Math.ceil(props.UsersTotalCount / props.UersPageSize);
 
     let pages = [1];
@@ -56,7 +56,7 @@ let FriendGroups = (props) => {
                                 </NavLink>
                             </div>
 
-                            {u.followedStatus ?
+                            {u.followed ?
 
                                 <button onClick={() => {
                                     usersAPI.unfollowUser(u.id).then(data => {
