@@ -1,25 +1,25 @@
 import React from 'react';
-import * as axios from "axios";
 import FriendGroups from "./FriendGroups";
+import {usersAPI} from "../../../API/API";
 
 class FriendGroupsAPIConnect extends React.Component {
 
 
     componentDidMount() {
         this.props.toggleIsLoading(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.SelectedPage}&count=${this.props.UsersTotalCount}`, {withCredentials: true}).then(response => {
+        usersAPI.getUsers(this.props.SelectedPage, this.props.UsersTotalCount).then(data => {
             this.props.toggleIsLoading(false);
-            this.props.SetUsers(response.data.items);
-            this.props.setUsersTotalCount(response.data.totalCount);
+            this.props.SetUsers(data.items);
+            this.props.setUsersTotalCount(data.totalCount);
         })
     }
 
     onPageChanged = (pageNumber) => {
         this.props.SetSelectedPage(pageNumber)
         this.props.toggleIsLoading(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.UersPageSize}`, {withCredentials: true}).then(response => {
+        usersAPI.getUsers(pageNumber, this.props.UersPageSize).then(data => {
             this.props.toggleIsLoading(false);
-            this.props.SetUsers(response.data.items);
+            this.props.SetUsers(data.items);
         })
 }
 

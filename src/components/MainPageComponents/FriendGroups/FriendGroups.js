@@ -3,9 +3,9 @@ import s from './FriendsGroup.module.css';
 import preloader from '../../../img/294.svg'
 import {NavLink} from "react-router-dom";
 import * as axios from "axios";
+import {usersAPI} from "../../../API/API";
 
 let FriendGroups = (props) => {
-    console.log(props)
     let pagesCount = Math.ceil(props.UsersTotalCount / props.UersPageSize);
 
     let pages = [1];
@@ -59,13 +59,8 @@ let FriendGroups = (props) => {
                             {u.followedStatus ?
 
                                 <button onClick={() => {
-                                    axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-                                        withCredentials: true,
-                                        headers: {
-                                            "API-KEY": "137233f8-ba0b-4d38-a7f9-d79d3e1c8363"
-                                        }
-                                    }).then(response => {
-                                        if (response.data.resultCode === 0) {
+                                    usersAPI.unfollowUser(u.id).then(data => {
+                                        if (data.resultCode === 0) {
                                             props.Unfollow(u.id);
                                         }
                                     })
@@ -75,13 +70,8 @@ let FriendGroups = (props) => {
                                 :
 
                                 <button onClick={() => {
-                                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
-                                        withCredentials: true,
-                                        headers: {
-                                            "API-KEY": "137233f8-ba0b-4d38-a7f9-d79d3e1c8363"
-                                        }
-                                    }).then(response => {
-                                        if (response.data.resultCode === 0) {
+                                    usersAPI.followUser(u.id).then(data => {
+                                        if (data.resultCode === 0) {
                                             props.Follow(u.id);
                                         }
                                     })
