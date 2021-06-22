@@ -5,7 +5,6 @@ import {NavLink} from "react-router-dom";
 import {usersAPI} from "../../../API/API";
 
 let FriendGroups = (props) => {
-    console.log(props)
     let pagesCount = Math.ceil(props.UsersTotalCount / props.UersPageSize);
 
     let pages = [1];
@@ -58,22 +57,26 @@ let FriendGroups = (props) => {
 
                             {u.followed ?
 
-                                <button onClick={() => {
+                                <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                    props.toggleFollowingInProgress(true, u.id);
                                     usersAPI.unfollowUser(u.id).then(data => {
                                         if (data.resultCode === 0) {
                                             props.Unfollow(u.id);
                                         }
+                                        props.toggleFollowingInProgress(false, u.id);
                                     })
                                 }}>unfollow
                                 </button>
 
                                 :
 
-                                <button onClick={() => {
+                                <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
+                                    props.toggleFollowingInProgress(true, u.id);
                                     usersAPI.followUser(u.id).then(data => {
                                         if (data.resultCode === 0) {
                                             props.Follow(u.id);
                                         }
+                                        props.toggleFollowingInProgress(false, u.id);
                                     })
                                 }}>follow
                                 </button>

@@ -4,6 +4,7 @@ const SET_USERS = 'SET_USERS'
 const SET_SELECTED_PAGE = 'SET_SELECTED_PAGE'
 const SET_USERS_TOTAL_COUNT = 'SET_USERS_TOTAL_COUNT'
 const TOGGLE_IS_LOADING = 'TOGGLE_IS_LOADING'
+const TOGGLE_FOLLOWING_IN_PROGRESS = 'TOGGLE_FOLLOWING_IN_PROGRESS'
 
 let initialState = {
     users: [],
@@ -11,6 +12,8 @@ let initialState = {
     UsersTotalCount: 5,
     SelectedPage: 1,
     isLoading: true,
+    followingInProgress: [],
+
 
 }
 
@@ -57,6 +60,12 @@ const FriendsReduser = (state = initialState, action) => {
             return {...state, isLoading: action.isLoading}
         }
 
+        case TOGGLE_FOLLOWING_IN_PROGRESS: {
+            return {...state, followingInProgress: action.followingInProgress ?
+                    [...state.followingInProgress, action.userId] :
+                    state.followingInProgress.filter(id => id != action.userId)}
+        }
+
         default:
             return state;
 
@@ -75,5 +84,7 @@ export const SetSelectedPage = (SelectedPage) => ({type: 'SET_SELECTED_PAGE', Se
 export const setUsersTotalCount = (UsersTotalCount) => ({type: 'SET_USERS_TOTAL_COUNT', UsersTotalCount})
 
 export const toggleIsLoading = (isLoading) => ({type: 'TOGGLE_IS_LOADING', isLoading})
+
+export const toggleFollowingInProgress = (followingInProgress, userId) => ({type: 'TOGGLE_FOLLOWING_IN_PROGRESS', followingInProgress, userId})
 
 export default FriendsReduser;
