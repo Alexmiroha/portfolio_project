@@ -1,3 +1,5 @@
+import {usersAPI} from "../API/API";
+
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET_USERS'
@@ -13,8 +15,6 @@ let initialState = {
     SelectedPage: 1,
     isLoading: true,
     followingInProgress: [],
-
-
 }
 
 
@@ -61,9 +61,11 @@ const FriendsReduser = (state = initialState, action) => {
         }
 
         case TOGGLE_FOLLOWING_IN_PROGRESS: {
-            return {...state, followingInProgress: action.followingInProgress ?
+            return {
+                ...state, followingInProgress: action.followingInProgress ?
                     [...state.followingInProgress, action.userId] :
-                    state.followingInProgress.filter(id => id != action.userId)}
+                    state.followingInProgress.filter(id => id != action.userId)
+            }
         }
 
         default:
@@ -73,9 +75,9 @@ const FriendsReduser = (state = initialState, action) => {
     }
 }
 
-export const Follow = (userId) => ({type: 'FOLLOW', userId});
+export const SetFollow = (userId) => ({type: 'FOLLOW', userId});
 
-export const Unfollow = (userId) => ({type: 'UNFOLLOW', userId});
+export const SetUnfollow = (userId) => ({type: 'UNFOLLOW', userId});
 
 export const SetUsers = (users) => ({type: 'SET_USERS', users});
 
@@ -85,6 +87,49 @@ export const setUsersTotalCount = (UsersTotalCount) => ({type: 'SET_USERS_TOTAL_
 
 export const toggleIsLoading = (isLoading) => ({type: 'TOGGLE_IS_LOADING', isLoading})
 
-export const toggleFollowingInProgress = (followingInProgress, userId) => ({type: 'TOGGLE_FOLLOWING_IN_PROGRESS', followingInProgress, userId})
+export const toggleFollowingInProgress = (followingInProgress, userId) => ({
+    type: 'TOGGLE_FOLLOWING_IN_PROGRESS',
+    followingInProgress,
+    userId
+})
+// thunks thunks thunks
+export const getUsers = (SelectedPage, PageSize) => {
+    return (dispatch) => {
+        dispatch(SetSelectedPage(SelectedPage));
+        dispatch(toggleIsLoading(true));
+        usersAPI.getUsers(SelectedPage, PageSize).then(data => {
+            dispatch(toggleIsLoading(false));
+            dispatch(SetUsers(data.items));
+            dispatch(setUsersTotalCount(data.totalCount));
+        })
+    }
+}
+
+export const follow = (id) => {
+    return (dispatch) => {
+        dispatch(toggleFollowingInProgress(true, id));
+        usersAPI.followUser(id).then(data => {
+            if (data.resultCode === 0) {
+                dispatch(SetFollow(id));
+            }
+            dispatch(toggleFollowingInProgress(false, id));
+        })
+
+    }
+}
+
+export const unfollow = (id) => {
+    return (dispatch) => {
+        dispatch(toggleFollowingInProgress(true, id));
+        usersAPI.unfollowUser(id).then(data => {
+            if (data.resultCode === 0) {
+                dispatch(SetUnfollow(id));
+            }
+            dispatch(toggleFollowingInProgress(false, id));
+        })
+
+    }
+}
+// thunks thunks thunks
 
 export default FriendsReduser;

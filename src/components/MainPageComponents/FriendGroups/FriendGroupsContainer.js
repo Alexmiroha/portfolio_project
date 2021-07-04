@@ -1,13 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {
-    Follow,
-    SetUsers,
-    Unfollow,
-    SetSelectedPage,
-    setUsersTotalCount,
-    toggleIsLoading,
-    toggleFollowingInProgress
+    getUsers, follow, unfollow
 } from "../../../Redux/Reducer-FriendGroups";
 import FriendGroupsAPIConnect from "./FriendGroupsAPIConnect";
 
@@ -24,4 +18,4 @@ let mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {Follow, Unfollow, SetUsers, SetSelectedPage, setUsersTotalCount, toggleIsLoading, toggleFollowingInProgress})(FriendGroupsAPIConnect)
+export default connect(mapStateToProps, {getUsers, follow, unfollow})(FriendGroupsAPIConnect)
