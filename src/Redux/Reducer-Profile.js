@@ -5,6 +5,7 @@ import u2 from "../components/MainPageComponents/Profile/MainContentBlock/img/fr
 import u3 from "../components/MainPageComponents/Profile/MainContentBlock/img/friend-harmonic9.jpg";
 import u4 from "../components/MainPageComponents/Profile/MainContentBlock/img/friend-harmonic10.jpg";
 import u5 from "../components/MainPageComponents/Profile/MainContentBlock/img/friend-harmonic11.jpg";
+import {profileAPI} from "../API/API";
 
 
 const ADD_POST = 'ADD-POST';
@@ -67,5 +68,15 @@ export const changeTextarea = (text) => ({
 });
 export const SetUserProfile = (profile) => ({type: 'SET_USER_PROFILE', profile});
 
+
+// thunks thunks thunks
+export const getProfile = (userID) => {
+    return (dispatch) => {
+        profileAPI.getUsersProfile(userID).then(data => {
+            dispatch(SetUserProfile(data));
+        })
+    }
+}
+// thunks thunks thunks
 
 export default profileReduser;

@@ -2,7 +2,6 @@ import React from 'react';
 import s from './FriendsGroup.module.css';
 import preloader from '../../../img/294.svg'
 import {NavLink} from "react-router-dom";
-import {usersAPI} from "../../../API/API";
 
 let FriendGroups = (props) => {
     let pagesCount = Math.ceil(props.UsersTotalCount / props.UersPageSize);

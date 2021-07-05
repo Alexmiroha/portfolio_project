@@ -31,4 +31,22 @@ export const usersAPI = {
 
 }
 
+export const profileAPI = {
+    getUsersProfile(userID) {
+        return instance.get(`profile/${userID}`)
+            .then(response => {
+                return response.data;
+            })
+    }
+}
+
+export const headerAPI = {
+    getProfileData() {
+        return instance.get(`auth/me`)
+            .then(response => {
+                return response.data;
+            })
+    }
+}
+
 
