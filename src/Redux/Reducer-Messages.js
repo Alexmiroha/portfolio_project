@@ -50,10 +50,10 @@ const messagesReduser = (state = initialState, action) => {
     }
 }
 
-export const changeMessageTextareaActionCreator = (text) => ({
+export const changeMessageTextarea = (text) => ({
     type: 'UPDT-MESSAGE-TEXTAREA', newText: text
 });
 
-export const SendMessageActionCreator = () => ({type: 'SEND-MESSAGE'});
+export const SendMessage = () => ({type: 'SEND-MESSAGE'});
 
 export default messagesReduser;

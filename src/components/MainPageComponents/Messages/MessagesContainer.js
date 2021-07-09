@@ -1,8 +1,9 @@
 import React from 'react';
-import {changeMessageTextareaActionCreator,
-    SendMessageActionCreator} from "../../../Redux/Reducer-Messages";
+import {changeMessageTextarea,
+    SendMessage} from "../../../Redux/Reducer-Messages";
 import Messages from "./Messages";
 import {connect} from "react-redux";
+import {withLoginRedirect} from "../../../HOC/withLoginRedirect";
 
 let mapStateToProps = (state) => {
     return {
@@ -10,17 +11,8 @@ let mapStateToProps = (state) => {
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        changeMessage: (text) => {
-            dispatch(changeMessageTextareaActionCreator(text));
-        },
-        SendMessage: () => {
-            dispatch(SendMessageActionCreator());
-        }
-    }
-}
+let LoginRedirectComponent = withLoginRedirect(Messages);
 
-const MessagesContainer = connect(mapStateToProps, mapDispatchToProps) (Messages);
+const MessagesContainer = connect(mapStateToProps, {changeMessageTextarea, SendMessage}) (LoginRedirectComponent);
 
 export default MessagesContainer;

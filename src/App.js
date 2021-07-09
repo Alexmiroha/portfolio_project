@@ -15,6 +15,7 @@ import MessagesContainer from "./components/MainPageComponents/Messages/Messages
 import FriendGroupsContainer from "./components/MainPageComponents/FriendGroups/FriendGroupsContainer";
 import ProfileContainer from "./components/MainPageComponents/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
+import LoginContainer from "./components/MainPageComponents/Login/LoginContainer";
 
 
 function App(props) {
@@ -40,6 +41,7 @@ function App(props) {
                 <Route path='/stats' render={() => <AccStats/>}/>
                 <Route path='/widgets' render={() => <Widgets/>}/>
                 <Route path='/messages' render={() => <MessagesContainer />}/>
+                <Route path='/login' render={() => <LoginContainer />}/>
             </div>
             <MessagesSidebar/>
         </div>
