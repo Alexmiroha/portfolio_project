@@ -1,9 +1,12 @@
 import React from 'react';
-import {changeMessageTextarea,
-    SendMessage} from "../../../Redux/Reducer-Messages";
+import {
+    changeMessageTextarea,
+    SendMessage
+} from "../../../Redux/Reducer-Messages";
 import Messages from "./Messages";
 import {connect} from "react-redux";
 import {withLoginRedirect} from "../../../HOC/withLoginRedirect";
+import {compose} from "redux";
 
 let mapStateToProps = (state) => {
     return {
@@ -11,8 +14,6 @@ let mapStateToProps = (state) => {
     }
 }
 
-let LoginRedirectComponent = withLoginRedirect(Messages);
-
-const MessagesContainer = connect(mapStateToProps, {changeMessageTextarea, SendMessage}) (LoginRedirectComponent);
-
-export default MessagesContainer;
+export default compose(
+    connect(mapStateToProps, {changeMessageTextarea, SendMessage}), withLoginRedirect
+)(Messages)

@@ -2,14 +2,13 @@ import React from 'react';
 import s from './Messages.module.css';
 import DialogItem from "./Dialog/DialogItem";
 import Message from "./Dialog/Message/Message";
-import Redirect from "react-router-dom/es/Redirect";
 
 
 const Messages = (props) => {
 
     let changeTextarea = (event) => {
         let text = event.target.value;
-        props.changeMessage(text);
+        props.changeMessageTextarea(text);
     }
 
     let sendMessage = () => {
