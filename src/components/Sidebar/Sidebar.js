@@ -23,53 +23,67 @@ const SidebarButton = (props) => {
     );
 }
 
-function Sidebar({active, setActive}) {
-    return (
-        <nav className={active ? `${s.sidebar} ${s.active} ${s.move2}` : `${s.sidebar} ${s.move1}`}>
-            <ul className={s.sidebarList}>
-                <li>
-                    <NavLink to="/profile/2" className={s.logo}>
-                        <img src={logo} className={s.imgLogo} alt="Logo Olympus"/>
-                        <h6 className={s.logoName}>Olympus</h6>
-                    </NavLink>
-                </li>
-                {/*!!!!!!!!!!styles 4 icons!!!!!!!!!!!!*/}
-                <IconContext.Provider value={{className: 'react-icons', size: '1.5em'}}>
-                    <li className={`${s.button} ${s.collapseMenu}`} onClick={() => setActive(!active)}>
-                        <div className={s.iconSB}><AiOutlineCloseCircle/></div>
-                        <div className={s.buttonName}>Collapse Menu</div>
+class Sidebar extends React.Component {
+
+    state = {
+        activeSidebar: false
+    }
+
+    changeSidebar = () => {
+        this.setState({
+            activeSidebar: !this.state.activeSidebar
+        })
+    }
+
+    render() {
+        return (
+            <nav
+                className={this.state.activeSidebar ? `${s.sidebar} ${s.active} ${s.move2}` : `${s.sidebar} ${s.move1}`}>
+                <ul className={s.sidebarList}>
+                    <li>
+                        <NavLink to="/profile/2" className={s.logo}>
+                            <img src={logo} className={s.imgLogo} alt="Logo Olympus"/>
+                            <h6 className={s.logoName}>Olympus</h6>
+                        </NavLink>
                     </li>
+                    {/*!!!!!!!!!!styles 4 icons!!!!!!!!!!!!*/}
+                    <IconContext.Provider value={{className: 'react-icons', size: '1.5em'}}>
+                        <li className={`${s.button} ${s.collapseMenu}`} onClick={this.changeSidebar}>
+                            <div className={s.iconSB}><AiOutlineCloseCircle/></div>
+                            <div className={s.buttonName}>Collapse Menu</div>
+                        </li>
 
-                    <SidebarButton path='/feed' icon=<RiNewspaperLine/> name='Newsfeed'/>
-                    <SidebarButton path='/fav' icon=<TiStarOutline/> name='Fav Pages Feed'/>
-                    <SidebarButton path='/friends' icon=<HiOutlineUserGroup/> name='Friend Groups'/>
-                    <SidebarButton path='/music' icon=<BsMusicPlayer/> name='Music & Playlists'/>
-                    <SidebarButton path='/weather' icon=<TiWeatherPartlySunny/> name='Weather'/>
-                    <SidebarButton path='/calendar' icon=<GoCalendar/> name='Calendar and Events'/>
-                    <SidebarButton path='/badges' icon=<BiBadgeCheck/> name='Community Badges'/>
-                    <SidebarButton path='/stats' icon=<BiStats/> name='Account Stats'/>
-                    <SidebarButton path='/widgets' icon=<BsColumns/> name='Manage Widgets'/>
+                        <SidebarButton path='/feed' icon=<RiNewspaperLine/> name='Newsfeed'/>
+                        <SidebarButton path='/fav' icon=<TiStarOutline/> name='Fav Pages Feed'/>
+                        <SidebarButton path='/friends' icon=<HiOutlineUserGroup/> name='Friend Groups'/>
+                        <SidebarButton path='/music' icon=<BsMusicPlayer/> name='Music & Playlists'/>
+                        <SidebarButton path='/weather' icon=<TiWeatherPartlySunny/> name='Weather'/>
+                        <SidebarButton path='/calendar' icon=<GoCalendar/> name='Calendar and Events'/>
+                        <SidebarButton path='/badges' icon=<BiBadgeCheck/> name='Community Badges'/>
+                        <SidebarButton path='/stats' icon=<BiStats/> name='Account Stats'/>
+                        <SidebarButton path='/widgets' icon=<BsColumns/> name='Manage Widgets'/>
 
-                </IconContext.Provider>
-            </ul>
-            <div className={s.profileCompletitionBlock}>
-                <div className={s.compSkillsItem}>
-                    <div className={s.infoCompl}>
-                        <div className={s.tittleCompl}>Profile Completition</div>
-                        <div className={s.unitsCompl}>82%</div>
+                    </IconContext.Provider>
+                </ul>
+                <div className={s.profileCompletitionBlock}>
+                    <div className={s.compSkillsItem}>
+                        <div className={s.infoCompl}>
+                            <div className={s.tittleCompl}>Profile Completition</div>
+                            <div className={s.unitsCompl}>82%</div>
+                        </div>
+                        <div className={s.meterCompl}>
+                            <span className={s.progress}></span>
+                        </div>
                     </div>
-                    <div className={s.meterCompl}>
-                        <span className={s.progress}></span>
+                    <div className={s.textCompl}>
+                        Complete
+                        <NavLink to="/profile" className={s.rText}> your profile </NavLink>
+                        so people can know more about you!
                     </div>
                 </div>
-                <div className={s.textCompl}>
-                    Complete
-                    <NavLink to="/profile" className={s.rText}> your profile </NavLink>
-                    so people can know more about you!
-                </div>
-            </div>
-        </nav>
-    );
+            </nav>
+        );
+    }
 }
 
 export default Sidebar;

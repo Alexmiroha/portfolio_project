@@ -20,12 +20,10 @@ import LoginContainer from "./components/MainPageComponents/Login/LoginContainer
 
 function App(props) {
 
-    const [sidebarActive, setSidebarActive] = useState(false);
-
     return (
         <div className="App-wrapper">
             <HeaderContainer/>
-            <Sidebar active={sidebarActive} setActive={setSidebarActive}/>
+            <Sidebar />
             <div className='App-wrapper-content'>
                 <Route exact path="/">
                     <Redirect to="/profile"/>
