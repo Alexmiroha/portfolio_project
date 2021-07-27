@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import './App.css';
-import Sidebar from "./components/Sidebar/Sidebar";
 import MessagesSidebar from "./components/MessagesSidebar/MessagesSidebar";
 import NewsFeed from "./components/MainPageComponents/NewsFeed/NewsFeed";
 import {Route, Redirect} from "react-router-dom";
@@ -16,6 +15,7 @@ import FriendGroupsContainer from "./components/MainPageComponents/FriendGroups/
 import ProfileContainer from "./components/MainPageComponents/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import LoginContainer from "./components/MainPageComponents/Login/LoginContainer";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 
 function App(props) {
@@ -28,7 +28,7 @@ function App(props) {
                 <Route exact path="/">
                     <Redirect to="/profile"/>
                 </Route>
-                <Route path='/profile/:userID' render={() => <ProfileContainer /> }/>
+                <Route path='/profile/:userID?' render={() => <ProfileContainer /> }/>
                 <Route path='/feed' render={() => <NewsFeed/>}/>
                 <Route path='/fav' render={() => <FavPagesFeed/>}/>
                 <Route path='/friends' render={() => <FriendGroupsContainer/>}/>

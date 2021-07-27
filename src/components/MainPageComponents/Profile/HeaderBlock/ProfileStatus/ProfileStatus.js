@@ -1,24 +1,41 @@
 import React from 'react';
 import s from './ProfileStatus.module.css'
+import {compose} from "redux";
+import {connect} from "react-redux";
+import {withRouter} from "react-router-dom";
 
 class ProfileStatus extends React.Component {
+
     state = {
-        editMode: false
+        editMode: false,
+        status: this.props.status
     }
 
     activateEditMode = () => {
-        this.setState( {
-            editMode: true
-        })
+        if (this.props.match.params.userID == this.props.loginedUserId) {
+            this.setState( {
+                editMode: true,
+            })
+        }
     }
 
     deactivateEditMode = () => {
         this.setState( {
             editMode: false
         })
+        this.props.updateUserStatus(this.state.status)
+    }
+
+    onStatusChange = (e) => {
+        this.setState({
+            status: e.currentTarget.value
+        })
     }
 
     render() {
+
+
+
         return (
             <div>
                 {!this.state.editMode &&
@@ -28,7 +45,7 @@ class ProfileStatus extends React.Component {
                 }
                 {this.state.editMode &&
                 <div>
-                    <input value={this.props.status} onBlur={this.deactivateEditMode} autoFocus={true}/>
+                    <input onChange={this.onStatusChange} value={this.state.status} onBlur={this.deactivateEditMode} autoFocus={true}/>
                 </div>
                 }
             </div>
@@ -37,4 +54,9 @@ class ProfileStatus extends React.Component {
 }
 ;
 
-export default ProfileStatus;
+let mapStateToProps = (state) => ({
+    loginedUserId: state.header.userId
+});
+
+export default compose(
+    connect(mapStateToProps, {}), withRouter)(ProfileStatus)

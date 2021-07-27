@@ -18,7 +18,7 @@ const HeaderBlock = (props) => {
                 <div className={s.topThumb}>
                     <div className={s.wrapperImg}>
                         <img src={header} alt="background profile image"/>
-                </div>
+                    </div>
                 </div>
                 <div className={s.profileSection}>
                     <div className={s.row}>
@@ -33,11 +33,10 @@ const HeaderBlock = (props) => {
                                 <NavLink to="">Friends</NavLink>
                             </li>
                             <li className={s.authorInfo}>
-                            <NavLink to="">
-                                <h4>{props.fullName}</h4>
-                            </NavLink>
-                            <div className={s.instaLink}>{props.contacts?.instagram}</div>
-                                <ProfileStatus status={123}/>
+                                <NavLink to="">
+                                    <h4>{props.fullName}</h4>
+                                </NavLink>
+                                <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
                             </li>
                             <li>
                                 <NavLink to="">Photos</NavLink>

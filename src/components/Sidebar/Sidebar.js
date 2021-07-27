@@ -10,6 +10,7 @@ import {GoCalendar} from "react-icons/go";
 import {BiBadgeCheck, BiStats} from "react-icons/bi";
 import {NavLink} from "react-router-dom";
 import logo from "./logo.png";
+import {connect} from "react-redux";
 
 
 const SidebarButton = (props) => {
@@ -41,7 +42,7 @@ class Sidebar extends React.Component {
                 className={this.state.activeSidebar ? `${s.sidebar} ${s.active} ${s.move2}` : `${s.sidebar} ${s.move1}`}>
                 <ul className={s.sidebarList}>
                     <li>
-                        <NavLink to="/profile/2" className={s.logo}>
+                        <NavLink to={'/profile/' + this.props.loginedUserId} className={s.logo}>
                             <img src={logo} className={s.imgLogo} alt="Logo Olympus"/>
                             <h6 className={s.logoName}>Olympus</h6>
                         </NavLink>
@@ -86,4 +87,8 @@ class Sidebar extends React.Component {
     }
 }
 
-export default Sidebar;
+const mapStateToProps = (state) => ({
+    loginedUserId: state.header.userId
+});
+
+export default connect(mapStateToProps, {}) (Sidebar);

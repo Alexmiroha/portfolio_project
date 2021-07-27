@@ -11,6 +11,7 @@ import {profileAPI} from "../API/API";
 const ADD_POST = 'ADD-POST';
 const UPDT_NEWPOST_TEXTAREA = 'UPDT-NEWPOST-TEXTAREA';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
+const SET_USER_STATUS = 'SET_USER_STATUS';
 
 
 let initialState = {
@@ -25,7 +26,7 @@ let initialState = {
     ],
     newPostTextarea: "",
     profile: null,
-
+    status: "",
 
 }
 
@@ -53,6 +54,11 @@ const profileReduser = (state = initialState, action) => {
             return {
                 ...state, profile: action.profile
             }
+        };
+        case SET_USER_STATUS: {
+            return {
+                ...state, status: action.status
+            }
         }
 
         default:
@@ -67,6 +73,7 @@ export const changeTextarea = (text) => ({
     type: 'UPDT-NEWPOST-TEXTAREA', newText: text
 });
 export const SetUserProfile = (profile) => ({type: 'SET_USER_PROFILE', profile});
+export const SetUserStatus = (status) => ({type: 'SET_USER_STATUS', status});
 
 
 // thunks thunks thunks
@@ -74,6 +81,27 @@ export const getProfile = (userID) => {
     return (dispatch) => {
         profileAPI.getUsersProfile(userID).then(data => {
             dispatch(SetUserProfile(data));
+        })
+    }
+}
+
+export const getUserStatus = (userID) => {
+    return (dispatch) => {
+        profileAPI.getUserStatus(userID).then(response => {
+            dispatch(SetUserStatus(response.data));
+            if (response.data === null || response.data === '') {
+                dispatch(SetUserStatus('...'));
+            }
+        })
+    }
+}
+
+export const updateUserStatus = (status) => {
+    return (dispatch) => {
+        profileAPI.updateUserStatus(status).then(response => {
+            if (response.data.resultCode === 0) {
+                dispatch(SetUserStatus(status));
+            }
         })
     }
 }
