@@ -8,6 +8,9 @@ class HeaderContainer extends React.Component {
         this.props.getProfileHeader()
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        debugger
+    }
 
     render() {
         return <Header {...this.props}/>

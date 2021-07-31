@@ -5,8 +5,7 @@ class FriendGroupsAPIConnect extends React.Component {
 
 
     componentDidMount() {
-
-        this.props.getUsers(this.props.SelectedPage, this.props.UsersTotalCount);
+        this.props.getUsers(this.props.SelectedPage, this.props.UersPageSize);
     }
 
 
@@ -14,7 +13,6 @@ class FriendGroupsAPIConnect extends React.Component {
     onPageChanged = (pageNumber) => {
         this.props.getUsers(pageNumber, this.props.UersPageSize);
     }
-
 
     render() {
         return <FriendGroups onPageChanged={this.onPageChanged}

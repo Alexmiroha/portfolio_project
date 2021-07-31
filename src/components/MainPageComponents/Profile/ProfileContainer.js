@@ -19,6 +19,10 @@ class ProfileContainer extends React.Component {
     }
     
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        let newProps = this.props;
+        let newState = this.state;
+    }
 
     render() {
         return (
