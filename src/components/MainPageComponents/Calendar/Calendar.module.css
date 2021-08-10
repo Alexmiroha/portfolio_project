@@ -1,0 +1,11 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+.table {
+    display: flex;
+    justify-content: center;
+}
+.day {
+    padding-left: 30px;
+}
