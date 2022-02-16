@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-    changeMessageTextarea,
     SendMessage
 } from "../../../Redux/Reducer-Messages";
 import Messages from "./Messages";
@@ -15,5 +14,5 @@ let mapStateToProps = (state) => {
 }
 
 export default compose(
-    connect(mapStateToProps, {changeMessageTextarea, SendMessage}), withLoginRedirect
+    connect(mapStateToProps, {SendMessage}), withLoginRedirect
 )(Messages)

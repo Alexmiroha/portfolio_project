@@ -9,7 +9,6 @@ class HeaderContainer extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        debugger
     }
 
     render() {

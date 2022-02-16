@@ -19,28 +19,19 @@ let initialState = {
         {id: 4, message: "How to play in this game"},
         {id: 5, message: "Let's Start!!!"},
         {id: 6, message: "Are U ready???"},
-    ],
-    newMessageTextarea: ""
-
+    ]
 }
 
 
 const messagesReduser = (state = initialState, action) => {
-
     switch (action.type) {
-        case UPDT_MESSAGE_TEXTAREA:
-            return {
-                ...state,
-                newMessageTextarea: action.newText
-            };
         case SEND_MESSAGE:
             let newMessage = {
                 id: state.messagesData.length + 1,
-                message: state.newMessageTextarea
+                message: action.newMessageTextarea
             }
             return {
                 ...state,
-                newMessageTextarea: '',
                 messagesData: [...state.messagesData, newMessage]
             };
         default:
@@ -50,10 +41,6 @@ const messagesReduser = (state = initialState, action) => {
     }
 }
 
-export const changeMessageTextarea = (text) => ({
-    type: 'UPDT-MESSAGE-TEXTAREA', newText: text
-});
-
-export const SendMessage = () => ({type: 'SEND-MESSAGE'});
+export const SendMessage = (newMessageTextarea) => ({type: 'SEND-MESSAGE', newMessageTextarea});
 
 export default messagesReduser;
