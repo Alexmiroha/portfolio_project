@@ -12,7 +12,7 @@ let mapStateToProps = (state) => {
 }
 
 
-const CreateNewPostContainer = connect(mapStateToProps, {changeTextarea, addPost}) (CreateNewPost);
+const CreateNewPostContainer = connect(mapStateToProps, {addPost}) (CreateNewPost);
 
 
 

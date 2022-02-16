@@ -9,7 +9,6 @@ import {profileAPI} from "../API/API";
 
 
 const ADD_POST = 'ADD-POST';
-const UPDT_NEWPOST_TEXTAREA = 'UPDT-NEWPOST-TEXTAREA';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_USER_STATUS = 'SET_USER_STATUS';
 
@@ -24,7 +23,6 @@ let initialState = {
         },
 
     ],
-    newPostTextarea: "",
     profile: null,
     status: "",
 
@@ -33,21 +31,15 @@ let initialState = {
 const profileReduser = (state = initialState, action) => {
 
     switch (action.type) {
-        case UPDT_NEWPOST_TEXTAREA:
-            return {
-                ...state,
-                newPostTextarea: action.newText
-            };
         case ADD_POST:
             let newPost = {
                 id: state.postsData.length + 1, uImgs: {}, authorAvatar: {avatar},
                 postImage: {postImage}, authorName: "Jack Sparrow",
-                postTime: "1 minute ago", postMessage: state.newPostTextarea,
+                postTime: "1 minute ago", postMessage: action.addPostTexarea,
                 likeCount: 0, liker1: "", liker2: "", commentCount: 0, repostCount: 0
             }
             return {
                 ...state,
-                newPostTextarea: '',
                 postsData: [newPost, ...state.postsData]
             };
         case SET_USER_PROFILE: {
@@ -68,10 +60,7 @@ const profileReduser = (state = initialState, action) => {
 }
 
 
-export const addPost = () => ({type: 'ADD-POST'});
-export const changeTextarea = (text) => ({
-    type: 'UPDT-NEWPOST-TEXTAREA', newText: text
-});
+export const addPost = (addPostTexarea) => ({type: 'ADD-POST', addPostTexarea});
 export const SetUserProfile = (profile) => ({type: 'SET_USER_PROFILE', profile});
 export const SetUserStatus = (status) => ({type: 'SET_USER_STATUS', status});
 

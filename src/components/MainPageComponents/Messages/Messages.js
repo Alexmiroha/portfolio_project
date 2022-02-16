@@ -2,8 +2,7 @@ import React from 'react';
 import s from './Messages.module.css';
 import DialogItem from "./Dialog/DialogItem";
 import Message from "./Dialog/Message/Message";
-import {Field, reduxForm, values} from "redux-form";
-import {SendMessage} from "../../../Redux/Reducer-Messages";
+import {Field, reduxForm} from "redux-form";
 
 
 const MessageReduxForm = reduxForm({ form: "MessageForm"}) (MessageForm);
@@ -21,8 +20,6 @@ function MessageForm(props) {
 }
 
 const Messages = (props) => {
-
-    console.log()
 
     let addNewMessage = (values) => {
         props.SendMessage(values.messageTextarea)

@@ -80,7 +80,7 @@ position: relative;
     padding: 8px 15px 10px 175px;
 }
 
-.confirm input[type=button] {
+.button {
     cursor: pointer;
     width: 126px;
     border: none;
@@ -92,7 +92,7 @@ position: relative;
     outline: none;
 }
 
-.confirm input[type=button]:hover {
+.button:hover {
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
 }
 
