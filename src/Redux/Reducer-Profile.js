@@ -38,7 +38,7 @@ const profileReduser = (state = initialState, action) => {
                 postTime: "1 minute ago", postMessage: action.addPostTexarea,
                 likeCount: 0, liker1: "", liker2: "", commentCount: 0, repostCount: 0
             }
-            return {
+            return { 
                 ...state,
                 postsData: [newPost, ...state.postsData]
             };
