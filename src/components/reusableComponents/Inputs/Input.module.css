@@ -1,0 +1,19 @@
+.errorSpan {
+    color: red;
+}
+
+.input {
+    border: 0.2em solid rgba(136, 141, 168, 0.3);
+    color: rgb(136, 141, 168);
+    border-radius: 5px;
+    outline: none;
+}
+
+.input:focus {
+    border: 0.2em solid #FFC6BA;
+}
+
+
+.errorInput {
+    border: 0.2em solid rgba(255, 46, 0, 0.6);
+}
