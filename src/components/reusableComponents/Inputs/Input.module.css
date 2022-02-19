@@ -1,5 +1,11 @@
-.errorSpan {
-    color: red;
+.name {
+    display: flex;
+    position: relative;
+    font-size: 15px;
+    pointer-events: none;
+    top: -34px;
+    left: 10px;
+    transition: .2s ease-out all;
 }
 
 .input {
@@ -7,13 +13,62 @@
     color: rgb(136, 141, 168);
     border-radius: 5px;
     outline: none;
+    padding: 16px 109px 4px 10px;
 }
 
 .input:focus {
     border: 0.2em solid #FFC6BA;
 }
 
+.focused {
+    transform: scale(0.7) translateY(-10px) translateX(-58px);
+}
+
+.filed {
+    transform: scale(0.7) translateY(-10px) translateX(-58px);
+}
 
 .errorInput {
     border: 0.2em solid rgba(255, 46, 0, 0.6);
+}
+
+.errorWrapper {
+}
+
+.error {
+    position: absolute;
+    transform: translateX(280px) translateY(-68px) scale(.7);
+    color: #FFFFFF;
+    background: #3F4257;
+    padding: 15px 5px;
+    border-radius: 20px;
+    width: 200px;
+    border: 1px solid #3F4257;
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+.error:before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: 100%;
+    top: calc(50% - 12px);
+    border-top: 12px solid transparent;
+    border-right: 24px solid #3F4257;
+    border-bottom: 12px solid transparent;
+}
+
+
+.icon {
+    position: absolute;
+    background-color: rgba(255, 46, 0, 0.6);
+    padding: 0px 16px 23px 8px;
+    width: 1px;
+    height: 1px;
+    transform: translate(260px, -53px) scale(.8);
+    color: #FFFFFF;
+    pointer-events: none;
+    border-radius: 100px;
 }
