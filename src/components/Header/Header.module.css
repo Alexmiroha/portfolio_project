@@ -134,6 +134,10 @@
     margin: 20px 100px 20px 20px;
 }
 
+.logout {
+    cursor: pointer;
+}
+
 @media screen and (max-width: 1200px) {
     .pageTitle {
         left: 55px;

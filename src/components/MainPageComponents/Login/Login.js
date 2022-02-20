@@ -3,6 +3,9 @@ import s from './Login.module.css';
 import {Field, reduxForm} from "redux-form";
 import {maxLenthCreator, requiredCreator} from "../../../utils/validators";
 import Input from "../../reusableComponents/Inputs/Input";
+import {connect} from "react-redux";
+import {login, logout} from "../../../Redux/Reducer-Header";
+import {Redirect} from "react-router-dom";
 
 const maxLength25 = maxLenthCreator(25);
 const requiredLogin = requiredCreator('login');
@@ -12,8 +15,8 @@ const LoginForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit} className={s.form}>
                 <div className={s.inputs}>
-                    <Field component={Input} name={"login"} placeholder={"Login"} placeholder={"Login or email"} validate={[requiredLogin, maxLength25]}/>
-                    <Field component={Input} name={"password"} placeholder={"Password"} validate={[requiredPassword, maxLength25]}/>
+                    <Field component={Input} name={"email"} type={"text"} placeholder={"Login"} placeholder={"Login or email"} validate={[requiredLogin, maxLength25]}/>
+                    <Field component={Input} name={"password"} type={"password"} placeholder={"Password"} validate={[requiredPassword, maxLength25]}/>
                 </div>
                 <div className={s.options}>
                     <label>
@@ -34,10 +37,14 @@ const LoginReduxForm = reduxForm({form: "login"}) (LoginForm);
 const Login = (props) => {
 
     const onSubmit = (formData) => {
-        console.log(formData)
+        props.login(formData.email, formData.password, formData.rememberMe)
     }
 
-    return (
+    if (props.isLogined) {
+        return <Redirect to={"/profile"}/>
+    }
+
+    else return (
         <div className={s.loginComponent}>
             <h1 className={s.title}>Login</h1>
             <LoginReduxForm onSubmit={onSubmit}/>
@@ -45,6 +52,12 @@ const Login = (props) => {
     )
 };
 
-// редакс форм устарела, сейчас актуальны редакс фвйнл форм, формик, реакт хук форм
+// редакс форм устарела, сейчас актуальны редакс файнл форм, формик, реакт хук форм
 
-export default Login;
+
+
+const mapStateToProps = (state) => ({
+    isLogined: state.header.isLogined
+})
+
+export default connect(mapStateToProps, {login, logout}) (Login);

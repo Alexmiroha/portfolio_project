@@ -11,7 +11,7 @@ const Input = ({input, meta, ...props}) => {
     return (
         <div className={s.input_wrapper}>
             <input className={checkInput ? `${s.errorInput} ${s.input}` : `${s.input}`}
-                   type="text" {...meta} {...input} />
+                   type={props.type} {...meta} {...input} />
             <div className={checkFocused ? `${s.name} ${s.focused}` : `${s.name}`}>{props.placeholder}</div>
 
             {checkInput &&

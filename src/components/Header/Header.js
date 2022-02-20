@@ -8,8 +8,81 @@ import {IconContext} from "react-icons";
 import avatar from "../../img/UserAvatarSmall.jpg";
 
 const Header = (props) => {
+
+
     return (
         <header className={s.header}>
+            <HeaderCurrentPage/>
+
+
+            <div className={s.headerItems}>
+                <IconContext.Provider value={{size: '1.6em', color: '#fff'}}>
+
+                        { props.isLogined ?
+
+                            <HeaderUserButtons login={props.login} logout={props.logout}/>
+
+                            :
+
+                            <div className={s.loginButtonCont}>
+                                <NavLink className={s.loginButton} to="/login">Login</NavLink>
+                            </div>
+                        }
+
+                </IconContext.Provider>
+            </div>
+        </header>
+    );
+}
+
+
+const HeaderUserButtons = (props) => {
+    return (
+        <div className={s.controlBlock}>
+            <div className={s.searchField}>
+                <form action="">
+                    <input type="text" placeholder='Search people or pages...'/>
+                    <div className={s.findFriends}>Find Friends</div>
+                </form>
+            </div>
+            <div className={s.headerIcons}>
+                <div className={s.icon}><BiSmile/></div>
+                <div className={s.label} style={{backgroundColor: '#38A9FF'}}>1</div>
+                <div className={s.dropdown}></div>
+            </div>
+            <div className={s.headerIcons}>
+                <NavLink to="/messages" className={s.icon}><TiMessages/></NavLink>
+                <div className={s.label} style={{backgroundColor: '#7C5AC2'}}>4</div>
+                <div className={s.dropdown}></div>
+            </div>
+            <div className={s.headerIcons}>
+                <div className={s.icon}><RiFlashlightLine/></div>
+                <div className={s.label} style={{backgroundColor: '#FF5E3A'}}>2</div>
+                <div className={s.dropdown}></div>
+            </div>
+            <div className={s.yourAccountButton}>
+                <div className={s.accButtonBlock}>
+                    <div className={s.avatar}>
+                        <img src={avatar} className={s.imgAvatar} alt="avatar"/>
+                        <div className={s.status}></div>
+                    </div>
+                    <div className={s.nameBlock}>
+                        <div className={s.name}>
+                            <div>{props.login}</div>
+                        </div>
+                        <div className={s.pseudoName}>Captain</div>
+                    </div>
+                    <span className={s.arrow}>ˇ</span>
+                    <button className={s.logout} onClick={props.logout}>logout</button>
+                </div>
+                <div className={s.dropdown}></div>
+            </div>
+        </div>
+    )
+}
+const HeaderCurrentPage = (props) => {
+    return (
+        <div>
             <Route path='/profile' render={() => {
                 return (<h6 className={s.pageTitle}>Profile Page</h6>)
             }}/>
@@ -46,60 +119,8 @@ const Header = (props) => {
             <Route path='/login' render={() => {
                 return (<h6 className={s.pageTitle}>Login Page</h6>)
             }}/>
-            <div className={s.headerItems}>
-                <IconContext.Provider value={{size: '1.6em', color: '#fff'}}>
-
-                        { props.isLogined ?
-                            <div className={s.controlBlock}>
-                                <div className={s.searchField}>
-                                    <form action="">
-                                        <input type="text" placeholder='Search people or pages...'/>
-                                        <div className={s.findFriends}>Find Friends</div>
-                                    </form>
-                                </div>
-                                <div className={s.headerIcons}>
-                                    <div className={s.icon}><BiSmile/></div>
-                                    <div className={s.label} style={{backgroundColor: '#38A9FF'}}>1</div>
-                                    <div className={s.dropdown}></div>
-                                </div>
-                                <div className={s.headerIcons}>
-                                    <NavLink to="/messages" className={s.icon}><TiMessages/></NavLink>
-                                    <div className={s.label} style={{backgroundColor: '#7C5AC2'}}>4</div>
-                                    <div className={s.dropdown}></div>
-                                </div>
-                                <div className={s.headerIcons}>
-                                    <div className={s.icon}><RiFlashlightLine/></div>
-                                    <div className={s.label} style={{backgroundColor: '#FF5E3A'}}>2</div>
-                                    <div className={s.dropdown}></div>
-                                </div>
-                                <div className={s.yourAccountButton}>
-                                    <div className={s.accButtonBlock}>
-                                        <div className={s.avatar}>
-                                            <img src={avatar} className={s.imgAvatar} alt="avatar"/>
-                                            <div className={s.status}></div>
-                                        </div>
-                                        <div className={s.nameBlock}>
-                                            <div className={s.name}>
-                                                <div>{props.login}</div>
-                                            </div>
-                                            <div className={s.pseudoName}>Captain</div>
-                                        </div>
-                                        <span className={s.arrow}>ˇ</span>
-                                    </div>
-                                    <div className={s.dropdown}></div>
-                                </div>
-                            </div>
-                            :
-
-                            <div className={s.loginButtonCont}>
-                                <NavLink className={s.loginButton} to="/login">Login</NavLink>
-                            </div>
-                        }
-
-                </IconContext.Provider>
-            </div>
-        </header>
-    );
+        </div>
+    )
 }
 
 export default Header;

@@ -1,7 +1,7 @@
-import {headerAPI, usersAPI} from "../API/API";
-import {SetUnfollow, toggleFollowingInProgress} from "./Reducer-FriendGroups";
+import {headerAPI} from "../API/API";
 
 const SET_USER_AUTH = 'SET_USER_AUTH'
+const DELETE_USER_AUTH = 'DELETE_USER_AUTH'
 
 
 let initialState = {
@@ -21,7 +21,13 @@ const HeaderReduser = (state = initialState, action) => {
                 ...state,
                 ...action.data,
                 isLogined: true
-            };
+            }
+        case DELETE_USER_AUTH:
+            return {
+                ...state,
+                ...action.data,
+                isLogined: false
+            }
         default:
             return state;
 
@@ -31,6 +37,10 @@ const HeaderReduser = (state = initialState, action) => {
 
 export const setUserAuthData = (userId, email, login) => ({
     type: 'SET_USER_AUTH', data: {userId, email, login}
+});
+
+export const deleteUserAuthData = (userId, email, login) => ({
+    type: 'DELETE_USER_AUTH', data: {userId, email, login}
 });
 
 // thunks thunks thunks
@@ -45,6 +55,26 @@ export const getProfileHeader = () => {
 
     }
 }
+
+export const login = (email, password, rememberMe) => (dispatch) => {
+    headerAPI.login(email, password, rememberMe)
+        .then(response => {
+            if (response.data.resultCode === 0) {
+                dispatch(getProfileHeader())
+            }
+        });
+}
+
+export const logout = () => (dispatch) => {
+    headerAPI.logout()
+        .then(response => {
+            if (response.data.resultCode === 0) {
+                dispatch(deleteUserAuthData(null, null, null))
+            }
+        });
+}
+
+
 // thunks thunks thunks
 
 export default HeaderReduser;
