@@ -27,7 +27,7 @@ const SidebarButton = (props) => {
 class Sidebar extends React.Component {
 
     state = {
-        activeSidebar: false
+        activeSidebar: null,
     }
 
     changeSidebar = () => {
@@ -39,7 +39,7 @@ class Sidebar extends React.Component {
     render() {
         return (
             <nav
-                className={this.state.activeSidebar ? `${s.sidebar} ${s.active} ${s.move2}` : `${s.sidebar} ${s.move1}`}>
+                className={`${s.sidebar} ${this.state.activeSidebar === true ? s.move2 : ""} ${this.state.activeSidebar === false ? s.move1 : ""}`}>
                 <ul className={s.sidebarList}>
                     <li>
                         <NavLink to={'/profile/' + this.props.loginedUserId} className={s.logo}>

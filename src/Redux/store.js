@@ -6,6 +6,7 @@ import HeaderReduser from "./Reducer-Header";
 import thunk from "redux-thunk";
 import loginReduser from "./Reduser-Login";
 import { reducer as formReduser } from "redux-form";
+import AppReduser from "./Reducer-App";
 
 let redusers = combineReducers({
     profilePage: profileReduser,
@@ -14,6 +15,8 @@ let redusers = combineReducers({
     header: HeaderReduser,
     loginPage: loginReduser,
     form: formReduser,
+    app: AppReduser,
+
 
 });
 

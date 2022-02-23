@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './FriendsGroup.module.css';
-import preloader from '../../../img/294.svg'
 import {NavLink} from "react-router-dom";
+import PreloaderMain from "../../reusableComponents/Preloaders/Preloader";
 
 let FriendGroups = (props) => {
     let pagesCount = Math.ceil(props.UsersTotalCount / props.UersPageSize);
@@ -44,7 +44,7 @@ let FriendGroups = (props) => {
             </div>
             <h2>Friends</h2>
             <div className={s.friendsBlock}>
-                {props.isLoading ? <img src={preloader}/> : null}
+                {props.isLoading ? <PreloaderMain/> : null}
                 {
                     props.users?.map(u =>
                         <div key={u.id}>
