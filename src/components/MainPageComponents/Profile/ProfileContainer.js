@@ -22,10 +22,9 @@ class ProfileContainer extends React.Component {
     componentDidUpdate(prevProps, prevState, snapshot) {
         let newProps = this.props;
         let newState = this.state;
-        console.log(prevProps, newProps)
-        if (newProps.match.params.userId !== prevProps.match.params.userId) {
-            this.props.getProfile(newProps.match.params.userId);
-        //    тестим, не понятно чи робить (має мінять юзера при зміні урла)
+        if (newProps.match.params.userID !== prevProps.match.params.userID) {
+            this.props.getProfile(newProps.match.params.userID);
+            this.props.getUserStatus(newProps.match.params.userID);
         }
     }
 

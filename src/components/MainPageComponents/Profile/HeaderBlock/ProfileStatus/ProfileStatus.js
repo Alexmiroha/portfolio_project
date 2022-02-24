@@ -12,7 +12,7 @@ class ProfileStatus extends React.Component {
     }
 
     activateEditMode = () => {
-        if (this.props.match.params.userID === this.props.loginedUserId) {
+        if (this.props.match.params.userID == this.props.loginedUserId) {
             this.setState( {
                 editMode: true,
             })
@@ -41,9 +41,6 @@ class ProfileStatus extends React.Component {
     }
 
     render() {
-
-
-
         return (
             <div>
                 {!this.state.editMode &&

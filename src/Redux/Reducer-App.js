@@ -4,6 +4,7 @@ import {stopSubmit} from "redux-form";
 const SET_USER_AUTH = 'SET_USER_AUTH'
 const DELETE_USER_AUTH = 'DELETE_USER_AUTH'
 const SET_INITIALIZED = 'SET_INITIALIZED'
+const CHANGE_SIDEBAR = 'CHANGE_SIDEBAR'
 
 
 let initialState = {
@@ -12,13 +13,19 @@ let initialState = {
     email: null,
     login: null,
     isLoading: false,
-    isLogined: false
+    isLogined: false,
+    activeSidebar: null
 }
 
 
 const AppReduser = (state = initialState, action) => {
 
     switch (action.type) {
+        case CHANGE_SIDEBAR:
+            return {
+                ...state,
+                activeSidebar: action.value
+            }
         case SET_INITIALIZED:
             return {
                 ...state,
@@ -42,6 +49,10 @@ const AppReduser = (state = initialState, action) => {
 
     }
 }
+
+export const changeSidebar = (value) => ({
+    type: 'CHANGE_SIDEBAR', value
+});
 
 export const setInitializationCompleted = () => ({
     type: 'SET_INITIALIZED'
@@ -80,7 +91,8 @@ export const login = (email, password, rememberMe) => (dispatch) => {
     authAPI.login(email, password, rememberMe)
         .then(response => {
             if (response.data.resultCode === 0) {
-                dispatch(getAuthData())
+                dispatch(getAuthData());
+                dispatch(changeSidebar(null))
             }
             else {
                 let error = response.data.messages.length > 0 ? response.data.messages[0] : "Unknown error"
@@ -94,6 +106,7 @@ export const logout = () => (dispatch) => {
         .then(response => {
             if (response.data.resultCode === 0) {
                 dispatch(deleteUserAuthData(null, null, null))
+                dispatch(changeSidebar(null))
             }
         });
 }

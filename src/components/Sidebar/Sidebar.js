@@ -11,6 +11,7 @@ import {BiBadgeCheck, BiStats} from "react-icons/bi";
 import {NavLink} from "react-router-dom";
 import logo from "./logo.png";
 import {connect} from "react-redux";
+import {changeSidebar} from "../../Redux/Reducer-App";
 
 
 const SidebarButton = (props) => {
@@ -26,20 +27,10 @@ const SidebarButton = (props) => {
 
 class Sidebar extends React.Component {
 
-    state = {
-        activeSidebar: null,
-    }
-
-    changeSidebar = () => {
-        this.setState({
-            activeSidebar: !this.state.activeSidebar
-        })
-    }
-
     render() {
         return (
             <nav
-                className={`${s.sidebar} ${this.state.activeSidebar === true ? s.move2 : ""} ${this.state.activeSidebar === false ? s.move1 : ""}`}>
+                className={`${s.sidebar} ${this.props.activeSidebar === true ? s.move2 : ""} ${this.props.activeSidebar === false ? s.move1 : ""}`}>
                 <ul className={s.sidebarList}>
                     <li>
                         <NavLink to={'/profile/' + this.props.loginedUserId} className={s.logo}>
@@ -49,7 +40,7 @@ class Sidebar extends React.Component {
                     </li>
                     {/*!!!!!!!!!!styles 4 icons!!!!!!!!!!!!*/}
                     <IconContext.Provider value={{className: 'react-icons', size: '1.5em'}}>
-                        <li className={`${s.button} ${s.collapseMenu}`} onClick={this.changeSidebar}>
+                        <li className={`${s.button} ${s.collapseMenu}`} onClick={() => {this.props.changeSidebar(!this.props.activeSidebar)}}>
                             <div className={s.iconSB}><AiOutlineCloseCircle/></div>
                             <div className={s.buttonName}>Collapse Menu</div>
                         </li>
@@ -98,7 +89,8 @@ class Sidebar extends React.Component {
 
 const mapStateToProps = (state) => ({
     loginedUserId: state.app.userId,
-    isLogined: state.app.isLogined
+    isLogined: state.app.isLogined,
+    activeSidebar: state.app.activeSidebar
 });
 
-export default connect(mapStateToProps, {})(Sidebar);
+export default connect(mapStateToProps, {changeSidebar}) (Sidebar);

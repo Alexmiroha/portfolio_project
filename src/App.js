@@ -29,6 +29,9 @@ class App extends React.Component {
     }
 
     render() {
+
+        const loginedUserId = this.props.loginedUserId;
+
         if (!this.props.initialized) {
             return (
                 <div className="mainPreloader">
@@ -43,7 +46,10 @@ class App extends React.Component {
                     <Sidebar/>
                     <div className='App-wrapper-content'>
                         <Route exact path="/">
-                            <Redirect to="/profile"/>
+                            <Redirect to="/login"/>
+                        </Route>
+                        <Route exact path="/profile">
+                            <Redirect to={`/profile/${this.props.loginedUserId}`}/>
                         </Route>
                         <Route path='/profile/:userID?' render={() => <ProfileContainer/>}/>
                         <Route path='/feed' render={() => <NewsFeed/>}/>
@@ -66,7 +72,8 @@ class App extends React.Component {
 
 
 const mapStateToProps = (state) => ({
-    initialized: state.app.initialized
+    initialized: state.app.initialized,
+    loginedUserId: state.app.userId
 });
 
 export default compose(
