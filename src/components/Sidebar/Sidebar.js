@@ -53,20 +53,28 @@ class Sidebar extends React.Component {
                             <div className={s.iconSB}><AiOutlineCloseCircle/></div>
                             <div className={s.buttonName}>Collapse Menu</div>
                         </li>
-
-                        <SidebarButton path='/feed' icon=<RiNewspaperLine/> name='Newsfeed'/>
-                        <SidebarButton path='/fav' icon=<TiStarOutline/> name='Fav Pages Feed'/>
-                        <SidebarButton path='/friends' icon=<HiOutlineUserGroup/> name='Friend Groups'/>
-                        <SidebarButton path='/music' icon=<BsMusicPlayer/> name='Music & Playlists'/>
-                        <SidebarButton path='/weather' icon=<TiWeatherPartlySunny/> name='Weather'/>
-                        <SidebarButton path='/calendar' icon=<GoCalendar/> name='Calendar and Events'/>
-                        <SidebarButton path='/badges' icon=<BiBadgeCheck/> name='Community Badges'/>
-                        <SidebarButton path='/stats' icon=<BiStats/> name='Account Stats'/>
-                        <SidebarButton path='/widgets' icon=<BsColumns/> name='Manage Widgets'/>
-
+                        {this.props.isLogined ?
+                            <div>
+                            <SidebarButton path='/feed' icon=<RiNewspaperLine/> name='Newsfeed'/>
+                            <SidebarButton path='/fav' icon=<TiStarOutline/> name='Fav Pages Feed'/>
+                            <SidebarButton path='/friends' icon=<HiOutlineUserGroup/> name='Friend Groups'/>
+                            <SidebarButton path='/music' icon=<BsMusicPlayer/> name='Music & Playlists'/>
+                            <SidebarButton path='/weather' icon=<TiWeatherPartlySunny/> name='Weather'/>
+                            <SidebarButton path='/calendar' icon=<GoCalendar/> name='Calendar and Events'/>
+                            <SidebarButton path='/badges' icon=<BiBadgeCheck/> name='Community Badges'/>
+                            <SidebarButton path='/stats' icon=<BiStats/> name='Account Stats'/>
+                            <SidebarButton path='/widgets' icon=<BsColumns/> name='Manage Widgets'/>
+                        </div>
+                            :
+                            <div>
+                            <SidebarButton path='/weather' icon=<TiWeatherPartlySunny/> name='Weather'/>
+                            <SidebarButton path='/calendar' icon=<GoCalendar/> name='Calendar and Events'/>
+                        </div>
+                            }
                     </IconContext.Provider>
                 </ul>
-                <div className={s.profileCompletitionBlock}>
+                {this.props.isLogined ?
+                    <div className={s.profileCompletitionBlock}>
                     <div className={s.compSkillsItem}>
                         <div className={s.infoCompl}>
                             <div className={s.tittleCompl}>Profile Completition</div>
@@ -82,13 +90,15 @@ class Sidebar extends React.Component {
                         so people can know more about you!
                     </div>
                 </div>
+                : ''}
             </nav>
         );
     }
 }
 
 const mapStateToProps = (state) => ({
-    loginedUserId: state.header.userId
+    loginedUserId: state.app.userId,
+    isLogined: state.app.isLogined
 });
 
-export default connect(mapStateToProps, {}) (Sidebar);
+export default connect(mapStateToProps, {})(Sidebar);

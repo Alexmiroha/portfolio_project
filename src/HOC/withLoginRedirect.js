@@ -1,9 +1,9 @@
 import React from 'react';
-import Redirect from "react-router-dom/es/Redirect";
+import { Redirect } from "react-router-dom"
 import {connect} from "react-redux";
 
 let mapStateToProps = (state) => ({
-    isLogined: state.header.isLogined
+    isLogined: state.app.isLogined
 });
 
 

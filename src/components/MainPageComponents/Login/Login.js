@@ -56,7 +56,7 @@ const Login = (props) => {
 
 
 const mapStateToProps = (state) => ({
-    isLogined: state.header.isLogined
+    isLogined: state.app.isLogined
 })
 
 export default connect(mapStateToProps, {login, logout})(Login);

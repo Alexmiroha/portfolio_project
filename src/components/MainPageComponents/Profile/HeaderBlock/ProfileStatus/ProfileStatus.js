@@ -12,7 +12,7 @@ class ProfileStatus extends React.Component {
     }
 
     activateEditMode = () => {
-        if (this.props.match.params.userID == this.props.loginedUserId) {
+        if (this.props.match.params.userID === this.props.loginedUserId) {
             this.setState( {
                 editMode: true,
             })
@@ -63,7 +63,7 @@ class ProfileStatus extends React.Component {
 ;
 
 let mapStateToProps = (state) => ({
-    loginedUserId: state.header.userId
+    loginedUserId: state.app.userId
 });
 
 export default compose(
