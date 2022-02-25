@@ -1,0 +1,44 @@
+.dropdown {
+    position: absolute;
+    border: 1px solid red;
+    color: black;
+    background: #FFFFFF;
+    border-radius: 4px;
+    box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
+    width: 220px;
+    top: calc(100% + 5px);
+    right: 30px;
+    padding: 5px;
+}
+.title {
+    font-size: 9px;
+    text-transform: uppercase;
+}
+
+.dropdown li {
+    display: flex;
+}
+
+.status_icon {
+    width: 8px;
+    height: 8px;
+    background-color: #32E2CC;
+    position: relative;display: block;
+    border-radius: 100px;
+}
+
+.online {
+    background-color: #32E2CC;
+}
+
+.away {
+    background-color: #ffd52f;
+}
+
+.disconnected {
+    background-color: #ff4f60;
+}
+
+.invisible {
+    background-color: #cbdfee;
+}

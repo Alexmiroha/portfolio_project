@@ -5,7 +5,7 @@ import {BiSmile} from "react-icons/bi";
 import {TiMessages} from "react-icons/ti";
 import {RiFlashlightLine} from "react-icons/ri";
 import {IconContext} from "react-icons";
-import avatar from "../../img/UserAvatarSmall.jpg";
+import AccountButton from "./AccountButton/AccountButton";
 
 const Header = (props) => {
 
@@ -60,23 +60,7 @@ const HeaderUserButtons = (props) => {
                 <div className={s.label} style={{backgroundColor: '#FF5E3A'}}>2</div>
                 <div className={s.dropdown}></div>
             </div>
-            <div className={s.yourAccountButton}>
-                <div className={s.accButtonBlock}>
-                    <div className={s.avatar}>
-                        <img src={avatar} className={s.imgAvatar} alt="avatar"/>
-                        <div className={s.status}></div>
-                    </div>
-                    <div className={s.nameBlock}>
-                        <div className={s.name}>
-                            <div>{props.login}</div>
-                        </div>
-                        <div className={s.pseudoName}>Captain</div>
-                    </div>
-                    <span className={s.arrow}>ˇ</span>
-                    <button className={s.logout} onClick={props.logout}>logout</button>
-                </div>
-                <div className={s.dropdown}></div>
-            </div>
+            <AccountButton login={props.login} logout={props.logout} />
         </div>
     )
 }
