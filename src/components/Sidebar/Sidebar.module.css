@@ -122,20 +122,6 @@
     z-index: 6;
 }
 
-
-
-li {
-    list-style-type: none;
-    margin-bottom: 0px;
-}
-
-a {
-    text-decoration: none;
-}
-ul {
-    padding-inline-start: 0px;
-}
-
 .logo {
     background: #ff5e3a;
     text-transform: uppercase;

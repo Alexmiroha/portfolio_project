@@ -15,10 +15,6 @@
     text-transform: uppercase;
 }
 
-.dropdown li {
-    display: flex;
-}
-
 .status_icon {
     width: 8px;
     height: 8px;

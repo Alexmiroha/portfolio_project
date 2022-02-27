@@ -1,9 +1,14 @@
 import React from 'react';
 import s from './Dropdown.module.css'
+import {IconContext} from "react-icons";
+import {NavLink} from "react-router-dom";
+import {RiLogoutCircleLine} from "react-icons/ri";
+import ReusableSidebarDropdownButton from "../../../reusableComponents/Buttons/ReusableSidebarDropdownButton";
 
 const Dropdown = (props) => {
     return (
         <div className={s.dropdown}>
+            <IconContext.Provider value={{className: 'react-icons', size: '1.5em'}}>
             <div className={s.AccountButtons}>
                 <h6 className={s.title}>YOUR ACCOUNT</h6>
                 <ul>
@@ -13,6 +18,7 @@ const Dropdown = (props) => {
                     <li>
                         <div>Create Fav Page</div>
                     </li>
+                    <ReusableSidebarDropdownButton path='' onClick={props.logout} icon=<RiLogoutCircleLine/>  name='Newsfeed'/>
                     <li>
                         <button className={s.logout} onClick={props.logout}>Log Out</button>
                     </li>
@@ -61,6 +67,7 @@ const Dropdown = (props) => {
                     </li>
                 </ul>
             </div>
+            </IconContext.Provider>
         </div>
     );
 };

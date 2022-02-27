@@ -24,6 +24,18 @@ h6 {
   margin: 0;
 }
 
+li {
+  list-style-type: none;
+  margin-bottom: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+ul {
+  padding-inline-start: 0px;
+}
+
 .mainPreloader {
   position: absolute;
   top: 50%;
