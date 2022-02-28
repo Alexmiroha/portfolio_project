@@ -12,7 +12,6 @@ import {NavLink} from "react-router-dom";
 import logo from "./logo.png";
 import {connect} from "react-redux";
 import {changeSidebar} from "../../Redux/Reducer-App";
-import ReusableSidebarDropdownButton from "../reusableComponents/Buttons/ReusableSidebarDropdownButton";
 
 
 const SidebarButton = (props) => {
@@ -47,9 +46,9 @@ class Sidebar extends React.Component {
                         </li>
                         {this.props.isLogined ?
                             <div>
-                            <ReusableSidebarDropdownButton path='/feed' icon=<RiNewspaperLine/> name='Newsfeed'/>
-                            <ReusableSidebarDropdownButton path='/fav' icon=<TiStarOutline/> name='Fav Pages Feed'/>
-                            <ReusableSidebarDropdownButton path='/friends' icon=<HiOutlineUserGroup/> name='Friend Groups'/>
+                            <SidebarButton path='/feed' icon=<RiNewspaperLine/> name='Newsfeed'/>
+                            <SidebarButton path='/fav' icon=<TiStarOutline/> name='Fav Pages Feed'/>
+                            <SidebarButton path='/friends' icon=<HiOutlineUserGroup/> name='Friend Groups'/>
                             <SidebarButton path='/music' icon=<BsMusicPlayer/> name='Music & Playlists'/>
                             <SidebarButton path='/weather' icon=<TiWeatherPartlySunny/> name='Weather'/>
                             <SidebarButton path='/calendar' icon=<GoCalendar/> name='Calendar and Events'/>

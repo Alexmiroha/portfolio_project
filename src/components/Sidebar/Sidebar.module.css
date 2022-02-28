@@ -35,8 +35,6 @@
     max-width: 70px;
 }
 
-
-
 .move1 .button {
     animation: showNamesButton 1s;
     animation-fill-mode: forwards;
@@ -44,7 +42,6 @@
     max-height: 56px;
     overflow: hidden;
     max-width: 70px;
-
 }
 
 @keyframes showCompl {

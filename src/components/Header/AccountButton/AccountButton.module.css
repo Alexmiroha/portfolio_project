@@ -49,3 +49,10 @@
 .logout {
     cursor: pointer;
 }
+
+.dropdownWrapper {
+    top: calc(100% + -80px);
+    right: 40px;
+    position: absolute;
+    padding: 60px 15px;
+}

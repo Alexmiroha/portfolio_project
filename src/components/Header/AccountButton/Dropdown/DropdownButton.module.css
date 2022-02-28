@@ -3,10 +3,10 @@
 
 .itemsWrapper {
     display: flex;
+    padding: 10px 20px;
 }
 
 .icon {
-    padding: 14px 0px 14px 25px;
     color: #9a9fbf;
     transition: color .5s linear;
 }
@@ -16,14 +16,13 @@
 }
 
 .buttonName {
+    padding: 3px 0 0 16px;
     color: #9a9fbf;
     font-weight: 700;
     font-size: 13px;
-    padding: 18px 15px 20px 25px;
     transition: color .5s linear;
 }
 
 .button:hover .buttonName {
     color: #515365;
 }
-

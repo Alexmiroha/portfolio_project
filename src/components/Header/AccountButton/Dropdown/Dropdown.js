@@ -1,9 +1,13 @@
 import React from 'react';
 import s from './Dropdown.module.css'
 import {IconContext} from "react-icons";
-import {NavLink} from "react-router-dom";
 import {RiLogoutCircleLine} from "react-icons/ri";
-import ReusableSidebarDropdownButton from "../../../reusableComponents/Buttons/ReusableSidebarDropdownButton";
+import {GoSettings} from "react-icons/go";
+import {TiStarOutline} from "react-icons/ti";
+import DropdownButton from "./DropdownButton";
+import StatusChanger from "./StatusChanger";
+import NicknameChanger from "./NicknameChanger";
+
 
 const Dropdown = (props) => {
     return (
@@ -12,43 +16,23 @@ const Dropdown = (props) => {
             <div className={s.AccountButtons}>
                 <h6 className={s.title}>YOUR ACCOUNT</h6>
                 <ul>
-                    <li>
-                        <div>Profile Settings</div>
-                    </li>
-                    <li>
-                        <div>Create Fav Page</div>
-                    </li>
-                    <ReusableSidebarDropdownButton path='' onClick={props.logout} icon=<RiLogoutCircleLine/>  name='Newsfeed'/>
-                    <li>
-                        <button className={s.logout} onClick={props.logout}>Log Out</button>
-                    </li>
+                    <DropdownButton path='/stats' onClick={''} icon=<GoSettings/>  name='Profile Settings'/>
+                    <DropdownButton path='/stats' onClick={''} icon=<TiStarOutline/>  name='Create Fav Page'/>
+                    <DropdownButton path='' onClick={props.logout} icon=<RiLogoutCircleLine/>  name='Logout'/>
                 </ul>
             </div>
-            <div className={s.statusSetting}>
+            <div className={s.statusSettings}>
                 <h6 className={s.title}>ONLINE STATUS</h6>
-                <ul>
-                    <li>
-                        <span className={`${s.status_icon} ${s.onlone}`}/>
-                        <div>Online</div>
-                    </li>
-                    <li>
-                        <span className={`${s.status_icon} ${s.away}`}/>
-                        <div>Away</div>
-                    </li>
-                    <li>
-                        <span className={`${s.status_icon} ${s.disconnected}`}></span>
-                        <div>Disconnected</div>
-                    </li>
-                    <li>
-                        <span className={`${s.status_icon} ${s.invisible}`}/>
-                        <div>Invisible</div>
-                    </li>
+                <ul className={s.statutsWrapper}>
+                    <StatusChanger BGColor={"#32E2CC"} title={'Online'}/>
+                    <StatusChanger BGColor={"#ffd52f"} title={'Away'}/>
+                    <StatusChanger BGColor={"#ff4f60"} title={'Disconnected'}/>
+                    <StatusChanger BGColor={"#cbdfee"} title={'Invisible'}/>
                 </ul>
             </div>
             <div className={s.changeNickname}>
                 <h6 className={s.title}>CUSTOM NICKNAME</h6>
-                <input type="text" placeholder={"CAPTAIN"}/>
-                <button>change</button>
+                <NicknameChanger/>
             </div>
             <div className={s.about}>
                 <h6 className={s.title}>ABOUT OLYMPUS</h6>

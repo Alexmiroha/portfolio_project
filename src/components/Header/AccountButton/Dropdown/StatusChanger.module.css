@@ -1,0 +1,17 @@
+.statusChanger {
+    display: flex;
+    padding: 7px 0;
+}
+
+.status_icon {
+    width: 8px;
+    height: 8px;
+    position: relative;display: block;
+    border-radius: 100px;
+    margin: 5px 20px 0 0;
+}
+
+.name {
+    font-size: 12px;
+    color: #888da8;
+}

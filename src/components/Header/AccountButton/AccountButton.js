@@ -9,7 +9,7 @@ const AccountButton = (props) => {
 
     return (
         <div className={s.yourAccountButton}>
-            <div className={s.accButtonBlock} onClick={() => {setActivedropdown(!activeDropdown)}}>
+            <div className={s.accButtonBlock} onMouseEnter={() => {setActivedropdown(!activeDropdown)}}>
                 <div className={s.avatar}>
                     <img src={avatar} className={s.imgAvatar} alt="avatar"/>
                     <div className={s.status}></div>
@@ -24,7 +24,7 @@ const AccountButton = (props) => {
             </div>
             {activeDropdown
             &&
-            <div className={s.dropdownWrapper}>
+            <div className={s.dropdownWrapper} onMouseLeave={() => {setActivedropdown(!activeDropdown)}}>
                 <Dropdown logout={props.logout}/>
             </div>
             }
