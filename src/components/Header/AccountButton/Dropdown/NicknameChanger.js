@@ -1,13 +1,16 @@
 import React from 'react';
 import {FaCheck} from "react-icons/fa";
+import s from './NicknameChanger.module.css'
 
 
 const NicknameChanger = (props) => {
     return (
-        <form>
-            <input type="text"/>
+        <form className={s.form}>
+            <input type="text" placeholder='Nickname'/>
             <button>
-                <FaCheck/>
+                <div className={s.icon}>
+                    <FaCheck/>
+                </div>
             </button>
         </form>
     );

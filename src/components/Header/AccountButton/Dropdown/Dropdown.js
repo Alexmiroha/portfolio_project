@@ -36,18 +36,18 @@ const Dropdown = (props) => {
             </div>
             <div className={s.about}>
                 <h6 className={s.title}>ABOUT OLYMPUS</h6>
-                <ul>
+                <ul className={s.about_list}>
                     <li>
-                        <div>Terms And Conditions</div>
+                        <div className={s.about_link}>Terms And Conditions</div>
                     </li>
                     <li>
-                        <div>FAQs</div>
+                        <div className={s.about_link}>FAQs</div>
                     </li>
                     <li>
-                        <div>Careers</div>
+                        <div className={s.about_link}>Careers</div>
                     </li>
                     <li>
-                        <div>Contact</div>
+                        <div className={s.about_link}>Contact</div>
                     </li>
                 </ul>
             </div>

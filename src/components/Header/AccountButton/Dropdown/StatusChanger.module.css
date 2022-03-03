@@ -1,6 +1,7 @@
 .statusChanger {
     display: flex;
     padding: 7px 0;
+    cursor: pointer;
 }
 
 .status_icon {
@@ -14,4 +15,9 @@
 .name {
     font-size: 12px;
     color: #888da8;
+}
+
+.statusChanger:hover .name {
+
+    color: #515365;
 }
