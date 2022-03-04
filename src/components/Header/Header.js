@@ -9,7 +9,6 @@ import AccountButton from "./AccountButton/AccountButton";
 
 const Header = (props) => {
 
-
     return (
         <header className={s.header}>
             <HeaderCurrentPage/>
@@ -20,7 +19,7 @@ const Header = (props) => {
 
                         { props.isLogined ?
 
-                            <HeaderUserButtons login={props.login} logout={props.logout}/>
+                            <HeaderUserButtons login={props.login} logout={props.logout} nickname={props.nickname}/>
 
                             :
 
@@ -60,7 +59,7 @@ const HeaderUserButtons = (props) => {
                 <div className={s.label} style={{backgroundColor: '#FF5E3A'}}>2</div>
                 <div className={s.dropdown}></div>
             </div>
-            <AccountButton login={props.login} logout={props.logout} />
+            <AccountButton login={props.login} logout={props.logout} nickname={props.nickname} />
         </div>
     )
 }

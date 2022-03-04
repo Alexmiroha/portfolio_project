@@ -11,7 +11,7 @@ import {profileAPI} from "../API/API";
 const ADD_POST = 'ADD-POST';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
 const SET_USER_STATUS = 'SET_USER_STATUS';
-
+const SET_USER_NICKNAME = 'SET_USER_NICKNAME';
 
 let initialState = {
     postsData: [
@@ -25,6 +25,7 @@ let initialState = {
     ],
     profile: null,
     status: "",
+    nickname: "Space Cowboy",
 
 }
 
@@ -41,15 +42,20 @@ const profileReduser = (state = initialState, action) => {
             return { 
                 ...state,
                 postsData: [newPost, ...state.postsData]
-            };
+            }
         case SET_USER_PROFILE: {
             return {
                 ...state, profile: action.profile
             }
-        };
+        }
         case SET_USER_STATUS: {
             return {
                 ...state, status: action.status
+            }
+        }
+        case SET_USER_NICKNAME: {
+            return {
+                ...state, nickname: action.nickname
             }
         }
 
@@ -63,6 +69,7 @@ const profileReduser = (state = initialState, action) => {
 export const addPost = (addPostTexarea) => ({type: 'ADD-POST', addPostTexarea});
 export const SetUserProfile = (profile) => ({type: 'SET_USER_PROFILE', profile});
 export const SetUserStatus = (status) => ({type: 'SET_USER_STATUS', status});
+export const SetUserNickname = (nickname) => ({type: 'SET_USER_NICKNAME', nickname});
 
 
 // thunks thunks thunks
@@ -92,6 +99,12 @@ export const updateUserStatus = (status) => {
                 dispatch(SetUserStatus(status));
             }
         })
+    }
+}
+
+export const updateUserNickname = (nickname) => {
+    return (dispatch) => {
+        dispatch(SetUserNickname(nickname));
     }
 }
 // thunks thunks thunks

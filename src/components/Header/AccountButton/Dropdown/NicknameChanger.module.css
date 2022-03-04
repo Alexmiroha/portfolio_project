@@ -3,7 +3,7 @@
     margin: 10px;
 }
 
-.form input {
+.formField {
     padding: 0.5rem 1rem;
     font-size: 12px;
     border: 1px solid #e6ecf5;
@@ -11,9 +11,11 @@
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     outline: none;
     max-width: 160px;
+    max-height: 14px;
+    resize: none;
 }
 
-.form input:focus {
+.formField:focus {
     border: 1px solid #FFC6BA;
 }
 

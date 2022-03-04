@@ -6,7 +6,7 @@ import {GoSettings} from "react-icons/go";
 import {TiStarOutline} from "react-icons/ti";
 import DropdownButton from "./DropdownButton";
 import StatusChanger from "./StatusChanger";
-import NicknameChanger from "./NicknameChanger";
+import NicknameChangerForm from "./NicknameChangerForm";
 
 
 const Dropdown = (props) => {
@@ -32,7 +32,7 @@ const Dropdown = (props) => {
             </div>
             <div className={s.changeNickname}>
                 <h6 className={s.title}>CUSTOM NICKNAME</h6>
-                <NicknameChanger/>
+                <NicknameChangerForm/>
             </div>
             <div className={s.about}>
                 <h6 className={s.title}>ABOUT OLYMPUS</h6>
