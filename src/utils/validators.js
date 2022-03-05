@@ -6,7 +6,7 @@ export const requiredCreator = (name) => (value) => {
 }
 // замикання (функція, яка вертає функцію)
 
-export const maxLenthCreator = (maxLenth) => (value) => {
-    if (value.length > maxLenth) return `Max length is ${maxLenth} symbols`
+export const maxLengthCreator = (maxLength) => (values) => {
+    if (values && values.length > maxLength) return `Max length is ${maxLength} symbols`
 }
 // замикання (функція, яка вертає функцію)

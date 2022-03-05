@@ -2,12 +2,17 @@ import React from 'react';
 import {FaCheck} from "react-icons/fa";
 import s from './NicknameChanger.module.css'
 import {Field, reduxForm} from "redux-form";
+import {maxLengthCreator} from "../../../../utils/validators";
 
+const maxLength25 = maxLengthCreator(25);
 
 const NicknameChanger = (props) => {
+
+    console.log(props)
+
     return (
         <form className={s.form} onSubmit={props.handleSubmit}>
-            <Field component="textarea" name="NicknameField" placeholder='Nickname' className={s.formField}/>
+            <Field validate={maxLength25} component={"textarea"} name={"NicknameField"} placeholder='Nickname' className={s.formField}/>
             <button>
                 <div className={s.icon}>
                     <FaCheck/>
@@ -17,7 +22,7 @@ const NicknameChanger = (props) => {
     );
 };
 
-const NicknameChangerForm = reduxForm({form: "NicknameForm"}) (NicknameChanger);
+const NicknameChangerForm = reduxForm({form: "nickname"}) (NicknameChanger);
 
 
 export default NicknameChangerForm;

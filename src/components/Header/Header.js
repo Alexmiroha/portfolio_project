@@ -19,7 +19,7 @@ const Header = (props) => {
 
                         { props.isLogined ?
 
-                            <HeaderUserButtons login={props.login} logout={props.logout} nickname={props.nickname}/>
+                            <HeaderUserButtons login={props.login} logout={props.logout} updateUserNickname={props.updateUserNickname} nickname={props.nickname}/>
 
                             :
 
@@ -59,7 +59,7 @@ const HeaderUserButtons = (props) => {
                 <div className={s.label} style={{backgroundColor: '#FF5E3A'}}>2</div>
                 <div className={s.dropdown}></div>
             </div>
-            <AccountButton login={props.login} logout={props.logout} nickname={props.nickname} />
+            <AccountButton login={props.login} logout={props.logout} updateUserNickname={props.updateUserNickname} nickname={props.nickname} />
         </div>
     )
 }

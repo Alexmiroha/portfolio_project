@@ -1,13 +1,13 @@
 import React from 'react';
 import s from './Login.module.css';
 import {Field, reduxForm} from "redux-form";
-import {maxLenthCreator, requiredCreator} from "../../../utils/validators";
+import {maxLengthCreator, requiredCreator} from "../../../utils/validators";
 import Input from "../../reusableComponents/Inputs/Input";
 import {connect} from "react-redux";
 import {login, logout} from "../../../Redux/Reducer-App";
 import {Redirect} from "react-router-dom";
 
-const maxLength25 = maxLenthCreator(25);
+const maxLength25 = maxLengthCreator(25);
 const requiredLogin = requiredCreator('login');
 const requiredPassword = requiredCreator('password');
 

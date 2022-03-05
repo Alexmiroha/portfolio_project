@@ -10,6 +10,11 @@ import NicknameChangerForm from "./NicknameChangerForm";
 
 
 const Dropdown = (props) => {
+
+    let changeNickname = (values) => {
+        props.updateUserNickname(values.NicknameField)
+    }
+
     return (
         <div className={s.dropdown}>
             <IconContext.Provider value={{className: 'react-icons', size: '1.5em'}}>
@@ -32,7 +37,7 @@ const Dropdown = (props) => {
             </div>
             <div className={s.changeNickname}>
                 <h6 className={s.title}>CUSTOM NICKNAME</h6>
-                <NicknameChangerForm/>
+                <NicknameChangerForm onSubmit={changeNickname}/>
             </div>
             <div className={s.about}>
                 <h6 className={s.title}>ABOUT OLYMPUS</h6>
