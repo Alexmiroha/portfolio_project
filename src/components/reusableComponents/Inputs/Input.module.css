@@ -13,7 +13,6 @@
     color: rgb(136, 141, 168);
     border-radius: 5px;
     outline: none;
-    padding: 16px 109px 4px 10px;
 }
 
 .input:focus {
@@ -23,16 +22,14 @@
 .focused {
     transform: scale(0.7) translateY(-10px) translateX(-58px);
 }
-
-.filed {
-    transform: scale(0.7) translateY(-10px) translateX(-58px);
-}
-
 .errorInput {
     border: 0.2em solid rgba(255, 46, 0, 0.6);
 }
 
-.errorWrapper {
+.errorMinimal {
+    font-size: 10px;
+    padding-left: 10px;
+    color: rgba(255, 46, 0, 0.6);
 }
 
 .error {

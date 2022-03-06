@@ -6,6 +6,7 @@ import {GoSettings} from "react-icons/go";
 import {TiStarOutline} from "react-icons/ti";
 import DropdownButton from "./DropdownButton";
 import StatusChanger from "./StatusChanger";
+import {FaCheck} from "react-icons/fa";
 import NicknameChangerForm from "./NicknameChangerForm";
 
 

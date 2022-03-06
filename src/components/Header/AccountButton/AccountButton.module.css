@@ -1,7 +1,5 @@
 .yourAccountButton {
     margin-right: 70px;
-    color: #fff;
-    font-weight: 700;
     margin-top: -5px;
     padding-left: 70px;
 }
@@ -30,7 +28,8 @@
 
 .name {
     font-size: 12px;
-
+    font-weight: 700;
+    color: #fff;
 }
 
 .nickname {

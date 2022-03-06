@@ -8,6 +8,7 @@ import {Field, reduxForm} from "redux-form";
 const MessageReduxForm = reduxForm({ form: "MessageForm"}) (MessageForm);
 
 function MessageForm(props) {
+    console.log(props.error)
     return <form onSubmit={props.handleSubmit} className={s.sendMessageArea}>
         <Field
             component="textarea"

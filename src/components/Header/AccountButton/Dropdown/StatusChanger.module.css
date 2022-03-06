@@ -15,6 +15,7 @@
 .name {
     font-size: 12px;
     color: #888da8;
+    font-weight: 700;
 }
 
 .statusChanger:hover .name {

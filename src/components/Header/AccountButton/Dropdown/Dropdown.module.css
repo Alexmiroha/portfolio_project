@@ -1,5 +1,4 @@
 .dropdown {
-    color: black;
     background: #FFFFFF;
     border-radius: 4px;
     box-shadow: 0 0 34px 0 rgba(63, 66, 87, 0.1);
@@ -28,4 +27,6 @@
     font-size: 12px;
     padding: 7px 0;
     cursor: pointer;
+    font-weight: 700;
+    color: black;
 }

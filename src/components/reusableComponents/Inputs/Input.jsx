@@ -6,31 +6,43 @@ const Input = ({input, meta, ...props}) => {
 
     const checkInput = meta.touched && meta.error;
     const checkFocused = meta.active || input.value;
-
+    const style = {
+        padding: props.padding,
+        fontWeight: "300",
+    }
 
     return (
-        <div className={s.input_wrapper}>
+        <div className={s.input_wrapper} style={{height: props.inputMargin}}>
             <input className={checkInput ? `${s.errorInput} ${s.input}` : `${s.input}`}
-                   type={props.type} {...meta} {...input} />
-            <div className={checkFocused ? `${s.name} ${s.focused}` : `${s.name}`}>{props.placeholder}</div>
+                   type={props.type} {...meta} {...input}
+                   style={style}
+            />
+            <div
+                className={checkFocused ? `${s.name} ${s.focused}` : `${s.name}`}>{props.placeholder}</div>
 
             {checkInput &&
-                <Error meta={meta}/>
+            <Error meta={meta} styleError={props.styleError}/>
             }
 
         </div>
     );
 };
 
-const Error = ({meta}) => {
+const Error = ({meta, styleError}) => {
     return (
         <div className={s.errorWrapper}>
-            <div className={s.error}>
-                <div>{meta.error}</div>
-            </div>
-            <div className={s.icon}>
-                X
-            </div>
+            {styleError ?
+                <div>
+                    <div className={s.error}>
+                        <div>{meta.error}</div>
+                    </div>
+                    <div className={s.icon}>
+                        X
+                    </div>
+                </div>
+                :
+                <div className={s.errorMinimal}>{meta.error}</div>
+            }
         </div>
     )
 }

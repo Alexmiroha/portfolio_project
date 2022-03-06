@@ -24,7 +24,7 @@ const AccountButton = (props) => {
             </div>
             {activeDropdown
             &&
-            <div className={s.dropdownWrapper} onMouseLeave={() => {setActivedropdown(activeDropdown)}}>
+            <div className={s.dropdownWrapper} onMouseLeave={() => {setActivedropdown(!activeDropdown)}}>
                 <Dropdown logout={props.logout} updateUserNickname={props.updateUserNickname}/>
             </div>
             }
