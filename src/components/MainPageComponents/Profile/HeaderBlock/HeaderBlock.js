@@ -8,7 +8,7 @@ import {TiMessages} from "react-icons/ti";
 import {VscSettings} from "react-icons/vsc"
 import {IconContext} from "react-icons";
 import {CgMore} from "react-icons/cg";
-import ProfileStatusCopy from "./ProfileStatus/ProfileStatusCopy";
+import ProfileStatus from "./ProfileStatus/ProfileStatus";
 
 const HeaderBlock = (props) => {
 
@@ -36,7 +36,7 @@ const HeaderBlock = (props) => {
                                 <NavLink to="">
                                     <h4>{props.fullName}</h4>
                                 </NavLink>
-                                <ProfileStatusCopy status={props.status} updateUserStatus={props.updateUserStatus}/>
+                                <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
                             </li>
                             <li>
                                 <NavLink to="">Photos</NavLink>

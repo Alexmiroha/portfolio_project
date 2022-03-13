@@ -1,63 +1,47 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import s from './ProfileStatus.module.css'
 import {compose} from "redux";
 import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 
-class ProfileStatus extends React.Component {
+const ProfileStatus = (props) => {
 
-    state = {
-        editMode: false,
-        status: this.props.status
-    }
+    const [editMode, setEditMode] = useState(false);
+    const [status, setStatus] = useState(props.status)
 
-    activateEditMode = () => {
-        if (this.props.match.params.userID == this.props.loginedUserId) {
-            this.setState( {
-                editMode: true,
-            })
+    useEffect( () => {
+        setStatus(props.status)
+        }, [props.status])
+
+    let activateEditMode = () => {
+        if (props.match.params.userID == props.loginedUserId) {
+            setEditMode(true);
         }
     }
-
-    deactivateEditMode = () => {
-        this.setState( {
-            editMode: false
-        })
-        this.props.updateUserStatus(this.state.status)
+    let deactivateEditMode = () => {
+        setEditMode(false);
+        props.updateUserStatus(status);
+    }
+    let onStatusChange = (e) => {
+        setStatus(e.currentTarget.value)
     }
 
-    onStatusChange = (e) => {
-        this.setState({
-            status: e.currentTarget.value
-        })
-    }
-
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        if (prevProps.status !== this.props.status) {
-            this.setState({
-                status: this.props.status
-            })
-        }
-    }
-
-    render() {
-        return (
+    return (
+        <div>
+            {!editMode &&
             <div>
-                {!this.state.editMode &&
-                <div>
-                    <div className={s.status} onClick={this.activateEditMode}>{this.props.status}</div>
-                </div>
-                }
-                {this.state.editMode &&
-                <div>
-                    <input onChange={this.onStatusChange} value={this.state.status} onBlur={this.deactivateEditMode} autoFocus={true}/>
-                </div>
-                }
+                <div className={s.status} onClick={activateEditMode}>{props.status}</div>
             </div>
-        );
-    }
-}
-;
+            }
+            {editMode &&
+            <div>
+                <input onChange={onStatusChange} onBlur={deactivateEditMode} value={status} autoFocus={true}/>
+            </div>
+            }
+        </div>
+    );
+};
+
 
 let mapStateToProps = (state) => ({
     loginedUserId: state.app.userId
