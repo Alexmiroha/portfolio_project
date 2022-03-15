@@ -27,7 +27,7 @@ const ProfileStatus = (props) => {
     }
 
     return (
-        <div>
+        <div className={s.statusWrapper}>
             {!editMode &&
             <div>
                 <div className={s.status} onClick={activateEditMode}>{props.status}</div>

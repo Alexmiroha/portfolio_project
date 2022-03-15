@@ -33,8 +33,14 @@ const HeaderBlock = (props) => {
                                 <NavLink to="">Friends</NavLink>
                             </li>
                             <li className={s.authorInfo}>
+                                <div className={s.authorHeader}>
+                                    <NavLink to="">
+                                        <img src={props.photos?.large || avatar} className={s.avatarImg}
+                                             alt="Avatar image"/>
+                                    </NavLink>
+                                </div>
                                 <NavLink to="">
-                                    <h4>{props.fullName}</h4>
+                                    <h4 className={s.nickname}>{props.fullName}</h4>
                                 </NavLink>
                                 <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
                             </li>
@@ -48,11 +54,6 @@ const HeaderBlock = (props) => {
                                 <NavLink to=""><CgMore/></NavLink>
                             </li>
                         </ul>
-                        <div className={s.authorHeader}>
-                            <NavLink to="">
-                                <img src={props.photos?.large || avatar} className={s.avatarImg} alt="Avatar image"/>
-                            </NavLink>
-                        </div>
                     </div>
                     <div className={s.buttonsBlock}>
                         <IconContext.Provider value={{size: '22px', color: '#fff'}}>

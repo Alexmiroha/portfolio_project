@@ -3,6 +3,7 @@
     max-width: 1270px;
     border-radius: 5px;
     margin-bottom: 20px;
+
 }
 
 .container {
@@ -16,7 +17,6 @@
     align-items: center;
     box-shadow: inset 0 0 6px 4px rgba(0, 0, 0, .7);
     border-radius: 5px;
-
 }
 
 .topThumb img {
@@ -27,7 +27,6 @@
     margin-left: auto;
     overflow: hidden;
     border-radius: 5px;
-
 }
 
 /*!!!!!!!!!!!!!!!!!!!SHADOW 4 BACKGROUND PROFILE IMAGE!!!!!!!!!!!!!!!!*/
@@ -65,8 +64,8 @@
 }
 
 .LBlock li {
-    margin-left: 25%;
-    transform: translate(367px, 0px);
+    margin-left: 22%;
+    transform: translate(332px, 0px);
 }
 
 .LBlock li a {
@@ -104,14 +103,9 @@
 }
 
 .authorHeader {
-    transform: translate(-568px, -145px);
-    z-index: 1;
-    max-width: 200px;
-
 }
 
 .avatarImg {
-    transform: translate(0px, 0);
     border-radius: 100px;
     padding: 5px;
     background-color: #fdfbee;
@@ -120,16 +114,20 @@
 }
 
 .authorInfo {
-    min-width: 150px;
+    top: -130px;
     position: relative;
-    top: -15px;
+    z-index: 1;
+    min-width: 200px;
 }
 
-.authorInfo h4 {
+.nickname {
     font-size: 22px;
     font-weight: 700;
     color: #515365;
     margin: 0px 0px;
+    max-height: 30px;
+    max-width: 200px;
+    overflow: hidden;
 }
 
 .authorInfo h4:hover {

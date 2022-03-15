@@ -1,0 +1,11 @@
+.statusWrapper {
+    max-width: 200px;
+    max-height: 20px;
+    overflow: hidden;
+}
+
+.statusWrapper:hover {
+    overflow: unset;
+    max-height: unset;
+    background-color: #ffffff;
+}
