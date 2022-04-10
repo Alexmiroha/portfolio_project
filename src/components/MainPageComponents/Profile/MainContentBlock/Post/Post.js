@@ -18,7 +18,7 @@ const Post = (props) => {
     return (
         <div className={s.postBlock}>
             <div className={s.controlBlock}>
-                <IconContext.Provider value={{size: '22px', color: '#fff',}}>
+                <IconContext.Provider value={{size: '22px', color: '#FFF'}}>
                     <div className={s.icon}>
                         <RiHeart3Line/>
                     </div>
@@ -30,7 +30,7 @@ const Post = (props) => {
                     </div>
                 </IconContext.Provider>
             </div>
-            <IconContext.Provider value={{size: '22px', color: '#c2c5d9'}}>
+            <IconContext.Provider value={{size: '22px'}}>
                 <article className={s.post}>
                     <div className={s.postHeader}>
                         <div className={s.authorImg}>
@@ -54,10 +54,12 @@ const Post = (props) => {
                     </div>
                     <div className={s.postInfo}>
                         <div className={s.likesBlock}>
-                            <NavLink to="" className={s.likeIcon}>
-                                &#9825;
-                            </NavLink>
-                            <div className={s.likesCount}>{props.post.likeCount}</div>
+                            <div className={`${s.countersBlocks} ${s.likes}`}>
+                                <span className={s.likeIcon}>
+                                    &#9825;
+                                </span>
+                                <div className={s.likesCount}>{props.post.likeCount}</div>
+                            </div>
                             <div className={s.userLikedBlock}>
                                 <div className={s.likersImages}>
                                     <NavLink to=""><img src={props.post.uImgs.u1}
@@ -77,13 +79,13 @@ const Post = (props) => {
                             </div>
                         </div>
                         <div className={s.commentsReposts}>
-                            <div className={s.commentsInfo}>
+                            <div className={`${s.commentsInfo} ${s.countersBlocks}`}>
                                 <div className={s.commentsIcon}><BiCommentDetail/></div>
-                                <div className={s.commentsCount}>{props.post.commentCount}</div>
+                                <div className={s.count}>{props.post.commentCount}</div>
                             </div>
-                            <div className={s.repostsInfo}>
+                            <div className={`${s.repostsInfo} ${s.countersBlocks}`}>
                                 <div className={s.repostIcon}><CgArrowsExchangeAlt/></div>
-                                <div className={s.repostsCount}>{props.post.repostCount}</div>
+                                <div className={s.count}>{props.post.repostCount}</div>
                             </div>
                         </div>
                     </div>
