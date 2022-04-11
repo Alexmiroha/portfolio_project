@@ -2,6 +2,7 @@ import React from "react";
 import s from './Profile.module.css';
 import HeaderBlock from "./HeaderBlock/HeaderBlock";
 import MainContentBlockContainer from "./MainContentBlock/MainContentBlockContainer";
+import RSidebarBlock from "./RSidebarBlock/RSidebarBlock";
 
 function Profile(props) {
     return (
@@ -15,7 +16,9 @@ function Profile(props) {
                 <MainContentBlockContainer />
 
 
-                <div className={s.RSidebarBlock}></div>
+                <div className={s.RSidebarBlock}>
+                    <RSidebarBlock />
+                </div>
 
             </div>
         </main>

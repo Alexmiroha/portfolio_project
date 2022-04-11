@@ -1,0 +1,33 @@
+.LastPhotosBlock {
+    background: #FFFFFF;
+}
+
+.LastPhotosBlock h6 {
+    padding: 23px 25px 18px;
+    border-bottom: 1px solid #e6ecf5;
+}
+
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 19px;
+    padding: 5px;
+}
+
+.image {
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.image:nth-child(3), .image:nth-child(6), .image:nth-child(9) {
+    padding: 0 0 8px 4px;
+}
+
+.image:nth-child(1), .image:nth-child(4), .image:nth-child(7) {
+    padding: 0 4px 8px 0;
+}
+
+.image:nth-child(2), .image:nth-child(5), .image:nth-child(8) {
+    padding: 0 4px 8px 4px;
+}
