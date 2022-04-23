@@ -1,0 +1,22 @@
+.ProfileBadges {
+    padding: 0 0 25px;
+    background: #FFFFFF;
+    margin-bottom: 20px;
+    border-radius: 7px;
+}
+
+.mainTitle {
+    padding: 23px 25px 18px;
+    border-bottom: 1px solid #e6ecf5;
+}
+
+.badgesBlock {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.badge {
+    cursor: pointer;
+}
