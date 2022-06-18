@@ -27,7 +27,7 @@ const HeaderBlock = (props) => {
                                 <NavLink to="/profile">Timeline</NavLink>
                             </li>
                             <li>
-                                <NavLink to="">About</NavLink>
+                                <NavLink to="">AboutBLBLBLBLBLBLBBLBLBLBLB Change IT</NavLink>
                             </li>
                             <li>
                                 <NavLink to="">Friends</NavLink>
