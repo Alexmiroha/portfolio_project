@@ -21,3 +21,12 @@
 .friend img {
     border-radius: 25px;
 }
+
+.more {
+    padding: 11px 10px 6px 9px;
+    background-color: #ff5e3a;
+    border-radius: 25px;
+    color: #FFFFFF;
+    font-weight: 600;
+    transform: scale(0.93);
+}

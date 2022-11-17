@@ -13,8 +13,7 @@ import img10 from './img/avatar33-sm.webp';
 import img11 from './img/avatar34-sm.webp';
 import img12 from './img/avatar35-sm.webp';
 import img13 from './img/avatar36-sm.webp';
-import img14 from './img/avatar38-sm.webp';
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 const Friends = () => {
 
@@ -63,12 +62,9 @@ const Friends = () => {
                 <div className={s.friend}>
                     <img src={img13} alt="friend"/>
                 </div>
-                <div className={s.friend}>
-                    <img src={img14} alt="friend"/>
-                </div>
-                <Link className={s.more}>
+                <NavLink to="" className={s.more}>
                     +{friends - 14}
-                </Link>
+                </NavLink>
 
             </div>
         </div>
