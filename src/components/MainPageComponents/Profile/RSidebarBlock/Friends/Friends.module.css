@@ -1,0 +1,23 @@
+.friendsBlock {
+    padding: 0 0 25px;
+    background: #FFFFFF;
+    margin-bottom: 20px;
+    border-radius: 7px;
+}
+
+.friendsBlock h6 {
+    padding: 23px 25px 18px;
+    border-bottom: 1px solid #e6ecf5;
+}
+
+.friendsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 19px 10px 5px;
+    gap: 5px;
+}
+
+.friend img {
+    border-radius: 25px;
+}
