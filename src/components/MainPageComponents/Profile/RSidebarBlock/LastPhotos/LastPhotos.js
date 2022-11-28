@@ -12,7 +12,7 @@ import img9 from '../../../../../img/LastPhotos/last-photo10-large.webp'
 
 const LastPhotos = () => {
     return (
-        <div className={s.LastPhotosBlock}>
+        <div className="ProfileSidebar">
             <h6>Last Photos</h6>
             <div className={s.photos}>
                 <img src={img1} className={s.image} alt=""/>

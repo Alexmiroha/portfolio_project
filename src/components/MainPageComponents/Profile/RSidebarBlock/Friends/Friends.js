@@ -20,7 +20,7 @@ const Friends = () => {
     const [friends] = useState(75);
 
     return (
-        <div className={s.friendsBlock}>
+        <div className="ProfileSidebar">
             <h6>Friends ({friends})</h6>
             <div className={s.friendsList}>
                 <div className={s.friend}>

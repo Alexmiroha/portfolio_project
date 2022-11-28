@@ -1,15 +1,3 @@
-.LastPhotosBlock {
-    padding: 0 0 25px;
-    background: #FFFFFF;
-    margin-bottom: 20px;
-    border-radius: 7px;
-}
-
-.LastPhotosBlock h6 {
-    padding: 23px 25px 18px;
-    border-bottom: 1px solid #e6ecf5;
-}
-
 .photos {
     display: flex;
     flex-wrap: wrap;
@@ -21,6 +9,7 @@
 .image {
     max-width: 80px;
     max-height: 80px;
+    cursor: pointer;
 }
 
 .image:nth-child(3), .image:nth-child(6), .image:nth-child(9) {
