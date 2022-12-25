@@ -1,0 +1,49 @@
+.favPageBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.imgBlock {
+    margin-right: 8px;
+}
+
+.img {
+    border-radius: 20px;
+}
+
+.titleBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 5px;
+}
+
+.title {
+    font-weight: 700;
+    color: #515365;
+    font-size: 14px;
+    margin: 0px;
+    padding-bottom: 4px;
+}
+
+.title:hover {
+    color: #FF5E3A;
+}
+
+.titleDiscription {
+    font-size: 11px;
+    margin: 0;
+}
+
+.icon {
+    margin-left: 40px;
+    transform: scale(1.3);
+    color: #515365;
+    cursor: pointer;
+}
+
+.icon:hover {
+    color: #FF5E3A;
+}
