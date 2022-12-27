@@ -9,14 +9,15 @@ import img5 from './img/avatar45-sm.webp'
 import {TiStarOutline} from "react-icons/ti";
 
 const FavPageBlock = (props) => {
+
     return (
         <div className={s.favPageBlock}>
             <div className={s.imgBlock}>
-                <img className={s.img} src={img1} alt=""/>
+                <img className={s.img} src={props.image} alt=""/>
             </div>
             <div className={s.titleBlock}>
-                <p className={s.title}>The Marina Bar</p>
-                <p className={s.titleDiscription}>Restaurant / Bar</p>
+                <p className={s.title}>{props.title.length<21? props.title : props.title.substr(0, 15) + '...'}</p>
+                <p className={s.titleDescription}>{props.titleDescription}</p>
             </div>
             <div className={s.icon}>
                 <TiStarOutline/>
@@ -29,8 +30,12 @@ const FavoritePages = () => {
     return (
         <div className="ProfileSidebar">
             <h6>Favorite Pages</h6>
-            <FavPageBlock/>
-            <FavPageBlock/>
+            <FavPageBlock title='The Marina Bar' titleDescription='Restaurant / Bar' image={img1} />
+            <FavPageBlock title='Tapronus Rock' titleDescription='Rock Band' image={img2} />
+            <FavPageBlock title='Pixel Digital Design' titleDescription='Company' image={img3} />
+            <FavPageBlock title='Thompson’s Custom Clothing Boutique' titleDescription='Clothing Store' image={img4} />
+            <FavPageBlock title='Crimson Agency' titleDescription='Company' image={img5} />
+            <FavPageBlock title='The Marina Bar' titleDescription='Clothing Store' image={img6} />
         </div>
     );
 };

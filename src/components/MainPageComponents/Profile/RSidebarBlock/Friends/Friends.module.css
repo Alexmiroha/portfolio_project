@@ -2,8 +2,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 19px 10px 5px;
-    gap: 5px;
+    margin: 19px 12px 5px;
+    gap: 12px;
+    max-width: 295px;
 }
 
 .friend img {

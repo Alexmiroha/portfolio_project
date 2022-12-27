@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     margin: 10px;
+    max-width: 295px;
 }
 
 .imgBlock {
@@ -11,6 +12,7 @@
 
 .img {
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .titleBlock {
@@ -18,6 +20,7 @@
     flex-direction: column;
     align-items: flex-start;
     margin: 5px;
+    width: 150px;
 }
 
 .title {
@@ -26,13 +29,16 @@
     font-size: 14px;
     margin: 0px;
     padding-bottom: 4px;
+    cursor: pointer;
+    max-width: 130px;
+    max-height: 19px;
 }
 
 .title:hover {
     color: #FF5E3A;
 }
 
-.titleDiscription {
+.titleDescription {
     font-size: 11px;
     margin: 0;
 }
