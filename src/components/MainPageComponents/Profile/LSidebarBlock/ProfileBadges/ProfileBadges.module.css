@@ -16,3 +16,15 @@
 .badge {
     cursor: pointer;
 }
+
+.badgeCount {
+    color: #FFFFFF;
+    font-size: 20px;
+    background: #FF5E3A;
+    border-radius: 20px;
+    padding: 5px 14px;
+    position: absolute;
+    transform: scale(0.6)
+    translate(25px, -95px);
+
+}
