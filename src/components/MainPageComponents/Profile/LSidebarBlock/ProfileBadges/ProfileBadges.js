@@ -13,7 +13,7 @@ import badge10 from "../../../../../img/Badges/badge13.webp"
 
 const ProfileBadges = () => {
     return (
-        <div className={s.ProfileBadges}>
+        <div className='ProfileSidebar'>
             <h6 className={s.mainTitle}>Profile Badges</h6>
             <div className={s.badgesBlock}>
                 <div className={s.badge}>
