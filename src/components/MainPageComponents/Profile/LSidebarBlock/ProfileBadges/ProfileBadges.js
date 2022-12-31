@@ -11,14 +11,21 @@ import badge8 from "../../../../../img/Badges/badge11.webp"
 import badge9 from "../../../../../img/Badges/badge12.webp"
 import badge10 from "../../../../../img/Badges/badge13.webp"
 
+const Badge = (props) => {
+    return (
+        <div className={s.badge}>
+            <img src={badge1} alt=""/>
+        </div>
+    )
+
+}
+
 const ProfileBadges = () => {
     return (
         <div className='ProfileSidebar'>
             <h6 className={s.mainTitle}>Profile Badges</h6>
             <div className={s.badgesBlock}>
-                <div className={s.badge}>
-                    <img src={badge1} alt=""/>
-                </div>
+                <Badge/>
                 <div className={s.badge}>
                     <img src={badge2} alt=""/>
                 </div>
