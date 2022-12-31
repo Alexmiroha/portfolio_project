@@ -14,7 +14,7 @@ import badge10 from "../../../../../img/Badges/badge13.webp"
 const Badge = (props) => {
     return (
         <div className={s.badge}>
-            <img src={badge1} alt=""/>
+            <img src={props.image} alt=""/>
         </div>
     )
 
@@ -25,34 +25,16 @@ const ProfileBadges = () => {
         <div className='ProfileSidebar'>
             <h6 className={s.mainTitle}>Profile Badges</h6>
             <div className={s.badgesBlock}>
-                <Badge/>
-                <div className={s.badge}>
-                    <img src={badge2} alt=""/>
-                </div>
-                <div className={s.badge}>
-                    <img src={badge3} alt=""/>
-                </div>
-                <div className={s.badge}>
-                    <img src={badge4} alt=""/>
-                </div>
-                <div className={s.badge}>
-                    <img src={badge5} alt=""/>
-                </div>
-                <div className={s.badge}>
-                    <img src={badge6} alt=""/>
-                </div>
-                <div className={s.badge}>
-                    <img src={badge7} alt=""/>
-                </div>
-                <div className={s.badge}>
-                    <img src={badge8} alt=""/>
-                </div>
-                <div className={s.badge}>
-                    <img src={badge9} alt=""/>
-                </div>
-                <div className={s.badge}>
-                    <img src={badge10} alt=""/>
-                </div>
+                <Badge image={badge1}/>
+                <Badge image={badge2}/>
+                <Badge image={badge3}/>
+                <Badge image={badge4}/>
+                <Badge image={badge5}/>
+                <Badge image={badge6}/>
+                <Badge image={badge7}/>
+                <Badge image={badge8}/>
+                <Badge image={badge9}/>
+                <Badge image={badge10}/>
             </div>
         </div>
     );
