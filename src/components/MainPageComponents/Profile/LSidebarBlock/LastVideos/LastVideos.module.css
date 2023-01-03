@@ -1,0 +1,10 @@
+.vidsContainer {
+    display: flex;
+
+}
+
+.vid {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 260px;
+}
