@@ -4,7 +4,7 @@ import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa'
 
 const ProfileIntro = () => {
     return (
-        <div className={s.profileIntro}>
+        <div className='ProfileSidebar'>
             <h6 className={s.mainTitle}>Profile Intro</h6>
             <div>
                 <div className={s.title}>About Me</div>

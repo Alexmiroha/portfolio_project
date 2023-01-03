@@ -23,7 +23,7 @@ const Badge = (props) => {
 
 const ProfileBadges = () => {
     return (
-        <div className={s.ProfileBadges}>
+        <div className='ProfileSidebar'>
             <h6 className={s.mainTitle}>Profile Badges</h6>
             <div className={s.badgesBlock}>
                 <Badge image={badge1} count={1}/>

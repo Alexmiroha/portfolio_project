@@ -7,8 +7,7 @@ import LastVideos from "./LastVideos/LastVideos";
 
 const LSidebarBlock = () => {
     return (
-        <div className='ProfileSidebar'>
-            {/*тут треба поміняти стиль*/}
+        <div>
             <ProfileIntro/>
             <ProfileBadges/>
             <Playlist/>

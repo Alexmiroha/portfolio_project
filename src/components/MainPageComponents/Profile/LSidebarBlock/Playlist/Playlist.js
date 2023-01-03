@@ -4,7 +4,7 @@ import Iframe from 'react-iframe'
 
 const Playlist = () => {
     return (
-        <div className={s.playlist}>
+        <div className='ProfileSidebar'>
             <h6 className={s.mainTitle}>My Spotify Playlist</h6>
             <div className={s.playlistFrame}>
                 <Iframe style="border-radius:12px"

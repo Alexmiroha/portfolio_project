@@ -1,10 +1,3 @@
-.ProfileBadges {
-    padding: 0 0 25px;
-    background: #FFFFFF;
-    margin-bottom: 20px;
-    border-radius: 7px;
-}
-
 .badgesBlock {
     display: flex;
     flex-wrap: wrap;

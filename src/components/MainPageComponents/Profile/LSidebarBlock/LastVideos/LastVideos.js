@@ -3,7 +3,7 @@ import s from './LastVideos.module.css'
 
 const LastVideos = (props) => {
     return (
-        <div className={s.lastVideos}>
+        <div className='ProfileSidebar'>
             <h6>Last Videos</h6>
         </div>
     );
