@@ -1,14 +1,15 @@
 import React from 'react';
 import s from './NewsFeed.module.css';
-import Post from "./Main/Feed/Post/Post";
+import LSidebarNews from "./LSidebarNews/LSidebarNews";
+import MainContentNews from "./MainContentNews/MainContentNews";
+import RSidebarNews from "./RSidebarNews/RSidebarNews";
 
 function NewsFeed(props) {
     return (
-        <div className={s.News}>
-            <Post />
-            <h1>asfd</h1>Newpost
-            News
-            Weather
+        <div className={s.contentWrapper}>
+            <LSidebarNews/>
+            <MainContentNews/>
+            <RSidebarNews/>
         </div>
     );
 }
