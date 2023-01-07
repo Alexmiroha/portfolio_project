@@ -3,7 +3,7 @@ import s from './MainContentNews.module.css';
 
 const MainContentNews = (props) => {
     return (
-        <div>
+        <div className={s.mainContent}>
             MainContent
         </div>
     );

@@ -1,6 +1,7 @@
 .contentWrapper {
     max-width: 1270px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
 }
