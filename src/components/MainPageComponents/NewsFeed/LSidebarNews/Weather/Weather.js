@@ -2,6 +2,8 @@ import React from 'react';
 import s from './Weather.module.css'
 import ReactWeather, { useVisualCrossing } from 'react-open-weather';
 
+// https://www.npmjs.com/package/react-open-weather
+
 const Weather = (props) => {
 
     const { data, isLoading, errorMessage,} = useVisualCrossing({
@@ -13,10 +15,10 @@ const Weather = (props) => {
     });
 
     const customStyles = {
-        fontFamily:  'Helvetica, sans-serif',
-        gradientStart:  '#0181C2',
-        gradientMid:  '#04A7F9',
-        gradientEnd:  '#4BC4F7',
+        fontFamily:  'Roboto, sans-serif',
+        gradientStart:  '#00a7ff',
+        gradientMid:  '#0076af',
+        gradientEnd:  '#0076af',
         locationFontColor:  '#FFF',
         todayTempFontColor:  '#FFF',
         todayDateFontColor:  '#B5DEF4',
@@ -24,9 +26,9 @@ const Weather = (props) => {
         todayDescFontColor:  '#B5DEF4',
         todayInfoFontColor:  '#B5DEF4',
         todayIconColor:  '#FFF',
-        forecastBackgroundColor:  '#FFF',
+        forecastBackgroundColor:  '#006A9D',
         forecastSeparatorColor:  '#DDD',
-        forecastDateColor:  '#777',
+        forecastDateColor:  '#fff',
         forecastDescColor:  '#777',
         forecastRangeColor:  '#777',
         forecastIconColor:  '#4BC4F7',
