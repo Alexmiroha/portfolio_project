@@ -29,14 +29,14 @@ const Weather = (props) => {
         forecastBackgroundColor:  '#006A9D',
         forecastSeparatorColor:  '#DDD',
         forecastDateColor:  '#fff',
-        forecastDescColor:  '#777',
-        forecastRangeColor:  '#777',
+        forecastDescColor:  '#fff',
+        forecastRangeColor:  '#fff',
         forecastIconColor:  '#4BC4F7',
     };
 
     return (
         <div className={s.weatherWrapper}>
-            <div>
+            <div className={s.widget}>
                 <ReactWeather
                     theme={customStyles}
                     isLoading={isLoading}

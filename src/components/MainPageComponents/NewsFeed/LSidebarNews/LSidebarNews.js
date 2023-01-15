@@ -5,7 +5,9 @@ import Weather from "./Weather/Weather";
 const LSidebarNews = (props) => {
     return (
         <div className={s.LSidebarBlock}>
-            <Weather/>
+            <div className={s.widget}>
+                <Weather/>
+            </div>
         </div>
     );
 };

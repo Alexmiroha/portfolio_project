@@ -1,4 +1,10 @@
 .LSidebarBlock {
     width: 290px;
-    background-color: blue;
+    background-color: red;
+    overflow: hidden;
+}
+
+.widget {
+    width: 320px;
+    transform: scale(.9) translate(-17px,-33px);
 }
