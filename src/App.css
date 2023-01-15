@@ -55,3 +55,7 @@ ul {
   padding: 23px 25px 18px;
   border-bottom: 1px solid #e6ecf5;
 }
+
+.weatherSidebar .rw-forecast-desc {
+  display: none;
+}

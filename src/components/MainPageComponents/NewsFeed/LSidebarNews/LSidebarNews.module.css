@@ -4,7 +4,16 @@
     overflow: hidden;
 }
 
-.widget {
+.rw-forecast-desc {
+    display: none;
+}
+
+.weatherWidget {
     width: 320px;
     transform: scale(.9) translate(-17px,-33px);
+    height: 427px;
+}
+
+.widget {
+    padding-bottom: 25px;
 }
