@@ -1,7 +1,7 @@
 import React from 'react';
 import s from "./CreateNewPost.module.css";
 import avatar from '../../../../../img/UserAvatarSmall.jpg'
-import {FiSmile, FiMusic} from "react-icons/fi";
+import {FiMusic} from "react-icons/fi";
 import {MdAddAPhoto} from "react-icons/md";
 import {FaPhotoVideo} from "react-icons/fa";
 import {CgMore} from "react-icons/cg";
@@ -32,7 +32,6 @@ const NewPostForm = (props) => {
             <div className={s.userImage}>
                 <img src={props.photo?.small || avatar} alt="user avatar"/>
             </div>
-            <div className={s.emojiButton}><FiSmile/></div>
             <div className={s.forMoveTop}>
                 <div className={s.inputField}>
                     <Field name="addPostTexarea"

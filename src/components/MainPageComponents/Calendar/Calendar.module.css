@@ -1,11 +1,3 @@
-.header {
-    display: flex;
-    justify-content: space-between;
-}
-.table {
-    display: flex;
-    justify-content: center;
-}
-.day {
-    padding-left: 30px;
+.calendarWrapper {
+    transform: scale(2.7) translate(38%, 32%);
 }
